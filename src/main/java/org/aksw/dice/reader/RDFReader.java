@@ -27,16 +27,13 @@ public class RDFReader {
 	public void readDataUsingStream() {
 		PipedRDFIterator<Triple> iter = new PipedRDFIterator<Triple>();
 		final PipedRDFStream<Triple> inputStream = new PipedTriplesStream(iter);
-
 		ExecutorService executor = Executors.newSingleThreadExecutor();
 		Runnable parser = new Runnable() {
-
 			public void run() {
 				RDFParser.source(filename).parse(inputStream);
 			}
 		};
 		executor.submit(parser);
-
 	}
 
 }
