@@ -109,7 +109,7 @@ public class TransitionMatrixUtil {
 					}
 				}
 			}
-			this.F.showGUI();
+		
 		} else
 			LOGGER.warning("Matrix not made!!");
 
