@@ -27,6 +27,14 @@ public class TransitionMatrixUtil {
 	// beta - number of triples
 	long beta;
 
+	public long getAlpha() {
+		return alpha;
+	}
+
+	public long getBeta() {
+		return beta;
+	}
+
 	private ArrayList<Resource> entityList;
 	private ArrayList<Statement> tripleList;
 
@@ -37,7 +45,7 @@ public class TransitionMatrixUtil {
 		this.tripleList = new ArrayList<Statement>();
 		this.alpha = 0;
 		this.beta = 0;
-		this.getDimensionValues();
+		this.setupMatrix();
 
 	}
 
@@ -67,6 +75,7 @@ public class TransitionMatrixUtil {
 	}
 
 	public void setupMatrix() {
+		this.getDimensionValues();
 		if ((this.alpha != 0) && (this.beta != 0)) {
 			this.W = SparseMatrix.Factory.zeros(this.beta, this.alpha);
 			this.F = SparseMatrix.Factory.zeros(this.alpha, this.beta);
@@ -88,7 +97,6 @@ public class TransitionMatrixUtil {
 							this.W.setAsDouble(0.33, tripleList.indexOf(trip), entityList.indexOf(res));
 							tripleCountforResource++;
 						}
-
 					}
 					// populating F
 					if (tripleCountforResource != 0) {
@@ -99,7 +107,6 @@ public class TransitionMatrixUtil {
 									this.F.setAsDouble(1 / tripleCountforResource, entityList.indexOf(res),
 											tripleList.indexOf(trip));
 								}
-
 							} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 									|| (trip.getObject().equals(res))) {
 								this.F.setAsDouble(1 / tripleCountforResource, entityList.indexOf(res),
@@ -109,10 +116,18 @@ public class TransitionMatrixUtil {
 					}
 				}
 			}
-		
+
 		} else
 			LOGGER.warning("Matrix not made!!");
 
+	}
+
+	public SparseMatrix getW() {
+		return W;
+	}
+
+	public SparseMatrix getF() {
+		return F;
 	}
 
 }
