@@ -1,7 +1,6 @@
 package org.aksw.dice.HARE;
 
-import java.util.Iterator;
-
+import org.apache.jena.rdf.model.Model;
 import org.ujmp.core.Matrix;
 import org.ujmp.core.SparseMatrix;
 
@@ -17,8 +16,8 @@ public class HARERank {
 
 	TransitionMatrixUtil matrxUtil;
 
-	public HARERank() {
-		this.matrxUtil = new TransitionMatrixUtil();
+	public HARERank(Model data) {
+		this.matrxUtil = new TransitionMatrixUtil(data);
 		this.W = matrxUtil.getW();
 		this.F = matrxUtil.getF();
 
@@ -37,10 +36,7 @@ public class HARERank {
 		double damping = 0.85;
 		double epsilon = 1e-3;
 		double error = 1;
-		int iteration = 0;
-
 		while (error > epsilon) {
-			iteration++;
 			Matrix S_n_previous = S_n;
 			S_n = (P_n.times(damping).transpose().mtimes(S_n_previous)
 					.plus(I.times((1 - damping) / S_n_previous.getRowCount())));
@@ -48,7 +44,6 @@ public class HARERank {
 			error = S_n.manhattenDistanceTo(S_n_previous, true);
 			System.out.println(error);
 		}
-		S_n.showGUI();
 
 	}
 

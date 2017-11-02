@@ -1,7 +1,8 @@
 package org.aksw.dice.HARE;
 
 import java.util.ArrayList;
-
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.logging.Logger;
 
 import org.aksw.dice.reader.RDFReader;
@@ -14,14 +15,30 @@ import org.ujmp.core.SparseMatrix;
 
 public class TransitionMatrixUtil {
 	private static final Logger LOGGER = Logger.getLogger(TransitionMatrixUtil.class.getName());
+
+	public ArrayList<Resource> getEntityList() {
+		return entityList;
+	}
+
+	public void setEntityList(ArrayList<Resource> entityList) {
+		this.entityList = entityList;
+	}
+
+	public ArrayList<Statement> getTripleList() {
+		return tripleList;
+	}
+
+	public void setTripleList(ArrayList<Statement> tripleList) {
+		this.tripleList = tripleList;
+	}
+
 	RDFReader reader;
 	// W:the transition matrix from triples to entities.
 	SparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
 	// entities to triples,
 	SparseMatrix F;
-	// model to store the read data
-	Model m;
+
 	// alpha - number of entities
 	long alpha;
 	// beta - number of triples
@@ -35,47 +52,50 @@ public class TransitionMatrixUtil {
 		return beta;
 	}
 
-	private ArrayList<Resource> entityList;
-	private ArrayList<Statement> tripleList;
+	ArrayList<Resource> entityList;
+	ArrayList<Statement> tripleList;
+	private Set<Resource> entitySet;
+	private Set<Statement> tripleSet;
 
-	public TransitionMatrixUtil() {
-		this.reader = new RDFReader();
-		this.m = this.reader.readData();
-		this.entityList = new ArrayList<Resource>();
-		this.tripleList = new ArrayList<Statement>();
+	public TransitionMatrixUtil(Model data) {
+
+		this.entitySet = new LinkedHashSet<Resource>();
+		this.tripleSet = new LinkedHashSet<Statement>();
 		this.alpha = 0;
 		this.beta = 0;
-		this.setupMatrix();
-
+		this.setupMatrix(data);
 	}
 
-	public void getDimensionValues() {
+	public void getDimensionValues(Model data) {
 
-		StmtIterator iter = this.m.listStatements();
+		StmtIterator iter = data.listStatements();
 		while (iter.hasNext()) {
 			Statement t = iter.next();
-			tripleList.add(t);
+			tripleSet.add(t);
 			if (t.getSubject() != null) {
-				this.entityList.add(t.getSubject());
+				this.entitySet.add(t.getSubject());
 			}
 			if (t.getPredicate() != null) {
-				this.entityList.add(t.getPredicate());
+				this.entitySet.add(t.getPredicate());
 			}
 			if (t.getObject() != null) {
 				// convert literal to resource
 				if (t.getObject().isResource())
-					this.entityList.add(t.getObject().asResource());
+					this.entitySet.add(t.getObject().asResource());
 				else
-					this.entityList.add(ResourceFactory.createResource(t.getObject().toString()));
+					this.entitySet.add(ResourceFactory.createResource(t.getObject().toString()));
 			}
 		}
-
+		
+		this.entityList = new ArrayList<Resource>(this.entitySet);
+		this.tripleList = new ArrayList<Statement>(this.tripleSet);
 		this.beta = tripleList.size();
 		this.alpha = entityList.size();
 	}
 
-	public void setupMatrix() {
-		this.getDimensionValues();
+	public void setupMatrix(Model data) {
+		this.getDimensionValues(data);
+		double a = 1.0/3.0;
 		if ((this.alpha != 0) && (this.beta != 0)) {
 			this.W = SparseMatrix.Factory.zeros(this.beta, this.alpha);
 			this.F = SparseMatrix.Factory.zeros(this.alpha, this.beta);
@@ -87,29 +107,37 @@ public class TransitionMatrixUtil {
 						if (trip.getObject().isLiteral()) {
 							Resource r = ResourceFactory.createResource(trip.getObject().toString());
 							if (r.equals(res)) {
-								this.W.setAsDouble(1 / 3, tripleList.indexOf(trip), entityList.indexOf(res));
+								this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
+								System.out.println("Index of triple " + tripleList.indexOf(trip));
+								System.out.println("Index of resource " + entityList.indexOf(res));
 								tripleCountforResource++;
-
 							}
 						} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 								|| (trip.getObject().equals(res))) {
+							System.out.println("Index of triple " + tripleList.indexOf(trip));
+							System.out.println("Index of resource " + entityList.indexOf(res));
 
-							this.W.setAsDouble(0.33, tripleList.indexOf(trip), entityList.indexOf(res));
+							this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
 							tripleCountforResource++;
 						}
 					}
 					// populating F
 					if (tripleCountforResource != 0) {
+						double b = 1.0 /tripleCountforResource;
 						for (Statement trip : tripleList) {
 							if (trip.getObject().isLiteral()) {
 								Resource r = ResourceFactory.createResource(trip.getObject().toString());
 								if (r.equals(res)) {
-									this.F.setAsDouble(1 / tripleCountforResource, entityList.indexOf(res),
+									System.out.println("Index of triple " + tripleList.indexOf(trip));
+									System.out.println("Index of resource " + entityList.indexOf(res));
+									this.F.setAsDouble(b, entityList.indexOf(res),
 											tripleList.indexOf(trip));
 								}
 							} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 									|| (trip.getObject().equals(res))) {
-								this.F.setAsDouble(1 / tripleCountforResource, entityList.indexOf(res),
+								System.out.println("Index of triple " + tripleList.indexOf(trip));
+								System.out.println("Index of resource " + entityList.indexOf(res));
+								this.F.setAsDouble(b, entityList.indexOf(res),
 										tripleList.indexOf(trip));
 							}
 						}

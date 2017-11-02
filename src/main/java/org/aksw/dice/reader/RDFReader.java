@@ -15,22 +15,23 @@ import org.apache.jena.riot.lang.PipedTriplesStream;
 // Stream to constantly read data while processing the data
 
 public class RDFReader {
-	final String filename = "data.ttl";
 
-	public Model readData() {
+	public Model readData(String filename) {
 		Model model = ModelFactory.createDefaultModel();
+
 		// Allows us to read data directly from server
 		model = RDFDataMgr.loadModel(filename);
 		return model;
 	}
 
-	public void readDataUsingStream() {
+	public void readDataUsingStream(String filename) {
 		PipedRDFIterator<Triple> iter = new PipedRDFIterator<Triple>();
 		final PipedRDFStream<Triple> inputStream = new PipedTriplesStream(iter);
 		ExecutorService executor = Executors.newSingleThreadExecutor();
+		final String pseudofile = filename;
 		Runnable parser = new Runnable() {
 			public void run() {
-				RDFParser.source(filename).parse(inputStream);
+				RDFParser.source(pseudofile).parse(inputStream);
 			}
 		};
 		executor.submit(parser);
