@@ -14,25 +14,24 @@ public class HARERank {
 	Matrix P_n;
 	Matrix P_t;
 
+	Matrix S_n_Final;
+	Matrix S_t_Final;
 	TransitionMatrixUtil matrxUtil;
 
 	public HARERank(Model data) {
 		this.matrxUtil = new TransitionMatrixUtil(data);
 		this.W = matrxUtil.getW();
 		this.F = matrxUtil.getF();
+		this.P_n = this.F.mtimes(this.W);
+		this.P_t = this.W.mtimes(this.F);
 
 	}
 
 	public void calculateRank() {
-
 		double alpha = this.matrxUtil.getAlpha();
 		double beta = this.matrxUtil.getBeta();
 		double intitialValue = beta / (alpha * (beta + alpha));
-		P_n = this.F.mtimes(this.W);
-		P_t = this.W.mtimes(this.F);
-
 		Matrix S_n = Matrix.Factory.fill(intitialValue, (long) alpha, (long) 1.0);
-
 		Matrix I = Matrix.Factory.fill(1, (long) alpha, (long) 1.0);
 		double damping = 0.85;
 		double epsilon = 1e-3;
@@ -41,11 +40,29 @@ public class HARERank {
 			Matrix S_n_previous = S_n;
 			S_n = (P_n.times(damping).transpose().mtimes(S_n_previous)
 					.plus(I.times((1 - damping) / S_n_previous.getRowCount())));
-
 			error = S_n.manhattenDistanceTo(S_n_previous, true);
-			System.out.println(error);
+
 		}
 
+		this.S_n_Final = S_n;
+	
+		this.calculateScoreTriples();
+
+	}
+	// Equation 6
+	public void calculateScoreTriples() {
+		S_t_Final = this.F.transpose().mtimes(S_n_Final);
+		S_t_Final= S_t_Final.transpose();
+		S_t_Final.showGUI();
+		
+	}
+
+	public Matrix getP_n() {
+		return P_n;
+	}
+
+	public Matrix getP_t() {
+		return P_t;
 	}
 
 }

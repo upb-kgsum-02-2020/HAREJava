@@ -110,15 +110,13 @@ public class TransitionMatrixUtil {
 						if (trip.getObject().isLiteral()) {
 							Resource r = ResourceFactory.createResource(trip.getObject().toString());
 							if (r.equals(res)) {
-								System.out.println("Index of triple " + tripleList.indexOf(trip) + " "
-										+ entityList.indexOf(res) + " " + a);
+								
 								this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
 								tripleCountforResource++;
 							}
 						} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 								|| (trip.getObject().equals(res))) {
-							System.out.println("Index of triple " + tripleList.indexOf(trip) + " "
-									+ entityList.indexOf(res) + " " + a);
+							
 
 							this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
 							tripleCountforResource++;
