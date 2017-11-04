@@ -86,16 +86,18 @@ public class TransitionMatrixUtil {
 					this.entitySet.add(ResourceFactory.createResource(t.getObject().toString()));
 			}
 		}
-		
+
 		this.entityList = new ArrayList<Resource>(this.entitySet);
 		this.tripleList = new ArrayList<Statement>(this.tripleSet);
 		this.beta = tripleList.size();
 		this.alpha = entityList.size();
 	}
 
+	// since the resources are available seperately the order is defined my triple
+	// insertion.
 	public void setupMatrix(Model data) {
 		this.getDimensionValues(data);
-		double a = 1.0/3.0;
+		double a = 1.0 / 3.0;
 		if ((this.alpha != 0) && (this.beta != 0)) {
 			this.W = SparseMatrix.Factory.zeros(this.beta, this.alpha);
 			this.F = SparseMatrix.Factory.zeros(this.alpha, this.beta);
@@ -103,42 +105,40 @@ public class TransitionMatrixUtil {
 			if ((!entityList.isEmpty()) && (!tripleList.isEmpty())) {
 				for (Resource res : entityList) {
 					tripleCountforResource = 0;
+					// populating W
 					for (Statement trip : tripleList) {
 						if (trip.getObject().isLiteral()) {
 							Resource r = ResourceFactory.createResource(trip.getObject().toString());
 							if (r.equals(res)) {
+								System.out.println("Index of triple " + tripleList.indexOf(trip) + " "
+										+ entityList.indexOf(res) + " " + a);
 								this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
-								System.out.println("Index of triple " + tripleList.indexOf(trip));
-								System.out.println("Index of resource " + entityList.indexOf(res));
 								tripleCountforResource++;
 							}
 						} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 								|| (trip.getObject().equals(res))) {
-							System.out.println("Index of triple " + tripleList.indexOf(trip));
-							System.out.println("Index of resource " + entityList.indexOf(res));
+							System.out.println("Index of triple " + tripleList.indexOf(trip) + " "
+									+ entityList.indexOf(res) + " " + a);
 
 							this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
 							tripleCountforResource++;
 						}
 					}
+
 					// populating F
 					if (tripleCountforResource != 0) {
-						double b = 1.0 /tripleCountforResource;
+						double b = 1.0 / tripleCountforResource;
 						for (Statement trip : tripleList) {
 							if (trip.getObject().isLiteral()) {
 								Resource r = ResourceFactory.createResource(trip.getObject().toString());
 								if (r.equals(res)) {
-									System.out.println("Index of triple " + tripleList.indexOf(trip));
-									System.out.println("Index of resource " + entityList.indexOf(res));
-									this.F.setAsDouble(b, entityList.indexOf(res),
-											tripleList.indexOf(trip));
+
+									this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
 								}
 							} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 									|| (trip.getObject().equals(res))) {
-								System.out.println("Index of triple " + tripleList.indexOf(trip));
-								System.out.println("Index of resource " + entityList.indexOf(res));
-								this.F.setAsDouble(b, entityList.indexOf(res),
-										tripleList.indexOf(trip));
+
+								this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
 							}
 						}
 					}

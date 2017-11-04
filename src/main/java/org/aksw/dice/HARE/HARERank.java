@@ -12,7 +12,7 @@ public class HARERank {
 
 	// P: is the product matrix
 	Matrix P_n;
-	// Matrix P_t;
+	Matrix P_t;
 
 	TransitionMatrixUtil matrxUtil;
 
@@ -29,6 +29,7 @@ public class HARERank {
 		double beta = this.matrxUtil.getBeta();
 		double intitialValue = beta / (alpha * (beta + alpha));
 		P_n = this.F.mtimes(this.W);
+		P_t = this.W.mtimes(this.F);
 
 		Matrix S_n = Matrix.Factory.fill(intitialValue, (long) alpha, (long) 1.0);
 
