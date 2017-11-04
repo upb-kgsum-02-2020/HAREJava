@@ -53,7 +53,8 @@ public class HARERank {
 	public void calculateScoreTriples() {
 		S_t_Final = this.F.transpose().mtimes(S_n_Final);
 		S_t_Final= S_t_Final.transpose();
-		S_t_Final.showGUI();
+		S_n_Final= S_n_Final.transpose();
+		S_n_Final.showGUI();
 		
 	}
 
