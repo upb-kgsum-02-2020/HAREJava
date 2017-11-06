@@ -30,7 +30,8 @@ public class HARERank {
 	public void calculateRank() {
 		double alpha = this.matrxUtil.getAlpha();
 		double beta = this.matrxUtil.getBeta();
-		double intitialValue = beta / (alpha * (beta + alpha));
+		double factor = beta / (alpha * (beta + alpha));
+		double intitialValue = 1 / alpha;
 		Matrix S_n = Matrix.Factory.fill(intitialValue, (long) alpha, (long) 1.0);
 		Matrix I = Matrix.Factory.fill(1, (long) alpha, (long) 1.0);
 		double damping = 0.85;
@@ -44,18 +45,19 @@ public class HARERank {
 
 		}
 
-		this.S_n_Final = S_n;
-	
+		this.S_n_Final = S_n.times(factor);
+
 		this.calculateScoreTriples();
 
 	}
+
 	// Equation 6
 	public void calculateScoreTriples() {
 		S_t_Final = this.F.transpose().mtimes(S_n_Final);
-		S_t_Final= S_t_Final.transpose();
-		S_n_Final= S_n_Final.transpose();
+		S_t_Final = S_t_Final.transpose();
+		S_n_Final = S_n_Final.transpose();
 		S_n_Final.showGUI();
-		
+
 	}
 
 	public Matrix getP_n() {
