@@ -43,5 +43,10 @@
 			<artifactId>ujmp-gui</artifactId>
 			<version>0.3.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.ujmp</groupId>
+			<artifactId>ujmp-parallelcolt</artifactId>
+			<version>0.3.0</version>
+		</dependency>
 	</dependencies>
 </project>

@@ -1,10 +1,19 @@
 package org.aksw.dice.HARE;
 
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.apache.jena.rdf.model.Model;
 import org.ujmp.core.Matrix;
 import org.ujmp.core.SparseMatrix;
 
+import org.ujmp.core.util.io.IntelligentFileWriter;
+
 public class HARERank {
+
+	public static final String OUTPUT_FILE = "LastRankCalculation.txt";
 	SparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
 	// entities to triples,
@@ -50,8 +59,28 @@ public class HARERank {
 
 		// Multiply with Equation 8
 		this.S_n_Final = S_n.times(factor);
-
+		// System.out.println(S_n_Final.getRowCount());
 		this.calculateScoreTriples();
+		this.writeRankToFile();
+	}
+
+	public void writeRankToFile() {
+		try {
+			@SuppressWarnings("resource")
+			IntelligentFileWriter writer = new IntelligentFileWriter(OUTPUT_FILE);
+			writer.write("S_N \n");
+			writer.write(this.S_n_Final.toString());
+			writer.write(" S_T \n");
+			writer.write(this.S_t_Final.toString());
+			writer.flush();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -60,7 +89,7 @@ public class HARERank {
 		S_t_Final = this.F.transpose().mtimes(S_n_Final);
 		S_t_Final = S_t_Final.transpose();
 		S_n_Final = S_n_Final.transpose();
-		S_n_Final.showGUI();
+		// S_n_Final.showGUI();
 
 	}
 
