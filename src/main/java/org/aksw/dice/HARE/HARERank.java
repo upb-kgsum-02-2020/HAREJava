@@ -34,9 +34,12 @@ public class HARERank {
 		double intitialValue = 1 / alpha;
 		Matrix S_n = Matrix.Factory.fill(intitialValue, (long) alpha, (long) 1.0);
 		Matrix I = Matrix.Factory.fill(1, (long) alpha, (long) 1.0);
+
 		double damping = 0.85;
 		double epsilon = 1e-3;
 		double error = 1;
+
+		// Iteration over Equation 9
 		while (error > epsilon) {
 			Matrix S_n_previous = S_n;
 			S_n = (P_n.times(damping).transpose().mtimes(S_n_previous)
@@ -45,6 +48,7 @@ public class HARERank {
 
 		}
 
+		// Multiply with Equation 8
 		this.S_n_Final = S_n.times(factor);
 
 		this.calculateScoreTriples();
