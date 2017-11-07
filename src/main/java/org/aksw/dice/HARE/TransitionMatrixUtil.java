@@ -5,8 +5,9 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import org.aksw.dice.reader.RDFReader;
 import org.apache.jena.rdf.model.ResourceFactory;
+import org.aksw.dice.RDFhandler.RDFReadWriteHandler;
+
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
@@ -32,7 +33,7 @@ public class TransitionMatrixUtil {
 		this.tripleList = tripleList;
 	}
 
-	RDFReader reader;
+	RDFReadWriteHandler reader;
 	// W:the transition matrix from triples to entities.
 	SparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
@@ -110,13 +111,12 @@ public class TransitionMatrixUtil {
 						if (trip.getObject().isLiteral()) {
 							Resource r = ResourceFactory.createResource(trip.getObject().toString());
 							if (r.equals(res)) {
-								
+
 								this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
 								tripleCountforResource++;
 							}
 						} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 								|| (trip.getObject().equals(res))) {
-							
 
 							this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
 							tripleCountforResource++;

@@ -1,20 +1,26 @@
-package org.aksw.dice.reader;
+package org.aksw.dice.RDFhandler;
 
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import org.aksw.dice.HARE.HARERank;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFParser;
 import org.apache.jena.riot.lang.PipedRDFIterator;
 import org.apache.jena.riot.lang.PipedRDFStream;
 import org.apache.jena.riot.lang.PipedTriplesStream;
+import org.ujmp.core.Matrix;
 
 // Stream to constantly read data while processing the data
 
-public class RDFReader {
+public class RDFReadWriteHandler {
+
+
 
 	public Model readData(String filename) {
 		Model model = ModelFactory.createDefaultModel();

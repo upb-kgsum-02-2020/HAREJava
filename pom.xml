@@ -45,7 +45,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.ujmp</groupId>
-			<artifactId>ujmp-parallelcolt</artifactId>
+			<artifactId>ujmp-ojalgo</artifactId>
 			<version>0.3.0</version>
 		</dependency>
 	</dependencies>
