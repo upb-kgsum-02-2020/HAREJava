@@ -1,8 +1,5 @@
 package org.aksw.dice.HARE;
 
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 
 import org.apache.jena.rdf.model.Model;
@@ -26,6 +23,7 @@ public class HARERank {
 	Matrix S_n_Final;
 	Matrix S_t_Final;
 	TransitionMatrixUtil matrxUtil;
+	 
 
 	public HARERank(Model data) {
 		this.matrxUtil = new TransitionMatrixUtil(data);

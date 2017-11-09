@@ -10,6 +10,9 @@ public class Example {
 	public static void main(String[] args) {
 		final String filename = "data.ttl";
 		RDFReadWriteParallelHandler reader = new RDFReadWriteParallelHandler();
-		reader.readData(filename).write(System.out);
+
+		TransitionMatrixUtil matrxUtil = new TransitionMatrixUtil(reader.readData(filename));
+		System.out.println(matrxUtil.getAlpha());
+		System.out.println(matrxUtil.getBeta());
 	}
 }
