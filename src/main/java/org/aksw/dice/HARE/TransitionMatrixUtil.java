@@ -90,8 +90,8 @@ public class TransitionMatrixUtil {
 
 		this.entityList = new ArrayList<Resource>(this.entitySet);
 		this.tripleList = new ArrayList<Statement>(this.tripleSet);
-		this.beta = tripleList.size();
-		this.alpha = entityList.size();
+		this.beta = this.tripleList.size();
+		this.alpha = this.entityList.size();
 	}
 
 	// since the resources are available seperately the order is defined my triple

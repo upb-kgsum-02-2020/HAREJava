@@ -14,6 +14,7 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
+import org.ujmp.core.SparseMatrix;
 
 import cern.colt.matrix.tdouble.impl.SparseDoubleMatrix2D;
 
@@ -43,6 +44,19 @@ public class TransitionMatrixUtilParallel {
 	ArrayList<Statement> tripleList;
 
 	public TransitionMatrixUtilParallel(Model data) {
+		this.alpha = 0;
+		this.beta = 0;
+	}
+
+	public ArrayList<Resource> getEntityList() {
+		return entityList;
+	}
+
+	public ArrayList<Statement> getTripleList() {
+		return tripleList;
+	}
+
+	public void getDimensionValues(Model data) {
 		TripleListReader t = new TripleListReader(data);
 		t.start();
 		EntityListReader e = new EntityListReader(data);
@@ -58,22 +72,59 @@ public class TransitionMatrixUtilParallel {
 
 		this.entityList = new ArrayList<Resource>(e.getEntitySet());
 		this.tripleList = new ArrayList<Statement>(t.getTripleSet());
-		this.alpha = 0;
-		this.beta = 0;
-
+		this.alpha = this.entityList.size();
+		this.beta = this.tripleList.size();
 	}
 
-	public ArrayList<Resource> getEntityList() {
-		return entityList;
-	}
+	public void setupMatrix(Model data) {
+		this.getDimensionValues(data);
+		double a = 1.0 / 3.0;
+		if ((this.alpha != 0) && (this.beta != 0)) {
+			this.W = SparseMatrix.Factory.zeros(this.beta, this.alpha);
+			this.F = SparseMatrix.Factory.zeros(this.alpha, this.beta);
+			double tripleCountforResource = 0;
+			if ((!entityList.isEmpty()) && (!tripleList.isEmpty())) {
+				for (Resource res : entityList) {
+					tripleCountforResource = 0;
+					// populating W
+					for (Statement trip : tripleList) {
+						if (trip.getObject().isLiteral()) {
+							Resource r = ResourceFactory.createResource(trip.getObject().toString());
+							if (r.equals(res)) {
 
-	public ArrayList<Statement> getTripleList() {
-		return tripleList;
-	}
+								this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
+								tripleCountforResource++;
+							}
+						} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
+								|| (trip.getObject().equals(res))) {
 
-	public static void main(String[] args) {
-		final String filename = "data.ttl";
-		RDFReadWriteParallelHandler reader = new RDFReadWriteParallelHandler();
+							this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
+							tripleCountforResource++;
+						}
+					}
+
+					// populating F
+					if (tripleCountforResource != 0) {
+						double b = 1.0 / tripleCountforResource;
+						for (Statement trip : tripleList) {
+							if (trip.getObject().isLiteral()) {
+								Resource r = ResourceFactory.createResource(trip.getObject().toString());
+								if (r.equals(res)) {
+
+									this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
+								}
+							} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
+									|| (trip.getObject().equals(res))) {
+
+								this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
+							}
+						}
+					}
+				}
+			}
+
+		} else
+			LOGGER.warning("Matrix not made!!");
 
 	}
 }
@@ -106,7 +157,7 @@ class TripleListReader implements Runnable {
 				tripleSet.add(t);
 			}
 		}
-		System.out.println("Thread " + threadName + " exiting.");
+		LOGGER.info("Thread " + threadName + " exiting.");
 	}
 
 	public void start() {
@@ -160,11 +211,11 @@ class EntityListReader implements Runnable {
 				}
 			}
 		}
-		System.out.println("Thread " + threadName + " exiting.");
+		LOGGER.info("Thread " + threadName + " exiting.");
 	}
 
 	public void start() {
-		System.out.println("Starting " + threadName);
+		LOGGER.info("Starting " + threadName);
 		if (t == null) {
 			t = new Thread(this, threadName);
 			t.start();

@@ -23,7 +23,6 @@ public class HARERank {
 	Matrix S_n_Final;
 	Matrix S_t_Final;
 	TransitionMatrixUtil matrxUtil;
-	 
 
 	public HARERank(Model data) {
 		this.matrxUtil = new TransitionMatrixUtil(data);
@@ -37,7 +36,6 @@ public class HARERank {
 	public void calculateRank() {
 		double alpha = this.matrxUtil.getAlpha();
 		double beta = this.matrxUtil.getBeta();
-		double factor = beta / (alpha * (beta + alpha));
 		double intitialValue = 1 / alpha;
 		Matrix S_n = Matrix.Factory.fill(intitialValue, (long) alpha, (long) 1.0);
 		Matrix I = Matrix.Factory.fill(1, (long) alpha, (long) 1.0);
@@ -56,9 +54,14 @@ public class HARERank {
 		}
 
 		// Multiply with Equation 8
-		this.S_n_Final = S_n.times(factor);
-		// System.out.println(S_n_Final.getRowCount());
-		this.calculateScoreTriples();
+		double factorSn = alpha /  (beta + alpha);
+		double factorSt = beta / (beta + alpha);
+
+		S_t_Final = this.F.transpose().mtimes(S_n);
+		S_t_Final = S_t_Final.times(factorSt).transpose();
+		S_n_Final = S_n.times(factorSn).transpose();
+		Matrix S = SparseMatrix.Factory.horCat(S_t_Final, S_n_Final);
+		S.showGUI();
 		this.writeRankToFile();
 	}
 
@@ -71,7 +74,7 @@ public class HARERank {
 			writer.write(" S_T \n");
 			writer.write(this.S_t_Final.toString());
 			writer.flush();
-			
+
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -79,15 +82,6 @@ public class HARERank {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-	}
-
-	// Equation 6
-	public void calculateScoreTriples() {
-		S_t_Final = this.F.transpose().mtimes(S_n_Final);
-		S_t_Final = S_t_Final.transpose();
-		S_n_Final = S_n_Final.transpose();
-		// S_n_Final.showGUI();
 
 	}
 

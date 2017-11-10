@@ -11,8 +11,7 @@ public class Example {
 		final String filename = "data.ttl";
 		RDFReadWriteParallelHandler reader = new RDFReadWriteParallelHandler();
 
-		TransitionMatrixUtil matrxUtil = new TransitionMatrixUtil(reader.readData(filename));
-		System.out.println(matrxUtil.getAlpha());
-		System.out.println(matrxUtil.getBeta());
+		HARERank matrxUtil = new HARERank(reader.readData(filename));
+		matrxUtil.calculateRank();
 	}
 }
