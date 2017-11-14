@@ -17,33 +17,17 @@ import org.ujmp.core.SparseMatrix;
 public class TransitionMatrixUtil {
 	private static final Logger LOGGER = Logger.getLogger(TransitionMatrixUtil.class.getName());
 
-	public ArrayList<Resource> getEntityList() {
-		return entityList;
-	}
-
-	public void setEntityList(ArrayList<Resource> entityList) {
-		this.entityList = entityList;
-	}
-
-	public ArrayList<Statement> getTripleList() {
-		return tripleList;
-	}
-
-	public void setTripleList(ArrayList<Statement> tripleList) {
-		this.tripleList = tripleList;
-	}
-
-	RDFReadWriteHandler reader;
+	public RDFReadWriteHandler reader;
 	// W:the transition matrix from triples to entities.
-	SparseMatrix W;
+	public SparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
 	// entities to triples,
-	SparseMatrix F;
+	public SparseMatrix F;
 
 	// alpha - number of entities
-	long alpha;
+	public long alpha;
 	// beta - number of triples
-	long beta;
+	public long beta;
 
 	public long getAlpha() {
 		return alpha;
@@ -53,10 +37,10 @@ public class TransitionMatrixUtil {
 		return beta;
 	}
 
-	ArrayList<Resource> entityList;
-	ArrayList<Statement> tripleList;
-	private Set<Resource> entitySet;
-	private Set<Statement> tripleSet;
+	public ArrayList<Resource> entityList;
+	public ArrayList<Statement> tripleList;
+	public Set<Resource> entitySet;
+	public Set<Statement> tripleSet;
 
 	public TransitionMatrixUtil(Model data) {
 
@@ -64,7 +48,7 @@ public class TransitionMatrixUtil {
 		this.tripleSet = new LinkedHashSet<Statement>();
 		this.alpha = 0;
 		this.beta = 0;
-		this.setupMatrix(data);
+		this.getDimensionValues(data);
 	}
 
 	public void getDimensionValues(Model data) {
@@ -96,8 +80,8 @@ public class TransitionMatrixUtil {
 
 	// since the resources are available seperately the order is defined my triple
 	// insertion.
-	public void setupMatrix(Model data) {
-		this.getDimensionValues(data);
+	public void setupMatrix() {
+
 		double a = 1.0 / 3.0;
 		if ((this.alpha != 0) && (this.beta != 0)) {
 			this.W = SparseMatrix.Factory.zeros(this.beta, this.alpha);
@@ -154,6 +138,22 @@ public class TransitionMatrixUtil {
 
 	public SparseMatrix getF() {
 		return F;
+	}
+
+	public ArrayList<Resource> getEntityList() {
+		return entityList;
+	}
+
+	public void setEntityList(ArrayList<Resource> entityList) {
+		this.entityList = entityList;
+	}
+
+	public ArrayList<Statement> getTripleList() {
+		return tripleList;
+	}
+
+	public void setTripleList(ArrayList<Statement> tripleList) {
+		this.tripleList = tripleList;
 	}
 
 }

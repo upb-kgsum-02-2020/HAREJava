@@ -42,46 +42,7 @@ public class HARERankTest {
 
 	@Test
 	public void SMatrixTest() {
-		/*
-		 * Matrix P_N_actual = DenseMatrix.Factory.fill(0, 5, 5);
-		 * 
-		 * 
-		 * P_N_actual.setAsDouble((double)0.3333, 0, 0);
-		 * P_N_actual.setAsDouble((double)0.1667, 0, 1);
-		 * P_N_actual.setAsDouble((double)0.1667, 0, 2);
-		 * P_N_actual.setAsDouble((double)0.1667, 0, 3);
-		 * P_N_actual.setAsDouble((double)0.1667, 0, 4);
-		 * 
-		 * P_N_actual.setAsDouble((double)0.3333, 1, 0);
-		 * P_N_actual.setAsDouble((double)0.3333, 1, 1);
-		 * P_N_actual.setAsDouble((double)0.3333, 1, 2);
-		 * P_N_actual.setAsDouble((double)0, 1, 3); P_N_actual.setAsDouble((double)0, 1,
-		 * 4);
-		 * 
-		 * P_N_actual.setAsDouble((double)0.3333, 2, 0);
-		 * P_N_actual.setAsDouble((double)0.3333, 2, 1);
-		 * P_N_actual.setAsDouble((double)0.3333, 2, 2);
-		 * P_N_actual.setAsDouble((double)0, 2, 3); P_N_actual.setAsDouble((double)0, 2,
-		 * 4);
-		 * 
-		 * P_N_actual.setAsDouble((double)0.3333, 3, 0);
-		 * P_N_actual.setAsDouble((double)0, 3, 1); P_N_actual.setAsDouble((double)0, 3,
-		 * 2); P_N_actual.setAsDouble((double)0.3333, 3, 3);
-		 * P_N_actual.setAsDouble((double)0.3333, 3, 4);
-		 * 
-		 * P_N_actual.setAsDouble((double)0.3333, 4, 0);
-		 * P_N_actual.setAsDouble((double)0, 4, 1); P_N_actual.setAsDouble((double)0, 4,
-		 * 2); P_N_actual.setAsDouble((double)0.3333, 4, 3);
-		 * P_N_actual.setAsDouble((double)0.3333, 4, 4);
-		 * 
-		 * Matrix P_T_actual = DenseMatrix.Factory.fill(0, 2, 2);
-		 * 
-		 * P_T_actual.setAsDouble((double)0.8333, 0, 0);
-		 * P_T_actual.setAsDouble((double)0.1667, 0, 1);
-		 * 
-		 * P_T_actual.setAsDouble((double)0.1667, 1, 0);
-		 * P_T_actual.setAsDouble((double)0.8333, 1, 1);
-		 */
+		
 
 		Matrix F_actual = DenseMatrix.Factory.zeros(5, 2);
 		F_actual.setAsDouble(0.5, 0, 0);

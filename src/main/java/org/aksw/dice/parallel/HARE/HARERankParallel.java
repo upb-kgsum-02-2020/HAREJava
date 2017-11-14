@@ -1,44 +1,54 @@
-package org.aksw.dice.HARE;
+package org.aksw.dice.parallel.HARE;
 
 import java.io.IOException;
 
 import org.apache.jena.rdf.model.Model;
-import org.ujmp.core.Matrix;
+
 import org.ujmp.core.SparseMatrix;
+
 import org.ujmp.core.util.io.IntelligentFileWriter;
 
-public class HARERank {
+import no.uib.cipr.matrix.DenseMatrix;
+import no.uib.cipr.matrix.Matrix;
+import no.uib.cipr.matrix.sparse.LinkedSparseMatrix;
+import no.uib.cipr.matrix.sparse.SparseVector;
 
-	public static final String OUTPUT_FILE = "LastRankCalculation.txt";
-	SparseMatrix W;
+public class HARERankParallel {
+	public static final String OUTPUT_FILE = "LastParallelRankCalculation.txt";
+	LinkedSparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
 	// entities to triples,
-	SparseMatrix F;
+	LinkedSparseMatrix F;
 
 	// P: is the product matrix
 	Matrix P_n;
 	Matrix P_t;
-
 	Matrix S_n_Final;
 	Matrix S_t_Final;
-	TransitionMatrixUtil matrxUtil;
+	TransitionMatrixUtilParallel matrxUtil;
 
-	public HARERank(Model data) {
-	
-		this.matrxUtil = new TransitionMatrixUtil(data);
+	public HARERankParallel(Model data) {
+		this.matrxUtil = new TransitionMatrixUtilParallel(data);
 		this.W = matrxUtil.getW();
 		this.F = matrxUtil.getF();
-		this.P_n = this.F.mtimes(this.W);
-		this.P_t = this.W.mtimes(this.F);
+		this.F.mult(this.W, this.P_n);
 
 	}
 
 	public void calculateRank() {
-		double alpha = this.matrxUtil.getAlpha();
-		double beta = this.matrxUtil.getBeta();
+		int alpha = this.matrxUtil.getAlpha();
+		int beta = this.matrxUtil.getBeta();
 		double intitialValue = 1 / alpha;
-		Matrix S_n = Matrix.Factory.fill(intitialValue, (long) alpha, (long) 1.0);
-		Matrix I = Matrix.Factory.fill(1, (long) alpha, (long) 1.0);
+		Matrix S_n = new DenseMatrix(alpha, 1);
+		for (int i = 0; i < S_n.numRows(); ++i) {
+			S_n.set(i,0, intitialValue);
+		}
+		
+		Matrix I = new DenseMatrix(alpha, 1);
+		
+		for (int i = 0; i < I.numRows(); ++i) {
+			I.set(i,0, 1);
+		}
 
 		double damping = 0.85;
 		double epsilon = 1e-3;
@@ -47,8 +57,12 @@ public class HARERank {
 		// Iteration over Equation 9
 		while (error > epsilon) {
 			Matrix S_n_previous = S_n;
-			S_n = (P_n.times(damping).transpose().mtimes(S_n_previous)
-					.plus(I.times((1 - damping) / S_n_previous.getRowCount())));
+			Matrix term1 = new DenseMatrix()
+		P_n.scale(damping).mult(S_n_previous, );
+			S_n = (
+					.plus(I.scale(alpha)((1 - damping) / S_n_previous.getRowCount())));
+			
+			
 			error = S_n.manhattenDistanceTo(S_n_previous, true);
 
 		}
@@ -57,12 +71,13 @@ public class HARERank {
 		double factorSn = alpha / (beta + alpha);
 		double factorSt = beta / (beta + alpha);
 
-		S_t_Final = this.F.transpose().mtimes(S_n);
-		S_t_Final = S_t_Final.times(factorSt).transpose();
+		
+		this.F.transpose().mult(S_n, S_t_Final);
+		S_t_Final =  S_t_Final.mult(factorSt, S_t_Final).transpose();
 		S_n_Final = S_n.times(factorSn).transpose();
 		Matrix S = SparseMatrix.Factory.horCat(S_t_Final, S_n_Final);
 		System.out.println(S.toString());
-		//this.writeRankToFile();
+		// this.writeRankToFile();
 	}
 
 	public void writeRankToFile() {
