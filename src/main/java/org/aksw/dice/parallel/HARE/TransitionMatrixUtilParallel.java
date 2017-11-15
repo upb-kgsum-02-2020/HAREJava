@@ -3,7 +3,6 @@ package org.aksw.dice.parallel.HARE;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 import org.aksw.dice.RDFhandler.RDFReadWriteHandler;
@@ -12,9 +11,6 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
-import org.ujmp.core.SparseMatrix;
-import org.ujmp.core.util.UJMPSettings;
-
 import no.uib.cipr.matrix.sparse.LinkedSparseMatrix;
 
 public class TransitionMatrixUtilParallel {
