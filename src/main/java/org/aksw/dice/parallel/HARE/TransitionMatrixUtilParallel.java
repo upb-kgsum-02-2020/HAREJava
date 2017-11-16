@@ -5,39 +5,65 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
+import org.apache.jena.rdf.model.ResourceFactory;
+import org.aksw.dice.HARE.TransitionMatrixUtil;
 import org.aksw.dice.RDFhandler.RDFReadWriteHandler;
+
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
-import no.uib.cipr.matrix.sparse.LinkedSparseMatrix;
+import org.ujmp.core.SparseMatrix;
+import org.ujmp.core.util.UJMPSettings;
 
 public class TransitionMatrixUtilParallel {
 	private static final Logger LOGGER = Logger.getLogger(TransitionMatrixUtilParallel.class.getName());
+
+	public ArrayList<Resource> getEntityList() {
+		return entityList;
+	}
+
+	public void setEntityList(ArrayList<Resource> entityList) {
+		this.entityList = entityList;
+	}
+
+	public ArrayList<Statement> getTripleList() {
+		return tripleList;
+	}
+
+	public void setTripleList(ArrayList<Statement> tripleList) {
+		this.tripleList = tripleList;
+	}
+
 	RDFReadWriteHandler reader;
 	// W:the transition matrix from triples to entities.
-	LinkedSparseMatrix W;
+	SparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
 	// entities to triples,
-	LinkedSparseMatrix F;
-	// alpha - number of entities
-	int alpha;
-	// beta - number of triples
-	int beta;
+	SparseMatrix F;
 
-	public int getAlpha() {
+	// alpha - number of entities
+	long alpha;
+	// beta - number of triples
+	long beta;
+
+	public long getAlpha() {
 		return alpha;
 	}
 
-	public int getBeta() {
+	public long getBeta() {
 		return beta;
 	}
 
 	ArrayList<Resource> entityList;
 	ArrayList<Statement> tripleList;
+	private Set<Resource> entitySet;
+	private Set<Statement> tripleSet;
 
 	public TransitionMatrixUtilParallel(Model data) {
+		
+		UJMPSettings.getInstance().setNumberOfThreads(3);
+		
 		this.entitySet = new LinkedHashSet<Resource>();
 		this.tripleSet = new LinkedHashSet<Statement>();
 		this.alpha = 0;
@@ -45,18 +71,8 @@ public class TransitionMatrixUtilParallel {
 		this.setupMatrix(data);
 	}
 
-	public ArrayList<Resource> getEntityList() {
-		return entityList;
-	}
-
-	public ArrayList<Statement> getTripleList() {
-		return tripleList;
-	}
-
-	public Set<Resource> entitySet;
-	public Set<Statement> tripleSet;
-
 	public void getDimensionValues(Model data) {
+
 		StmtIterator iter = data.listStatements();
 		while (iter.hasNext()) {
 			Statement t = iter.next();
@@ -75,29 +91,21 @@ public class TransitionMatrixUtilParallel {
 					this.entitySet.add(ResourceFactory.createResource(t.getObject().toString()));
 			}
 		}
+
 		this.entityList = new ArrayList<Resource>(this.entitySet);
 		this.tripleList = new ArrayList<Statement>(this.tripleSet);
-		this.beta = this.tripleList.size();
-		this.alpha = this.entityList.size();
+		this.beta = tripleList.size();
+		this.alpha = entityList.size();
 	}
 
-	public LinkedSparseMatrix getW() {
-		return W;
-	}
-
-	public LinkedSparseMatrix getF() {
-		return F;
-	}
-
+	// since the resources are available seperately the order is defined my triple
+	// insertion.
 	public void setupMatrix(Model data) {
 		this.getDimensionValues(data);
-		LOGGER.info("alpha and beta " + this.alpha + " " + this.beta);
 		double a = 1.0 / 3.0;
 		if ((this.alpha != 0) && (this.beta != 0)) {
-			this.W = new LinkedSparseMatrix(this.beta, this.alpha);
-			this.W.zero();
-			this.F = new LinkedSparseMatrix(this.alpha, this.beta);
-			this.F.zero();
+			this.W = SparseMatrix.Factory.zeros(this.beta, this.alpha);
+			this.F = SparseMatrix.Factory.zeros(this.alpha, this.beta);
 			double tripleCountforResource = 0;
 			if ((!entityList.isEmpty()) && (!tripleList.isEmpty())) {
 				for (Resource res : entityList) {
@@ -108,16 +116,17 @@ public class TransitionMatrixUtilParallel {
 							Resource r = ResourceFactory.createResource(trip.getObject().toString());
 							if (r.equals(res)) {
 
-								this.W.set(tripleList.indexOf(trip), entityList.indexOf(res), a);
+								this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
 								tripleCountforResource++;
 							}
 						} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 								|| (trip.getObject().equals(res))) {
-
-							this.W.set(tripleList.indexOf(trip), entityList.indexOf(res), a);
+							
+							this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
 							tripleCountforResource++;
 						}
 					}
+
 					// populating F
 					if (tripleCountforResource != 0) {
 						double b = 1.0 / tripleCountforResource;
@@ -126,12 +135,12 @@ public class TransitionMatrixUtilParallel {
 								Resource r = ResourceFactory.createResource(trip.getObject().toString());
 								if (r.equals(res)) {
 
-									this.F.set(entityList.indexOf(res), tripleList.indexOf(trip), b);
+									this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
 								}
 							} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 									|| (trip.getObject().equals(res))) {
 
-								this.F.set(entityList.indexOf(res), tripleList.indexOf(trip), b);
+								this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
 							}
 						}
 					}
@@ -141,8 +150,13 @@ public class TransitionMatrixUtilParallel {
 		} else
 			LOGGER.warning("Matrix not made!!");
 
-		LOGGER.info("Size of F " + this.F.numRows() + "   " + this.F.numColumns());
-		LOGGER.info("Size of W " + this.W.numRows() + "   " + this.W.numColumns());
+	}
 
+	public SparseMatrix getW() {
+		return W;
+	}
+
+	public SparseMatrix getF() {
+		return F;
 	}
 }

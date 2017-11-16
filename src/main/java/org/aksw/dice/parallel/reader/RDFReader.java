@@ -13,7 +13,7 @@ import org.apache.jena.riot.lang.PipedRDFIterator;
 import org.apache.jena.riot.lang.PipedRDFStream;
 import org.apache.jena.riot.lang.PipedTriplesStream;
 
-public class RDFReadWriteParallelHandler {
+public class RDFReader {
 
 	public Model readData(final String filename) {
 

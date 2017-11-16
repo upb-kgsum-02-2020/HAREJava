@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.apache.jena.rdf.model.Model;
 import org.ujmp.core.Matrix;
 import org.ujmp.core.SparseMatrix;
+
 import org.ujmp.core.util.io.IntelligentFileWriter;
 
 public class HARERank {
@@ -24,22 +25,22 @@ public class HARERank {
 	TransitionMatrixUtil matrxUtil;
 
 	public HARERank(Model data) {
-	
 		this.matrxUtil = new TransitionMatrixUtil(data);
 		this.W = matrxUtil.getW();
 		this.F = matrxUtil.getF();
+
 		this.P_n = this.F.mtimes(this.W);
 		this.P_t = this.W.mtimes(this.F);
 
 	}
 
 	public void calculateRank() {
+		long tic=System.nanoTime();
 		double alpha = this.matrxUtil.getAlpha();
 		double beta = this.matrxUtil.getBeta();
 		double intitialValue = 1 / alpha;
 		Matrix S_n = Matrix.Factory.fill(intitialValue, (long) alpha, (long) 1.0);
 		Matrix I = Matrix.Factory.fill(1, (long) alpha, (long) 1.0);
-
 		double damping = 0.85;
 		double epsilon = 1e-3;
 		double error = 1;
@@ -61,8 +62,9 @@ public class HARERank {
 		S_t_Final = S_t_Final.times(factorSt).transpose();
 		S_n_Final = S_n.times(factorSn).transpose();
 		Matrix S = SparseMatrix.Factory.horCat(S_t_Final, S_n_Final);
-		System.out.println(S.toString());
-		//this.writeRankToFile();
+		long tac=System.nanoTime();
+		System.out.println(tac-tic);
+		this.writeRankToFile();
 	}
 
 	public void writeRankToFile() {
@@ -82,6 +84,15 @@ public class HARERank {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+	}
+
+	// Equation 6
+	public void calculateScoreTriples() {
+		S_t_Final = this.F.transpose().mtimes(S_n_Final);
+		S_t_Final = S_t_Final.transpose();
+		S_n_Final = S_n_Final.transpose();
+		// S_n_Final.showGUI();
 
 	}
 
