@@ -1,22 +1,28 @@
-package org.aksw.dice.parallel.HARE;
+package org.aksw.dice.parallel.PageRank;
+
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.aksw.dice.PageRank.PageRank;
+import org.aksw.dice.PageRank.PageRankTest;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.rdf.model.Statement;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.ujmp.core.DenseMatrix;
 import org.ujmp.core.Matrix;
+import org.ujmp.core.SparseMatrix;
 
-public class HARERankParallelTest {
+import junit.framework.Assert;
+
+public class PageRankParallelTest {
 
 	static Resource r1 = ResourceFactory.createResource("http://aksw.org/resource/BarackObama");
 	static Property p1 = ResourceFactory.createProperty("http://aksw.org/property/spouse");
@@ -28,18 +34,17 @@ public class HARERankParallelTest {
 			Arrays.asList(ResourceFactory.createStatement(r1, p2, r2), ResourceFactory.createStatement(r1, p1, r3)));
 
 	public List<Resource> actualEntity = new ArrayList<Resource>(Arrays.asList(r1, p1, r3, p2, r2));
-	HARERankParallel hrparallelTester;
+	PageRankParallel prTester;
 
 	@Before
 	public void data() {
 		Model testModel = ModelFactory.createDefaultModel();
 		testModel.add(actualTriples);
-		hrparallelTester = new HARERankParallel(testModel);
+		prTester = new PageRankParallel(testModel);
 	}
 
 	@Test
 	public void SMatrixTest() {
-
 		Matrix F_actual = DenseMatrix.Factory.zeros(5, 2);
 		F_actual.setAsDouble(0.5, 0, 0);
 		F_actual.setAsDouble(0.5, 0, 1);
@@ -70,19 +75,20 @@ public class HARERankParallelTest {
 		W_actual.setAsDouble(a, 1, 3);
 		W_actual.setAsDouble(a, 1, 4);
 
-		Matrix P_N_actual = F_actual.mtimes(W_actual);
-		Matrix P_T_actual = W_actual.mtimes(F_actual);
+		SparseMatrix blk1 = SparseMatrix.Factory.zeros(W_actual.getRowCount(), F_actual.getColumnCount());
+		SparseMatrix blk2 = SparseMatrix.Factory.zeros(F_actual.getRowCount(), W_actual.getColumnCount());
 
-		Assert.assertEquals(P_T_actual, hrparallelTester.getrank().getP_t());
-		Assert.assertEquals(P_N_actual, hrparallelTester.getrank().getP_n());
+		Matrix P_actual = SparseMatrix.Factory.vertCat(SparseMatrix.Factory.horCat(blk1, W_actual),
+				SparseMatrix.Factory.horCat(F_actual, blk2));
+	//	Assert.assertEquals(P_actual, prTester.);
 
 	}
 
 	public static void main(String[] args) {
-		HARERankParallelTest test = new HARERankParallelTest();
+		PageRankParallelTest test = new PageRankParallelTest();
 		test.data();
 		test.SMatrixTest();
-		
-		// test.hrTester.writeRankToFile();
+
 	}
+
 }

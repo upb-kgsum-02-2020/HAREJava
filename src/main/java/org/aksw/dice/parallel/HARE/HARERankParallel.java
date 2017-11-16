@@ -6,7 +6,7 @@ import org.ujmp.core.util.UJMPSettings;
 
 public class HARERankParallel {
 
-	public static final String OUTPUT_FILE = "LastRankCalculation.txt";
+	public static final String OUTPUT_FILE = "LastParallelRankCalculation.txt";
 
 	TransitionMatrixUtilParallel matrxUtil;
 	HARERank rank;

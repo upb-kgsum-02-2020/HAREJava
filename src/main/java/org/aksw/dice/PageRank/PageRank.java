@@ -31,6 +31,7 @@ public class PageRank {
 	}
 
 	public void calculateRank() {
+		long tic=System.nanoTime();
 		double beta = this.matrxUtil.getBeta();
 		double intitialValue = 1 / beta;
 
@@ -56,9 +57,10 @@ public class PageRank {
 		}
 		this.S_n_Final = PRval;
 		this.calculateScoreTriples();
-
-		S_n_Final.showGUI();
-		// this.writeRankToFile();
+		long tac=System.nanoTime();
+		System.out.println(tac-tic);
+		System.out.println(S_n_Final.toString());
+		 this.writeRankToFile();
 
 	}
 
@@ -80,10 +82,10 @@ public class PageRank {
 
 	}
 
-	// 
+	//
 	public void calculateScoreTriples() {
 		S_n_Final = S_n_Final.transpose();
-		
+
 	}
 
 	public Matrix getP_n() {
