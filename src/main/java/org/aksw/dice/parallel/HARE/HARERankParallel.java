@@ -1,110 +1,29 @@
 package org.aksw.dice.parallel.HARE;
 
-import java.io.IOException;
-
+import org.aksw.dice.HARE.HARERank;
 import org.apache.jena.rdf.model.Model;
-import org.ujmp.core.Matrix;
-import org.ujmp.core.SparseMatrix;
 import org.ujmp.core.util.UJMPSettings;
-import org.ujmp.core.util.io.IntelligentFileWriter;
 
 public class HARERankParallel {
 
 	public static final String OUTPUT_FILE = "LastRankCalculation.txt";
-	SparseMatrix W;
-	// F:the matrix of which the entries are the transition probabilities from
-	// entities to triples,
-	SparseMatrix F;
 
-	// P: is the product matrix
-	Matrix P_n;
-	Matrix P_t;
-
-	Matrix S_n_Final;
-	Matrix S_t_Final;
 	TransitionMatrixUtilParallel matrxUtil;
+	HARERank rank;
 
 	public HARERankParallel(Model data) {
-		
-		UJMPSettings.getInstance().setNumberOfThreads(3);
-		
+		UJMPSettings.getInstance().setNumberOfThreads(5);
 		this.matrxUtil = new TransitionMatrixUtilParallel(data);
-		this.W = matrxUtil.getW();
-		this.F = matrxUtil.getF();
-		this.P_n = this.F.mtimes(this.W);
-		this.P_t = this.W.mtimes(this.F);
+		this.rank = new HARERank(data);
+		this.rank.calculateRank();
 
 	}
 
-	public void calculateRank() {
-		long tic=System.nanoTime();
-		double alpha = this.matrxUtil.getAlpha();
-		double beta = this.matrxUtil.getBeta();
-		double intitialValue = 1 / alpha;
-		Matrix S_n = Matrix.Factory.fill(intitialValue, (long) alpha, (long) 1.0);
-		Matrix I = Matrix.Factory.fill(1, (long) alpha, (long) 1.0);
-		double damping = 0.85;
-		double epsilon = 1e-3;
-		double error = 1;
-
-		// Iteration over Equation 9
-		while (error > epsilon) {
-			Matrix S_n_previous = S_n;
-			S_n = (P_n.times(damping).transpose().mtimes(S_n_previous)
-					.plus(I.times((1 - damping) / S_n_previous.getRowCount())));
-			
-			error = S_n.manhattenDistanceTo(S_n_previous, true);
-
-		}
-		
-		// Multiply with Equation 8
-		double factorSn = alpha / (beta + alpha);
-		double factorSt = beta / (beta + alpha);
-
-		S_t_Final = this.F.transpose().mtimes(S_n);
-		S_t_Final = S_t_Final.times(factorSt).transpose();
-		S_n_Final = S_n.times(factorSn).transpose();
-		Matrix S = SparseMatrix.Factory.horCat(S_t_Final, S_n_Final);
-		long tac=System.nanoTime();
-		System.out.println(tac-tic);
-		this.writeRankToFile();
-	}
-
-	public void writeRankToFile() {
-		try {
-			@SuppressWarnings("resource")
-			IntelligentFileWriter writer = new IntelligentFileWriter(OUTPUT_FILE);
-			writer.write("S_N \n");
-			writer.write(this.S_n_Final.toString());
-			writer.write(" S_T \n");
-			writer.write(this.S_t_Final.toString());
-			writer.flush();
-
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
-
-	// Equation 6
-	public void calculateScoreTriples() {
-		S_t_Final = this.F.transpose().mtimes(S_n_Final);
-		S_t_Final = S_t_Final.transpose();
-		S_n_Final = S_n_Final.transpose();
-		// S_n_Final.showGUI();
-
-	}
-
-	public Matrix getP_n() {
-		return P_n;
-	}
-
-	public Matrix getP_t() {
-		return P_t;
+	/**
+	 * @return the hr
+	 */
+	public HARERank getrank() {
+		return rank;
 	}
 
 }

@@ -10,12 +10,11 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.rdf.model.Statement;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.ujmp.core.DenseMatrix;
 import org.ujmp.core.Matrix;
-
-import junit.framework.Assert;
 
 public class HARERankParallelTest {
 
@@ -29,13 +28,13 @@ public class HARERankParallelTest {
 			Arrays.asList(ResourceFactory.createStatement(r1, p2, r2), ResourceFactory.createStatement(r1, p1, r3)));
 
 	public List<Resource> actualEntity = new ArrayList<Resource>(Arrays.asList(r1, p1, r3, p2, r2));
-	HARERankParallel hrTester;
+	HARERankParallel hrparallelTester;
 
 	@Before
 	public void data() {
 		Model testModel = ModelFactory.createDefaultModel();
 		testModel.add(actualTriples);
-		hrTester = new HARERankParallel(testModel);
+		hrparallelTester = new HARERankParallel(testModel);
 	}
 
 	@Test
@@ -74,8 +73,8 @@ public class HARERankParallelTest {
 		Matrix P_N_actual = F_actual.mtimes(W_actual);
 		Matrix P_T_actual = W_actual.mtimes(F_actual);
 
-	//	Assert.assertEquals(P_T_actual, hrTester.getP_t());
-	//	Assert.assertEquals(P_N_actual, hrTester.getP_n());
+		// Assert.assertEquals(P_T_actual, hrparallelTester.getrank().getP_t());
+		// Assert.assertEquals(P_N_actual, hrparallelTester.getrank().getP_n());
 
 	}
 
@@ -83,7 +82,6 @@ public class HARERankParallelTest {
 		HARERankParallelTest test = new HARERankParallelTest();
 		test.data();
 		test.SMatrixTest();
-		test.hrTester.calculateRank();
-		//test.hrTester.writeRankToFile();
+		// test.hrTester.writeRankToFile();
 	}
 }

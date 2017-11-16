@@ -64,6 +64,7 @@ public class HARERank {
 		Matrix S = SparseMatrix.Factory.horCat(S_t_Final, S_n_Final);
 		long tac=System.nanoTime();
 		System.out.println(tac-tic);
+		System.out.println(S.toString());
 		this.writeRankToFile();
 	}
 
