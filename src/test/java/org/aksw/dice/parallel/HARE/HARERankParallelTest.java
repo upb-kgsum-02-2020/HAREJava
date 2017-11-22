@@ -71,18 +71,11 @@ public class HARERankParallelTest {
 		W_actual.setAsDouble(a, 1, 4);
 
 		Matrix P_N_actual = F_actual.mtimes(W_actual);
-		Matrix P_T_actual = W_actual.mtimes(F_actual);
-
-		Assert.assertEquals(P_T_actual, hrparallelTester.getrank().getP_t());
+		hrparallelTester.rank.calculateRank();
+		Assert.assertEquals(W_actual, hrparallelTester.rank.W);
+		Assert.assertEquals(F_actual, hrparallelTester.rank.F);
 		Assert.assertEquals(P_N_actual, hrparallelTester.getrank().getP_n());
 
 	}
 
-	public static void main(String[] args) {
-		HARERankParallelTest test = new HARERankParallelTest();
-		test.data();
-		test.SMatrixTest();
-		
-		// test.hrTester.writeRankToFile();
-	}
 }

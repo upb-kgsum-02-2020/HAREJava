@@ -42,16 +42,12 @@ public class TransitionMatrixTest {
 		Matrix F_actual = DenseMatrix.Factory.zeros(5, 2);
 		F_actual.setAsDouble(0.5, 0, 0);
 		F_actual.setAsDouble(0.5, 0, 1);
-		
 		F_actual.setAsDouble(1, 1, 0);
 		F_actual.setAsDouble(0, 1, 1);
-
 		F_actual.setAsDouble(1, 2, 0);
 		F_actual.setAsDouble(0, 2, 1);
-
 		F_actual.setAsDouble(0, 3, 0);
 		F_actual.setAsDouble(1, 3, 1);
-
 		F_actual.setAsDouble(0, 4, 0);
 		F_actual.setAsDouble(1, 4, 1);
 
@@ -62,7 +58,6 @@ public class TransitionMatrixTest {
 		W_actual.setAsDouble(a, 0, 2);
 		W_actual.setAsDouble(0, 0, 3);
 		W_actual.setAsDouble(0, 0, 4);
-
 		W_actual.setAsDouble(a, 1, 0);
 		W_actual.setAsDouble(0, 1, 1);
 		W_actual.setAsDouble(0, 1, 2);

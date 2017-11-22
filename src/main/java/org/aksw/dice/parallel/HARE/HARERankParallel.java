@@ -6,7 +6,7 @@ import org.ujmp.core.util.UJMPSettings;
 
 public class HARERankParallel {
 
-	public static final String OUTPUT_FILE = "LastParallelRankCalculation.txt";
+
 
 	TransitionMatrixUtilParallel matrxUtil;
 	HARERank rank;
@@ -15,9 +15,10 @@ public class HARERankParallel {
 		UJMPSettings.getInstance().setNumberOfThreads(5);
 		this.matrxUtil = new TransitionMatrixUtilParallel(data);
 		this.rank = new HARERank(data);
-		this.rank.calculateRank();
 
 	}
+
+	
 
 	/**
 	 * @return the hr

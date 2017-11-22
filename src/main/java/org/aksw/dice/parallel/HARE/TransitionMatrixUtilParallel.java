@@ -6,9 +6,6 @@ import org.apache.jena.rdf.model.Model;
 public class TransitionMatrixUtilParallel {
 	TransitionMatrixUtil matrixUtilParallel;
 
-	/**
-	 * @return the matrixUtilParallel
-	 */
 	public TransitionMatrixUtil getMatrixUtilParallel() {
 		return matrixUtilParallel;
 	}

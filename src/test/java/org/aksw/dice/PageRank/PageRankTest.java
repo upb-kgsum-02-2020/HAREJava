@@ -75,15 +75,11 @@ public class PageRankTest {
 
 		Matrix P_actual = SparseMatrix.Factory.vertCat(SparseMatrix.Factory.horCat(blk1, W_actual),
 				SparseMatrix.Factory.horCat(F_actual, blk2));
+		prTester.calculateRank();
+		Assert.assertEquals(W_actual, prTester.W);
+		Assert.assertEquals(F_actual, prTester.F);
 		Assert.assertEquals(P_actual, prTester.getP_n());
 
 	}
 
-	public static void main(String[] args) {
-		PageRankTest test = new PageRankTest();
-		test.data();
-		test.prTester.calculateRank();
-		test.SMatrixTest();
-
-	}
 }

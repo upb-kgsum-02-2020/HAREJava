@@ -9,11 +9,11 @@ import org.ujmp.core.SparseMatrix;
 import org.ujmp.core.util.io.IntelligentFileWriter;
 
 public class PageRank {
-	public static final String OUTPUT_FILE = "LastPageRankCalculation.txt";
-	SparseMatrix W;
+	
+	public SparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
 	// entities to triples,
-	SparseMatrix F;
+	public SparseMatrix F;
 
 	// P: is the product matrix
 	Matrix P;
@@ -31,7 +31,7 @@ public class PageRank {
 	}
 
 	public void calculateRank() {
-		long tic=System.nanoTime();
+		long tic = System.currentTimeMillis();
 		double beta = this.matrxUtil.getBeta();
 		double intitialValue = 1 / beta;
 
@@ -40,14 +40,11 @@ public class PageRank {
 
 		this.P = SparseMatrix.Factory.vertCat(SparseMatrix.Factory.horCat(blk1, W),
 				SparseMatrix.Factory.horCat(F, blk2));
-
 		Matrix PRval = Matrix.Factory.fill(intitialValue, P.getRowCount(), (long) 1.0);
 		Matrix I = Matrix.Factory.fill(1, P.getRowCount(), (long) 1.0);
-
 		double damping = 0.85;
 		double epsilon = 1e-3;
 		double error = 1;
-
 		while (error > epsilon) {
 			Matrix previousPRval = PRval;
 			PRval = (P.times(damping).transpose().mtimes(previousPRval)
@@ -56,37 +53,30 @@ public class PageRank {
 
 		}
 		this.S_n_Final = PRval;
-		this.calculateScoreTriples();
-		long tac=System.nanoTime();
-		System.out.println(tac-tic);
+		S_n_Final = S_n_Final.transpose();
+		long tac = System.currentTimeMillis();
+		//System.out.println("Execution time  Page Rank is " + ((tac - tic) / 1000d) + " seconds");
 		System.out.println(S_n_Final.toString());
-		 this.writeRankToFile();
 
 	}
 
-	public void writeRankToFile() {
+	public void writeRankToFile(String filename) {
 		try {
 			@SuppressWarnings("resource")
-			IntelligentFileWriter writer = new IntelligentFileWriter(OUTPUT_FILE);
+			IntelligentFileWriter writer = new IntelligentFileWriter(filename);
 			writer.write("S_N \n");
 			writer.write(this.S_n_Final.toString());
 			writer.flush();
 
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
 
-	//
-	public void calculateScoreTriples() {
-		S_n_Final = S_n_Final.transpose();
-
-	}
+	
 
 	public Matrix getP_n() {
 		return P;

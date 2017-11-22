@@ -1,13 +1,9 @@
 package org.aksw.dice.parallel.PageRank;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.aksw.dice.PageRank.PageRank;
-import org.aksw.dice.PageRank.PageRankTest;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
@@ -80,14 +76,10 @@ public class PageRankParallelTest {
 
 		Matrix P_actual = SparseMatrix.Factory.vertCat(SparseMatrix.Factory.horCat(blk1, W_actual),
 				SparseMatrix.Factory.horCat(F_actual, blk2));
-	//	Assert.assertEquals(P_actual, prTester.);
-
-	}
-
-	public static void main(String[] args) {
-		PageRankParallelTest test = new PageRankParallelTest();
-		test.data();
-		test.SMatrixTest();
+		prTester.getPageRank().calculateRank();
+		Assert.assertEquals(W_actual, prTester.getPageRank().W);
+		Assert.assertEquals(F_actual, prTester.getPageRank().F);
+		Assert.assertEquals(P_actual, prTester.getPageRank().getP_n());
 
 	}
 

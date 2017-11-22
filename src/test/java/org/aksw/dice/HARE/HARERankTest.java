@@ -1,6 +1,5 @@
 package org.aksw.dice.HARE;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -41,7 +40,6 @@ public class HARERankTest {
 
 	@Test
 	public void SMatrixTest() {
-		
 
 		Matrix F_actual = DenseMatrix.Factory.zeros(5, 2);
 		F_actual.setAsDouble(0.5, 0, 0);
@@ -74,18 +72,11 @@ public class HARERankTest {
 		W_actual.setAsDouble(a, 1, 4);
 
 		Matrix P_N_actual = F_actual.mtimes(W_actual);
-		Matrix P_T_actual = W_actual.mtimes(F_actual);
-
-		Assert.assertEquals(P_T_actual, hrTester.getP_t());
+		hrTester.calculateRank();
+		Assert.assertEquals(W_actual, hrTester.W);
+		Assert.assertEquals(F_actual, hrTester.F);
 		Assert.assertEquals(P_N_actual, hrTester.getP_n());
 
 	}
 
-	public static void main(String[] args) {
-		HARERankTest test = new HARERankTest();
-		test.data();
-		test.SMatrixTest();
-		test.hrTester.calculateRank();
-		
-	}
 }

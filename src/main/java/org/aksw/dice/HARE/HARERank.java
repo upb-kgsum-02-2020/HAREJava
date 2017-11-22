@@ -1,7 +1,6 @@
 package org.aksw.dice.HARE;
 
 import java.io.IOException;
-
 import org.apache.jena.rdf.model.Model;
 import org.ujmp.core.Matrix;
 import org.ujmp.core.SparseMatrix;
@@ -11,15 +10,15 @@ import org.ujmp.core.util.io.IntelligentFileWriter;
 public class HARERank {
 
 	public static final String OUTPUT_FILE = "LastRankCalculation.txt";
-	SparseMatrix W;
+	public SparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
 	// entities to triples,
-	SparseMatrix F;
+	public SparseMatrix F;
 
 	// P: is the product matrix
 	Matrix P_n;
 	Matrix P_t;
-
+	Matrix S;
 	Matrix S_n_Final;
 	Matrix S_t_Final;
 	TransitionMatrixUtil matrxUtil;
@@ -28,14 +27,13 @@ public class HARERank {
 		this.matrxUtil = new TransitionMatrixUtil(data);
 		this.W = matrxUtil.getW();
 		this.F = matrxUtil.getF();
-
 		this.P_n = this.F.mtimes(this.W);
 		this.P_t = this.W.mtimes(this.F);
 
 	}
 
 	public void calculateRank() {
-		long tic=System.nanoTime();
+		long tic = System.currentTimeMillis();
 		double alpha = this.matrxUtil.getAlpha();
 		double beta = this.matrxUtil.getBeta();
 		double intitialValue = 1 / alpha;
@@ -44,7 +42,6 @@ public class HARERank {
 		double damping = 0.85;
 		double epsilon = 1e-3;
 		double error = 1;
-
 		// Iteration over Equation 9
 		while (error > epsilon) {
 			Matrix S_n_previous = S_n;
@@ -53,47 +50,38 @@ public class HARERank {
 			error = S_n.manhattenDistanceTo(S_n_previous, true);
 
 		}
-
 		// Multiply with Equation 8
 		double factorSn = alpha / (beta + alpha);
 		double factorSt = beta / (beta + alpha);
-
 		S_t_Final = this.F.transpose().mtimes(S_n);
 		S_t_Final = S_t_Final.times(factorSt).transpose();
 		S_n_Final = S_n.times(factorSn).transpose();
-		Matrix S = SparseMatrix.Factory.horCat(S_t_Final, S_n_Final);
-		long tac=System.nanoTime();
-		System.out.println(tac-tic);
+
+		this.S = SparseMatrix.Factory.horCat(S_t_Final, S_n_Final);
+		long tac = System.currentTimeMillis();
+	//	System.out.println("Execution time HARE is " + ((tac - tic) / 1000d) + " seconds");
 		System.out.println(S.toString());
-		this.writeRankToFile();
+
 	}
 
-	public void writeRankToFile() {
+	public void writeRankToFile(String filename) {
 		try {
 			@SuppressWarnings("resource")
-			IntelligentFileWriter writer = new IntelligentFileWriter(OUTPUT_FILE);
+			IntelligentFileWriter writer = new IntelligentFileWriter(filename);
 			writer.write("S_N \n");
 			writer.write(this.S_n_Final.toString());
 			writer.write(" S_T \n");
 			writer.write(this.S_t_Final.toString());
+			writer.write(" S \n");
+			writer.write(this.S.toString());
+
 			writer.flush();
 
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-	}
-
-	// Equation 6
-	public void calculateScoreTriples() {
-		S_t_Final = this.F.transpose().mtimes(S_n_Final);
-		S_t_Final = S_t_Final.transpose();
-		S_n_Final = S_n_Final.transpose();
-		// S_n_Final.showGUI();
 
 	}
 
