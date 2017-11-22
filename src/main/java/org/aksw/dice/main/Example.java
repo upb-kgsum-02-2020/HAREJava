@@ -1,4 +1,5 @@
-package org.aksw.dice.Main;
+package org.aksw.dice.main;
+
 import java.util.logging.Logger;
 
 import org.aksw.dice.HARE.HARERank;
@@ -16,21 +17,17 @@ public class Example {
 		String filename = null;
 		if (args.length == 0) {
 			System.out.println("no arguments were given.");
-		}
-
-		else if (args[0].equals("-f") && args[2].equals("-t")) {
+		} else if (args[0].equals("-f") && args[2].equals("-t")) {
 			filename = args[1];
-
 			long tic = System.currentTimeMillis();
 			RDFReader reader = new RDFReader();
 			Model readmodel = reader.readData(filename);
 			long tac = System.currentTimeMillis();
 			System.out.println("Reading Data time is " + ((tac - tic) / 1000d) + " seconds");
-			switch (args[3].toLowerCase()) {
+			switch (args[3]) {
 			case "hare":
 				work.setupHARE(readmodel);
 				break;
-
 			case "pagerank":
 				work.setupPageRank(readmodel);
 				break;
@@ -41,13 +38,12 @@ public class Example {
 				work.setupParallelPageRank(readmodel);
 				break;
 			default:
+				work.LOGGER.info("No valid experiment were provided");
 
 				break;
 			}
-
-		}
-
-		else
+			System.exit(0);
+		} else
 			work.LOGGER.info(
 					"Arguments not according to the format. \n Execute as follows: \n java Example.java -f <filename> -t <typename>");
 	}

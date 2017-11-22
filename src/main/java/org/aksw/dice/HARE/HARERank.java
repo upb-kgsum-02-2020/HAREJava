@@ -33,7 +33,7 @@ public class HARERank {
 	}
 
 	public void calculateRank() {
-		long tic = System.currentTimeMillis();
+
 		double alpha = this.matrxUtil.getAlpha();
 		double beta = this.matrxUtil.getBeta();
 		double intitialValue = 1 / alpha;
@@ -58,8 +58,6 @@ public class HARERank {
 		S_n_Final = S_n.times(factorSn).transpose();
 
 		this.S = SparseMatrix.Factory.horCat(S_t_Final, S_n_Final);
-		long tac = System.currentTimeMillis();
-	//	System.out.println("Execution time HARE is " + ((tac - tic) / 1000d) + " seconds");
 		System.out.println(S.toString());
 
 	}
