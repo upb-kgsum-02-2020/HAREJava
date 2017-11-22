@@ -5,9 +5,8 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import org.aksw.dice.RDFhandler.RDFReadWriteHandler;
-
 import org.apache.jena.rdf.model.ResourceFactory;
+import org.aksw.dice.parallel.reader.RDFReadWriteHandler;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;

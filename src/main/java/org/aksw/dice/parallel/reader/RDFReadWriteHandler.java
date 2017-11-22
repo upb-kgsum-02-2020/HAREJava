@@ -1,4 +1,4 @@
-package org.aksw.dice.RDFhandler;
+package org.aksw.dice.parallel.reader;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
