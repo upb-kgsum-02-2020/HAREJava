@@ -14,6 +14,7 @@ abc.txt
 data/
 
 *.ttl
+*.txt
 
 # Project-based exclusions
 **/.clover/
