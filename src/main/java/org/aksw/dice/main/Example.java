@@ -6,7 +6,7 @@ import org.aksw.dice.HARE.HARERank;
 import org.aksw.dice.PageRank.PageRank;
 import org.aksw.dice.parallel.HARE.HARERankParallel;
 import org.aksw.dice.parallel.PageRank.PageRankParallel;
-import org.aksw.dice.parallel.reader.RDFReader;
+import org.aksw.dice.parallel.reader.RDFReadWriteHandler;
 import org.apache.jena.rdf.model.Model;
 
 public class Example {
@@ -20,8 +20,8 @@ public class Example {
 		} else if (args[0].equals("-f") && args[2].equals("-t")) {
 			filename = args[1];
 			long tic = System.currentTimeMillis();
-			RDFReader reader = new RDFReader();
-			Model readmodel = reader.readData(filename);
+			RDFReadWriteHandler reader = new RDFReadWriteHandler();
+			Model readmodel = reader.readDataUsingThreads(filename);
 			long tac = System.currentTimeMillis();
 			System.out.println("Reading Data time is " + ((tac - tic) / 1000d) + " seconds");
 			switch (args[3]) {
@@ -39,9 +39,9 @@ public class Example {
 				break;
 			default:
 				work.LOGGER.info("No valid experiment were provided");
-
 				break;
 			}
+
 			System.exit(0);
 		} else
 			work.LOGGER.info(
@@ -55,7 +55,9 @@ public class Example {
 		prhandler.calculateRank();
 		long tac = System.currentTimeMillis();
 		System.out.println("Total Execution  of PageRank time is " + ((tac - tic) / 1000d) + " seconds");
+
 		prhandler.writeRankToFile(filerank);
+
 	}
 
 	public void setupHARE(Model model) {

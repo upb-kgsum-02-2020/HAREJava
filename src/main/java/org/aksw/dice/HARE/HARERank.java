@@ -23,6 +23,20 @@ public class HARERank {
 	Matrix S_t_Final;
 	TransitionMatrixUtil matrxUtil;
 
+	/**
+	 * @return the matrxUtil
+	 */
+	public TransitionMatrixUtil getMatrxUtil() {
+		return matrxUtil;
+	}
+
+	/**
+	 * @param matrxUtil the matrxUtil to set
+	 */
+	public void setMatrxUtil(TransitionMatrixUtil matrxUtil) {
+		this.matrxUtil = matrxUtil;
+	}
+
 	public HARERank(Model data) {
 		this.matrxUtil = new TransitionMatrixUtil(data);
 		this.W = matrxUtil.getW();
@@ -60,6 +74,48 @@ public class HARERank {
 		this.S = SparseMatrix.Factory.horCat(S_t_Final, S_n_Final);
 		System.out.println(S.toString());
 
+	}
+
+	/**
+	 * @return the s
+	 */
+	public Matrix getS() {
+		return S;
+	}
+
+	/**
+	 * @param s the s to set
+	 */
+	public void setS(Matrix s) {
+		S = s;
+	}
+
+	/**
+	 * @return the s_n_Final
+	 */
+	public Matrix getS_n_Final() {
+		return S_n_Final;
+	}
+
+	/**
+	 * @param s_n_Final the s_n_Final to set
+	 */
+	public void setS_n_Final(Matrix s_n_Final) {
+		S_n_Final = s_n_Final;
+	}
+
+	/**
+	 * @return the s_t_Final
+	 */
+	public Matrix getS_t_Final() {
+		return S_t_Final;
+	}
+
+	/**
+	 * @param s_t_Final the s_t_Final to set
+	 */
+	public void setS_t_Final(Matrix s_t_Final) {
+		S_t_Final = s_t_Final;
 	}
 
 	public void writeRankToFile(String filename) {

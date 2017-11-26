@@ -9,7 +9,7 @@ import org.ujmp.core.SparseMatrix;
 import org.ujmp.core.util.io.IntelligentFileWriter;
 
 public class PageRank {
-	
+
 	public SparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
 	// entities to triples,
@@ -31,7 +31,7 @@ public class PageRank {
 	}
 
 	public void calculateRank() {
-		long tic = System.currentTimeMillis();
+
 		double beta = this.matrxUtil.getBeta();
 		double intitialValue = 1 / beta;
 
@@ -54,8 +54,6 @@ public class PageRank {
 		}
 		this.S_n_Final = PRval;
 		S_n_Final = S_n_Final.transpose();
-		long tac = System.currentTimeMillis();
-		//System.out.println("Execution time  Page Rank is " + ((tac - tic) / 1000d) + " seconds");
 		System.out.println(S_n_Final.toString());
 
 	}
@@ -75,8 +73,6 @@ public class PageRank {
 		}
 
 	}
-
-	
 
 	public Matrix getP_n() {
 		return P;

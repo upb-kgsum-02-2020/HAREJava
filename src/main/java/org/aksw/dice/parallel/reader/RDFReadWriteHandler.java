@@ -1,20 +1,89 @@
 package org.aksw.dice.parallel.reader;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import org.apache.jena.graph.Triple;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.jena.rdf.model.Statement;
+import org.apache.jena.rdf.model.impl.PropertyImpl;
+import org.apache.jena.rdf.model.impl.ResourceImpl;
 import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.riot.RDFParser;
 import org.apache.jena.riot.lang.PipedRDFIterator;
 import org.apache.jena.riot.lang.PipedRDFStream;
 import org.apache.jena.riot.lang.PipedTriplesStream;
-
-// Stream to constantly read data while processing the data
+import org.ujmp.core.Matrix;
 
 public class RDFReadWriteHandler {
+	public void writeRDFResults(Matrix S_n_hare, Matrix S_t_hare, ArrayList<Statement> tripleList,
+			ArrayList<Resource> entityList, String datasetname) {
+		Model outputModel = ModelFactory.createDefaultModel();
+		Property hare = ResourceFactory.createProperty("http://aksw.org/property/hareRank");
+		Property pageRank = ResourceFactory.createProperty("http://aksw.org/property/pageRank");
+		System.out.println("Writing model to file: " + datasetname + ".ttl. ");
+		for (Statement triple : tripleList) {
+			outputModel.add(triple);
+			outputModel.addLiteral(triple.getSubject(), hare,
+					S_n_hare.getAsDouble(0, entityList.indexOf(triple.getSubject())));
+			outputModel.addLiteral(triple.getObject().asResource(), hare,
+					S_n_hare.getAsDouble(0, entityList.indexOf(triple.getObject())));
+			outputModel.addLiteral(triple.getPredicate().asResource(), hare,
+					S_n_hare.getAsDouble(0, entityList.indexOf(triple.getPredicate())));
+		}
+		outputModel.write(System.out, "Turtle");
+		
+		String outputfile = datasetname.concat("_hareresult.ttl");
+
+		FileOutputStream outputStream;
+		try {
+			outputStream = new FileOutputStream(outputfile);
+			outputModel.write(outputStream, "Turtle");
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	// Stream to constantly read data while processing the data
+
+	public Model readDataUsingThreads(final String filename) {
+
+		PipedRDFIterator<Triple> iter = new PipedRDFIterator<Triple>();
+		final PipedRDFStream<Triple> inputStream = new PipedTriplesStream(iter);
+
+		ExecutorService executor = Executors.newSingleThreadExecutor();
+		Runnable parser = new Runnable() {
+			@Override
+			public void run() {
+				RDFDataMgr.parse(inputStream, filename);
+			}
+		};
+
+		executor.submit(parser);
+		Model model = ModelFactory.createDefaultModel();
+		while (iter.hasNext()) {
+			Triple next = iter.next();
+			if (next.getObject().isLiteral())
+				model.add(new ResourceImpl(next.getSubject().toString()),
+						new PropertyImpl(next.getPredicate().getURI()),
+						model.createTypedLiteral(next.getObject().toString()));
+			else
+				model.add(new ResourceImpl(next.getSubject().toString()),
+						new PropertyImpl(next.getPredicate().getURI()), new ResourceImpl(next.getObject().toString()));
+
+		}
+
+		// model.write(System.out, "TURTLE");
+		return model;
+	}
 
 	public Model readData(String filename) {
 		Model model = ModelFactory.createDefaultModel();
@@ -22,19 +91,6 @@ public class RDFReadWriteHandler {
 		// Allows us to read data directly from server
 		model = RDFDataMgr.loadModel(filename);
 		return model;
-	}
-
-	public void readDataUsingStream(String filename) {
-		PipedRDFIterator<Triple> iter = new PipedRDFIterator<Triple>();
-		final PipedRDFStream<Triple> inputStream = new PipedTriplesStream(iter);
-		ExecutorService executor = Executors.newSingleThreadExecutor();
-		final String pseudofile = filename;
-		Runnable parser = new Runnable() {
-			public void run() {
-				RDFParser.source(pseudofile).parse(inputStream);
-			}
-		};
-		executor.submit(parser);
 	}
 
 }

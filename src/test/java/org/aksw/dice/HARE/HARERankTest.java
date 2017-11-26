@@ -73,8 +73,7 @@ public class HARERankTest {
 
 		Matrix P_N_actual = F_actual.mtimes(W_actual);
 		hrTester.calculateRank();
-		Assert.assertEquals(W_actual, hrTester.W);
-		Assert.assertEquals(F_actual, hrTester.F);
+	
 		Assert.assertEquals(P_N_actual, hrTester.getP_n());
 
 	}
