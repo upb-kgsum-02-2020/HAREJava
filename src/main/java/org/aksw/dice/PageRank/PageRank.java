@@ -20,7 +20,6 @@ public class PageRank {
 	Matrix P_t;
 
 	Matrix S_n_Final;
-	Matrix S_t_Final;
 	TransitionMatrixUtil matrxUtil;
 
 	public PageRank(Model data) {
@@ -54,8 +53,22 @@ public class PageRank {
 		}
 		this.S_n_Final = PRval;
 		S_n_Final = S_n_Final.transpose();
-		System.out.println(S_n_Final.toString());
 
+	}
+
+
+	/**
+	 * @return the s_n_Final
+	 */
+	public Matrix getS_n_Final() {
+		return S_n_Final;
+	}
+
+	/**
+	 * @param s_n_Final the s_n_Final to set
+	 */
+	public void setS_n_Final(Matrix s_n_Final) {
+		S_n_Final = s_n_Final;
 	}
 
 	public void writeRankToFile(String filename) {

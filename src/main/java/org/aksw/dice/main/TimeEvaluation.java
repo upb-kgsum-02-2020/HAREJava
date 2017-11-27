@@ -9,11 +9,11 @@ import org.aksw.dice.parallel.PageRank.PageRankParallel;
 import org.aksw.dice.parallel.reader.RDFReadWriteHandler;
 import org.apache.jena.rdf.model.Model;
 
-public class Example {
-	private final Logger LOGGER = Logger.getLogger(Example.class.getName());
+public class TimeEvaluation {
+	private final Logger LOGGER = Logger.getLogger(TimeEvaluation.class.getName());
 
 	public static void main(String[] args) {
-		Example work = new Example();
+		TimeEvaluation work = new TimeEvaluation();
 		String filename = null;
 		if (args.length == 0) {
 			System.out.println("no arguments were given.");

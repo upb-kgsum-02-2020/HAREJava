@@ -10,6 +10,7 @@ import org.apache.jena.graph.Triple;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.ReifiedStatement;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.rdf.model.Statement;
@@ -22,24 +23,78 @@ import org.apache.jena.riot.lang.PipedTriplesStream;
 import org.ujmp.core.Matrix;
 
 public class RDFReadWriteHandler {
-	public void writeRDFResults(Matrix S_n_hare, Matrix S_t_hare, ArrayList<Statement> tripleList,
+	public void writeRDFResults(Matrix S_n_hare, Matrix S_t_hare, Matrix S_n, ArrayList<Statement> tripleList,
 			ArrayList<Resource> entityList, String datasetname) {
 		Model outputModel = ModelFactory.createDefaultModel();
 		Property hare = ResourceFactory.createProperty("http://aksw.org/property/hareRank");
 		Property pageRank = ResourceFactory.createProperty("http://aksw.org/property/pageRank");
+		int size = tripleList.size();
 		System.out.println("Writing model to file: " + datasetname + ".ttl. ");
 		for (Statement triple : tripleList) {
+			ReifiedStatement rstmt = outputModel.createReifiedStatement(triple);
+			rstmt.addLiteral(hare, S_t_hare.getAsDouble(0, tripleList.indexOf(triple)));
+			rstmt.addLiteral(pageRank, S_n.getAsDouble(0, tripleList.indexOf(triple)));
 			outputModel.add(triple);
+
+			if (triple.getObject().isLiteral()) {
+				Resource r = ResourceFactory.createResource(triple.getObject().toString());
+				outputModel.addLiteral(r, hare, S_n_hare.getAsDouble(0, entityList.indexOf(r)));
+				outputModel.addLiteral(r, pageRank, S_n.getAsDouble(0, size + entityList.indexOf(r)));
+			} else {
+				outputModel.addLiteral(triple.getObject().asResource(), hare,
+						S_n_hare.getAsDouble(0, entityList.indexOf(triple.getObject())));
+				outputModel.addLiteral(triple.getObject().asResource(), pageRank,
+						S_n.getAsDouble(0, size + entityList.indexOf(triple.getObject())));
+			}
+
 			outputModel.addLiteral(triple.getSubject(), hare,
 					S_n_hare.getAsDouble(0, entityList.indexOf(triple.getSubject())));
-			outputModel.addLiteral(triple.getObject().asResource(), hare,
-					S_n_hare.getAsDouble(0, entityList.indexOf(triple.getObject())));
+
 			outputModel.addLiteral(triple.getPredicate().asResource(), hare,
 					S_n_hare.getAsDouble(0, entityList.indexOf(triple.getPredicate())));
+			outputModel.addLiteral(triple.getSubject(), pageRank,
+					S_n.getAsDouble(0, size + entityList.indexOf(triple.getSubject())));
+
+			outputModel.addLiteral(triple.getPredicate().asResource(), pageRank,
+					S_n.getAsDouble(0, size + entityList.indexOf(triple.getPredicate())));
+		}
+
+		outputModel.write(System.out, "Turtle");
+
+		String outputfile = datasetname.concat("_result.ttl");
+
+		FileOutputStream outputStream;
+		try {
+			outputStream = new FileOutputStream(outputfile);
+			outputModel.write(outputStream, "Turtle");
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void writePageRankResults(Matrix S_n, ArrayList<Statement> tripleList, ArrayList<Resource> entityList,
+			String datasetname) {
+		Model outputModel = ModelFactory.createDefaultModel();
+
+		Property pageRank = ResourceFactory.createProperty("http://aksw.org/property/pageRank");
+		System.out.println("Writing model to file: " + datasetname + ".ttl. ");
+		int size = tripleList.size();
+		for (Statement triple : tripleList) {
+			ReifiedStatement rstmt = outputModel.createReifiedStatement(triple);
+			rstmt.addLiteral(pageRank, S_n.getAsDouble(0, tripleList.indexOf(triple)));
+			outputModel.add(triple);
+			outputModel.addLiteral(triple.getSubject(), pageRank,
+					S_n.getAsDouble(0, size + entityList.indexOf(triple.getSubject())));
+			outputModel.addLiteral(triple.getObject().asResource(), pageRank,
+					S_n.getAsDouble(0, size + entityList.indexOf(triple.getObject())));
+			outputModel.addLiteral(triple.getPredicate().asResource(), pageRank,
+					S_n.getAsDouble(0, size + entityList.indexOf(triple.getPredicate())));
 		}
 		outputModel.write(System.out, "Turtle");
-		
-		String outputfile = datasetname.concat("_hareresult.ttl");
+
+		String outputfile = datasetname.concat("_PRresult.ttl");
 
 		FileOutputStream outputStream;
 		try {
