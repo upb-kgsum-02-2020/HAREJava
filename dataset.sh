@@ -1,8 +1,6 @@
-wget http://hobbitdata.aksw.uni-leipzig.de/hare/5datasets.zip
-
 wget http://hobbitdata.aksw.uni-leipzig.de/hare/airports.nt
 
-wget http://hobbitdata.akswv.uni-leipzig.de/hare/dbpedia.nt.zip
+wget http://hobbitdata.aksw.uni-leipzig.de/hare/dbpedia.nt.zip
 
 wget http://hobbitdata.aksw.uni-leipzig.de/hare/dogfood.nt
 

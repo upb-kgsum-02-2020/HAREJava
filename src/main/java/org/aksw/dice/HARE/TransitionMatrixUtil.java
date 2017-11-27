@@ -89,13 +89,17 @@ public class TransitionMatrixUtil {
 
 		this.entityList = new ArrayList<Resource>(this.entitySet);
 		this.tripleList = new ArrayList<Statement>(this.tripleSet);
+		
+		LOGGER.info("Obtained Entity and Triple List!!");
 		this.beta = tripleList.size();
 		this.alpha = entityList.size();
+		LOGGER.info("Obtained alpha and beta!!");
 	}
 
 	// since the resources are available seperately the order is defined my triple
 	// insertion.
 	public void setupMatrix(Model data) {
+		LOGGER.info("Setting up Matrices !!");
 		this.getDimensionValues(data);
 		double a = 1.0 / 3.0;
 		if ((this.alpha != 0) && (this.beta != 0)) {
@@ -105,6 +109,7 @@ public class TransitionMatrixUtil {
 			if ((!entityList.isEmpty()) && (!tripleList.isEmpty())) {
 				for (Resource res : entityList) {
 					tripleCountforResource = 0;
+					LOGGER.info("Populationg W!!");
 					// populating W
 					for (Statement trip : tripleList) {
 						if (trip.getObject().isLiteral()) {
@@ -121,8 +126,9 @@ public class TransitionMatrixUtil {
 							tripleCountforResource++;
 						}
 					}
-
+					LOGGER.info("Populationg W Complete!");
 					// populating F
+					LOGGER.info("Populating F!!");
 					if (tripleCountforResource != 0) {
 						double b = 1.0 / tripleCountforResource;
 						for (Statement trip : tripleList) {
@@ -141,7 +147,7 @@ public class TransitionMatrixUtil {
 					}
 				}
 			}
-
+			LOGGER.info("Populationg W & F Complete!");
 		} else
 			LOGGER.warning("Matrix not made!!");
 

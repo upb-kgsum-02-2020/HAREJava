@@ -1,6 +1,8 @@
 package org.aksw.dice.HARE;
 
 import java.io.IOException;
+import java.util.logging.Logger;
+
 import org.apache.jena.rdf.model.Model;
 import org.ujmp.core.Matrix;
 import org.ujmp.core.SparseMatrix;
@@ -8,8 +10,9 @@ import org.ujmp.core.SparseMatrix;
 import org.ujmp.core.util.io.IntelligentFileWriter;
 
 public class HARERank {
-
+	private static final Logger LOGGER = Logger.getLogger(HARERank.class.getName());
 	public static final String OUTPUT_FILE = "LastRankCalculation.txt";
+
 	public SparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
 	// entities to triples,
@@ -31,18 +34,21 @@ public class HARERank {
 	}
 
 	/**
-	 * @param matrxUtil the matrxUtil to set
+	 * @param matrxUtil
+	 *            the matrxUtil to set
 	 */
 	public void setMatrxUtil(TransitionMatrixUtil matrxUtil) {
 		this.matrxUtil = matrxUtil;
 	}
 
 	public HARERank(Model data) {
+
 		this.matrxUtil = new TransitionMatrixUtil(data);
 		this.W = matrxUtil.getW();
 		this.F = matrxUtil.getF();
 		this.P_n = this.F.mtimes(this.W);
 		this.P_t = this.W.mtimes(this.F);
+		LOGGER.info("HARE Rank Constructor Initialisation Complete ");
 
 	}
 
@@ -51,19 +57,25 @@ public class HARERank {
 		double alpha = this.matrxUtil.getAlpha();
 		double beta = this.matrxUtil.getBeta();
 		double intitialValue = 1 / alpha;
+
 		Matrix S_n = Matrix.Factory.fill(intitialValue, (long) alpha, (long) 1.0);
 		Matrix I = Matrix.Factory.fill(1, (long) alpha, (long) 1.0);
 		double damping = 0.85;
 		double epsilon = 1e-3;
 		double error = 1;
+		int iteration = 1;
+		LOGGER.info("All setup complete ");
 		// Iteration over Equation 9
 		while (error > epsilon) {
+			LOGGER.info("Going for iteration " + iteration);
 			Matrix S_n_previous = S_n;
 			S_n = (P_n.times(damping).transpose().mtimes(S_n_previous)
 					.plus(I.times((1 - damping) / S_n_previous.getRowCount())));
 			error = S_n.manhattenDistanceTo(S_n_previous, true);
-
+			LOGGER.info("Iteration " + iteration + "Complete");
+			iteration++;
 		}
+		LOGGER.info("Rank Calculation Completed!!");
 		// Multiply with Equation 8
 		double factorSn = alpha / (beta + alpha);
 		double factorSt = beta / (beta + alpha);
@@ -72,6 +84,7 @@ public class HARERank {
 		S_n_Final = S_n.times(factorSn).transpose();
 
 		this.S = SparseMatrix.Factory.horCat(S_t_Final, S_n_Final);
+		LOGGER.info("Obtained Final S matrix!!");
 		System.out.println(S.toString());
 
 	}
@@ -84,7 +97,8 @@ public class HARERank {
 	}
 
 	/**
-	 * @param s the s to set
+	 * @param s
+	 *            the s to set
 	 */
 	public void setS(Matrix s) {
 		S = s;
@@ -98,7 +112,8 @@ public class HARERank {
 	}
 
 	/**
-	 * @param s_n_Final the s_n_Final to set
+	 * @param s_n_Final
+	 *            the s_n_Final to set
 	 */
 	public void setS_n_Final(Matrix s_n_Final) {
 		S_n_Final = s_n_Final;
@@ -112,7 +127,8 @@ public class HARERank {
 	}
 
 	/**
-	 * @param s_t_Final the s_t_Final to set
+	 * @param s_t_Final
+	 *            the s_t_Final to set
 	 */
 	public void setS_t_Final(Matrix s_t_Final) {
 		S_t_Final = s_t_Final;
