@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import org.apache.jena.rdf.model.Model;
 import org.ujmp.core.Matrix;
 import org.ujmp.core.SparseMatrix;
-
+import org.ujmp.core.util.UJMPSettings;
 import org.ujmp.core.util.io.IntelligentFileWriter;
 
 public class HARERank {
@@ -42,7 +42,7 @@ public class HARERank {
 	}
 
 	public HARERank(Model data) {
-
+		UJMPSettings.getInstance().setNumberOfThreads(1);
 		this.matrxUtil = new TransitionMatrixUtil(data);
 		this.W = matrxUtil.getW();
 		this.F = matrxUtil.getF();
