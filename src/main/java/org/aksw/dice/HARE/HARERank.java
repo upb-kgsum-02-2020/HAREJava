@@ -11,8 +11,7 @@ import org.ujmp.core.util.io.IntelligentFileWriter;
 
 public class HARERank {
 	private static final Logger LOGGER = Logger.getLogger(HARERank.class.getName());
-	public static final String OUTPUT_FILE = "LastRankCalculation.txt";
-
+	
 	public SparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
 	// entities to triples,
@@ -42,7 +41,6 @@ public class HARERank {
 	}
 
 	public HARERank(Model data) {
-		UJMPSettings.getInstance().setNumberOfThreads(1);
 		this.matrxUtil = new TransitionMatrixUtil(data);
 		this.W = matrxUtil.getW();
 		this.F = matrxUtil.getF();
