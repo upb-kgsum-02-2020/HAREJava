@@ -51,9 +51,10 @@ public class HARERank {
 	}
 
 	public void calculateRank() {
-
+		LOGGER.info("HARE Rank calculation started");
 		double alpha = this.matrxUtil.getAlpha();
 		double beta = this.matrxUtil.getBeta();
+		
 		double intitialValue = 1 / alpha;
 
 		Matrix S_n = Matrix.Factory.fill(intitialValue, (long) alpha, (long) 1.0);

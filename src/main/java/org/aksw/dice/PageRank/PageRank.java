@@ -34,7 +34,7 @@ public class PageRank {
 	}
 
 	public void calculateRank() {
-
+		LOGGER.info("Page Rank Calculation started ");
 		double beta = this.matrxUtil.getBeta();
 		double intitialValue = 1 / beta;
 
