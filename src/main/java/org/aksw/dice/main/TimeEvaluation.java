@@ -62,6 +62,7 @@ public class TimeEvaluation {
 
 	public void setupHARE(Model model) {
 		String filerank = "LastRankCalculation.txt";
+		
 		long tic = System.currentTimeMillis();
 		HARERank harehandler = new HARERank(model);
 		harehandler.calculateRank();

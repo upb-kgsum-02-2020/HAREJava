@@ -102,54 +102,58 @@ public class TransitionMatrixUtil {
 		LOGGER.info("Setting up Matrices !!");
 		this.getDimensionValues(data);
 		double a = 1.0 / 3.0;
-		if ((this.alpha != 0) && (this.beta != 0)) {
-			this.W = SparseMatrix.Factory.zeros(this.beta, this.alpha);
-			this.F = SparseMatrix.Factory.zeros(this.alpha, this.beta);
-			double tripleCountforResource = 0;
-			if ((!entityList.isEmpty()) && (!tripleList.isEmpty())) {
-				for (Resource res : entityList) {
-					tripleCountforResource = 0;
-					LOGGER.info("Populationg W!!");
-					// populating W
-					for (Statement trip : tripleList) {
-						if (trip.getObject().isLiteral()) {
-							Resource r = ResourceFactory.createResource(trip.getObject().toString());
-							if (r.equals(res)) {
-
-								this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
-								tripleCountforResource++;
-							}
-						} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
-								|| (trip.getObject().equals(res))) {
-
-							this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
-							tripleCountforResource++;
-						}
-					}
-					LOGGER.info("Populationg W Complete!");
-					// populating F
-					LOGGER.info("Populating F!!");
-					if (tripleCountforResource != 0) {
-						double b = 1.0 / tripleCountforResource;
+		try {
+			if ((this.alpha != 0) && (this.beta != 0)) {
+				this.W = SparseMatrix.Factory.zeros(this.beta, this.alpha);
+				this.F = SparseMatrix.Factory.zeros(this.alpha, this.beta);
+				double tripleCountforResource = 0;
+				if ((!entityList.isEmpty()) && (!tripleList.isEmpty())) {
+					for (Resource res : entityList) {
+						tripleCountforResource = 0;
+						LOGGER.info("Populationg W!!");
+						// populating W
 						for (Statement trip : tripleList) {
 							if (trip.getObject().isLiteral()) {
 								Resource r = ResourceFactory.createResource(trip.getObject().toString());
 								if (r.equals(res)) {
 
-									this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
+									this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
+									tripleCountforResource++;
 								}
 							} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 									|| (trip.getObject().equals(res))) {
 
-								this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
+								this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
+								tripleCountforResource++;
+							}
+						}
+						LOGGER.info("Populationg W Complete!");
+						LOGGER.info("Populating F!!");
+						if (tripleCountforResource != 0) {
+							double b = 1.0 / tripleCountforResource;
+							for (Statement trip : tripleList) {
+								if (trip.getObject().isLiteral()) {
+									Resource r = ResourceFactory.createResource(trip.getObject().toString());
+									if (r.equals(res)) {
+
+										this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
+									}
+								} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
+										|| (trip.getObject().equals(res))) {
+
+									this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
+								}
 							}
 						}
 					}
 				}
+				LOGGER.info("Populationg W & F Complete!");
 			}
-			LOGGER.info("Populationg W & F Complete!");
-		} else
+
+		} catch (Exception e) {
+			// TODO: handle exception
 			LOGGER.warning("Matrix not made!!");
+		}
 
 	}
 
