@@ -41,7 +41,7 @@ public class HARERank {
 	}
 
 	public HARERank(Model data) {
-		UJMPSettings.getInstance().setNumberOfThreads(2);
+		UJMPSettings.getInstance().setNumberOfThreads(1);
 		this.matrxUtil = new TransitionMatrixUtil(data);
 		this.W = matrxUtil.getW();
 		this.F = matrxUtil.getF();
