@@ -69,8 +69,10 @@ public class HARERank {
 		while (error > epsilon) {
 			LOGGER.info("Going for iteration " + iteration);
 			Matrix S_n_previous = S_n;
+			
 			S_n = (P_n.times(damping).transpose().mtimes(S_n_previous)
 					.plus(I.times((1 - damping) / S_n_previous.getRowCount())));
+			
 			error = S_n.manhattenDistanceTo(S_n_previous, true);
 			LOGGER.info("Iteration " + iteration + "Complete");
 			iteration++;

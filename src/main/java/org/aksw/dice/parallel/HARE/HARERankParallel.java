@@ -12,7 +12,7 @@ public class HARERankParallel {
 	HARERank rank;
 
 	public HARERankParallel(Model data) {
-		UJMPSettings.getInstance().setNumberOfThreads(4);
+		UJMPSettings.getInstance().setNumberOfThreads(8);
 		this.matrxUtil = new TransitionMatrixUtilParallel(data);
 		this.rank = new HARERank(data);
 
