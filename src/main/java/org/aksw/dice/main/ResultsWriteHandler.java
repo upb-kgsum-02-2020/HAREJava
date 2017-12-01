@@ -2,8 +2,7 @@ package org.aksw.dice.main;
 
 import org.aksw.dice.HARE.HARERank;
 import org.aksw.dice.PageRank.PageRank;
-import org.aksw.dice.parallel.HARE.HARERankParallel;
-import org.aksw.dice.parallel.PageRank.PageRankParallel;
+
 import org.aksw.dice.parallel.reader.RDFReadWriteHandler;
 import org.apache.jena.rdf.model.Model;
 

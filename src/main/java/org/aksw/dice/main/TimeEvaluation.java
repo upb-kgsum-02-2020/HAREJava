@@ -4,8 +4,7 @@ import java.util.logging.Logger;
 
 import org.aksw.dice.HARE.HARERank;
 import org.aksw.dice.PageRank.PageRank;
-import org.aksw.dice.parallel.HARE.HARERankParallel;
-import org.aksw.dice.parallel.PageRank.PageRankParallel;
+
 import org.aksw.dice.parallel.reader.RDFReadWriteHandler;
 import org.apache.jena.rdf.model.Model;
 
@@ -31,12 +30,7 @@ public class TimeEvaluation {
 			case "pagerank":
 				work.setupPageRank(readmodel);
 				break;
-			case "parallelhare":
-				work.setupParallelHARE(readmodel);
-				break;
-			case "parallelpagerank":
-				work.setupParallelPageRank(readmodel);
-				break;
+
 			default:
 				work.LOGGER.info("No valid experiment were provided");
 				break;
@@ -56,38 +50,17 @@ public class TimeEvaluation {
 		long tac = System.currentTimeMillis();
 		System.out.println("Total Execution  of PageRank time is " + ((tac - tic) / 1000d) + " seconds");
 
-		prhandler.writeRankToFile(filerank);
-
 	}
 
 	public void setupHARE(Model model) {
 		String filerank = "LastRankCalculation.txt";
-		
+
 		long tic = System.currentTimeMillis();
 		HARERank harehandler = new HARERank(model);
 		harehandler.calculateRank();
 		long tac = System.currentTimeMillis();
 		System.out.println("Total Execution HARE  time is " + ((tac - tic) / 1000d) + " seconds");
-		harehandler.writeRankToFile(filerank);
+
 	}
 
-	public void setupParallelPageRank(Model model) {
-		String filerank = "LastParallelPageRankCalculation.txt";
-		long tic = System.currentTimeMillis();
-		PageRankParallel prhandler = new PageRankParallel(model);
-		prhandler.getPageRank().calculateRank();
-		long tac = System.currentTimeMillis();
-		System.out.println("Total Execution  Parallel PageRank  time is " + ((tac - tic) / 1000d) + " seconds");
-		prhandler.getPageRank().writeRankToFile(filerank);
-	}
-
-	public void setupParallelHARE(Model model) {
-		String filerank = "LastParallelRankCalculation.txt";
-		long tic = System.currentTimeMillis();
-		HARERankParallel harehandler = new HARERankParallel(model);
-		harehandler.getrank().calculateRank();
-		long tac = System.currentTimeMillis();
-		System.out.println("Total Execution Parallel HARE  time is " + ((tac - tic) / 1000d) + " seconds");
-		harehandler.getrank().writeRankToFile(filerank);
-	}
 }

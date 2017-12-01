@@ -1,4 +1,4 @@
-package org.aksw.dice.HARE;
+package org.aksw.dice.matrixUtil;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -11,7 +11,8 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
-import org.ujmp.core.SparseMatrix;
+
+import no.uib.cipr.matrix.sparse.LinkedSparseMatrix;
 
 public class TransitionMatrixUtil {
 	private static final Logger LOGGER = Logger.getLogger(TransitionMatrixUtil.class.getName());
@@ -34,21 +35,68 @@ public class TransitionMatrixUtil {
 
 	RDFReadWriteHandler reader;
 	// W:the transition matrix from triples to entities.
-	SparseMatrix W;
+	LinkedSparseMatrix W;
 	// F:the matrix of which the entries are the transition probabilities from
 	// entities to triples,
-	SparseMatrix F;
+	LinkedSparseMatrix F;
+	MatrixUtilities util;
+
+	/**
+	 * @return the w
+	 */
+	public LinkedSparseMatrix getW() {
+		return W;
+	}
+
+	/**
+	 * @param w
+	 *            the w to set
+	 */
+	public void setW(LinkedSparseMatrix w) {
+		W = w;
+	}
+
+	/**
+	 * @return the f
+	 */
+	public LinkedSparseMatrix getF() {
+		return F;
+	}
+
+	/**
+	 * @param f
+	 *            the f to set
+	 */
+	public void setF(LinkedSparseMatrix f) {
+		F = f;
+	}
+
+	/**
+	 * @param alpha
+	 *            the alpha to set
+	 */
+	public void setAlpha(int alpha) {
+		this.alpha = alpha;
+	}
+
+	/**
+	 * @param beta
+	 *            the beta to set
+	 */
+	public void setBeta(int beta) {
+		this.beta = beta;
+	}
 
 	// alpha - number of entities
-	long alpha;
+	int alpha;
 	// beta - number of triples
-	long beta;
+	int beta;
 
-	public long getAlpha() {
+	public int getAlpha() {
 		return alpha;
 	}
 
-	public long getBeta() {
+	public int getBeta() {
 		return beta;
 	}
 
@@ -63,6 +111,7 @@ public class TransitionMatrixUtil {
 		this.tripleSet = new LinkedHashSet<Statement>();
 		this.alpha = 0;
 		this.beta = 0;
+		this.util = new MatrixUtilities();
 		this.setupMatrix(data);
 	}
 
@@ -93,7 +142,7 @@ public class TransitionMatrixUtil {
 		LOGGER.info("Obtained Entity and Triple List!!");
 		this.beta = tripleList.size();
 		this.alpha = entityList.size();
-		LOGGER.info("Obtained alpha and beta!!" + "entities count is " + this.alpha + "triple count is " + this.beta);
+		LOGGER.info("Obtained alpha and beta!!" + "entities count is  " + this.alpha + " triple count is " + this.beta);
 	}
 
 	// since the resources are available seperately the order is defined my triple
@@ -104,8 +153,12 @@ public class TransitionMatrixUtil {
 		double a = 1.0 / 3.0;
 		try {
 			if ((this.alpha != 0) && (this.beta != 0)) {
-				this.W = SparseMatrix.Factory.zeros(this.beta, this.alpha);
-				this.F = SparseMatrix.Factory.zeros(this.alpha, this.beta);
+				this.W = new LinkedSparseMatrix(this.beta, this.alpha);
+				this.F = new LinkedSparseMatrix(this.alpha, this.beta);
+				LOGGER.info(alpha + "   " + beta);
+				this.W.zero();
+				this.F.zero();
+			
 				double tripleCountforResource = 0;
 				if ((!entityList.isEmpty()) && (!tripleList.isEmpty())) {
 					for (Resource res : entityList) {
@@ -116,18 +169,18 @@ public class TransitionMatrixUtil {
 							if (trip.getObject().isLiteral()) {
 								Resource r = ResourceFactory.createResource(trip.getObject().toString());
 								if (r.equals(res)) {
-
-									this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
+									this.W.set(tripleList.indexOf(trip), entityList.indexOf(res), a);
 									tripleCountforResource++;
 								}
 							} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 									|| (trip.getObject().equals(res))) {
 
-								this.W.setAsDouble(a, tripleList.indexOf(trip), entityList.indexOf(res));
+								this.W.set(tripleList.indexOf(trip), entityList.indexOf(res), a);
 								tripleCountforResource++;
 							}
 						}
 						LOGGER.info("Populationg W Complete!");
+
 						LOGGER.info("Populating F!!");
 						if (tripleCountforResource != 0) {
 							double b = 1.0 / tripleCountforResource;
@@ -136,17 +189,18 @@ public class TransitionMatrixUtil {
 									Resource r = ResourceFactory.createResource(trip.getObject().toString());
 									if (r.equals(res)) {
 
-										this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
+										this.F.set(entityList.indexOf(res), tripleList.indexOf(trip), b);
 									}
 								} else if ((trip.getSubject().equals(res)) || (trip.getPredicate().equals(res))
 										|| (trip.getObject().equals(res))) {
 
-									this.F.setAsDouble(b, entityList.indexOf(res), tripleList.indexOf(trip));
+									this.F.set(entityList.indexOf(res), tripleList.indexOf(trip), b);
 								}
 							}
 						}
 					}
 				}
+				 
 				LOGGER.info("Populationg W & F Complete!");
 			}
 
@@ -155,14 +209,6 @@ public class TransitionMatrixUtil {
 			LOGGER.warning("Matrix not made!!");
 		}
 
-	}
-
-	public SparseMatrix getW() {
-		return W;
-	}
-
-	public SparseMatrix getF() {
-		return F;
 	}
 
 }
