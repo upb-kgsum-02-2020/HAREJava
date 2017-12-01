@@ -21,7 +21,7 @@ public class TimeEvaluation {
 			filename = args[1];
 			long tic = System.currentTimeMillis();
 			RDFReadWriteHandler reader = new RDFReadWriteHandler();
-			Model readmodel = reader.readDataUsingThreads(filename);
+			Model readmodel = reader.readData(filename);
 			long tac = System.currentTimeMillis();
 			System.out.println("Reading Data time is " + ((tac - tic) / 1000d) + " seconds");
 			switch (args[3]) {
