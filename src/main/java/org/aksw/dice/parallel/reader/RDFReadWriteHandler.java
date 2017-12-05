@@ -74,39 +74,7 @@ public class RDFReadWriteHandler {
 
 	}
 
-	public void writePageRankResults(DenseMatrix S_n, ArrayList<Statement> tripleList, ArrayList<Resource> entityList,
-			String datasetname) {
-		Model outputModel = ModelFactory.createDefaultModel();
-
-		Property pageRank = ResourceFactory.createProperty("http://aksw.org/property/pageRank");
-		System.out.println("Writing model to file: " + datasetname + ".ttl. ");
-		int size = tripleList.size();
-		for (Statement triple : tripleList) {
-			ReifiedStatement rstmt = outputModel.createReifiedStatement(triple);
-			rstmt.addLiteral(pageRank, S_n.get(0, tripleList.indexOf(triple)));
-			outputModel.add(triple);
-			outputModel.addLiteral(triple.getSubject(), pageRank,
-					S_n.get(0, size + entityList.indexOf(triple.getSubject())));
-			outputModel.addLiteral(triple.getObject().asResource(), pageRank,
-					S_n.get(0, size + entityList.indexOf(triple.getObject())));
-			outputModel.addLiteral(triple.getPredicate().asResource(), pageRank,
-					S_n.get(0, size + entityList.indexOf(triple.getPredicate())));
-		}
-		outputModel.write(System.out, "Turtle");
-
-		String outputfile = datasetname.concat("_PRresult.ttl");
-
-		FileOutputStream outputStream;
-		try {
-			outputStream = new FileOutputStream(outputfile);
-			outputModel.write(outputStream, "Turtle");
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
-	}
-
+	
 	// Stream to constantly read data while processing the data
 
 	public Model readDataUsingThreads(final String filename) {

@@ -14,7 +14,7 @@ public class ResultsWriteHandler {
 		} else if (args[0].equals("-f")) {
 			filename = args[1];
 			RDFReadWriteHandler reader = new RDFReadWriteHandler();
-			Model readmodel = reader.readDataUsingThreads(filename);
+			Model readmodel = reader.readData(filename);
 			RDFReadWriteHandler write = new RDFReadWriteHandler();
 			HARERank hrTester = new HARERank(readmodel);
 			hrTester.calculateRank();
@@ -28,7 +28,7 @@ public class ResultsWriteHandler {
 			 */
 
 			write.writeRDFResults(hrTester.getS_n_Final(), hrTester.getS_t_Final(), pr.getS_n_Final(),
-					hrTester.getMatrxUtil().getTripleList(), hrTester.getMatrxUtil().getEntityList(), "test");
+					hrTester.getMatrxUtil().getTripleList(), hrTester.getMatrxUtil().getEntityList(), "airport");
 		
 
 		}
