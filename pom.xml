@@ -32,11 +32,10 @@
 			<version>3.4.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.googlecode.matrix-toolkits-java</groupId>
-			<artifactId>mtj</artifactId>
-			<version>1.0.2</version>
+			<groupId>org.ujmp</groupId>
+			<artifactId>ujmp-core</artifactId>
+			<version>0.3.0</version>
 		</dependency>
-
 
 	</dependencies>
 </project>
