@@ -17,16 +17,9 @@ public class ResultsWriteHandler {
 			RDFReadWriteHandler write = new RDFReadWriteHandler();
 			HARERank hrTester = new HARERank(readmodel);
 			hrTester.calculateRank();
-			
-			/*
-			 * PageRankParallel prhandler = new PageRankParallel(readmodel);
-			 * prhandler.getPageRank().calculateRank(); HARERankParallel harehandler = new
-			 * HARERankParallel(readmodel); harehandler.getrank().calculateRank();
-			 */
 
 			write.writeRDFResults(hrTester.getS_n_Final(), hrTester.getS_t_Final(),
 					hrTester.getMatrxUtil().getTripleList(), hrTester.getMatrxUtil().getEntityList(), "test");
-		
 
 		}
 	}
