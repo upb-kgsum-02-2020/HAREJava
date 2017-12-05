@@ -2,7 +2,6 @@ package org.aksw.dice.main;
 
 import org.aksw.dice.HARE.HARERank;
 import org.aksw.dice.PageRank.PageRank;
-
 import org.aksw.dice.parallel.reader.RDFReadWriteHandler;
 import org.apache.jena.rdf.model.Model;
 
@@ -28,7 +27,7 @@ public class ResultsWriteHandler {
 			 */
 
 			write.writeRDFResults(hrTester.getS_n_Final(), hrTester.getS_t_Final(), pr.getS_n_Final(),
-					hrTester.getMatrxUtil().getTripleList(), hrTester.getMatrxUtil().getEntityList(), "airport");
+					hrTester.getMatrxUtil().getTripleList(), hrTester.getMatrxUtil().getEntityList(), "test");
 		
 
 		}
