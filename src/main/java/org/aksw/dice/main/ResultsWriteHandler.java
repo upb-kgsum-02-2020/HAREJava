@@ -1,7 +1,6 @@
 package org.aksw.dice.main;
 
 import org.aksw.dice.HARE.HARERank;
-import org.aksw.dice.PageRank.PageRank;
 import org.aksw.dice.parallel.reader.RDFReadWriteHandler;
 import org.apache.jena.rdf.model.Model;
 
@@ -17,7 +16,6 @@ public class ResultsWriteHandler {
 			RDFReadWriteHandler write = new RDFReadWriteHandler();
 			HARERank hrTester = new HARERank(readmodel);
 			hrTester.calculateRank();
-
 			write.writeRDFResults(hrTester.getS_n_Final(), hrTester.getS_t_Final(),
 					hrTester.getMatrxUtil().getTripleList(), hrTester.getMatrxUtil().getEntityList(), "test");
 
