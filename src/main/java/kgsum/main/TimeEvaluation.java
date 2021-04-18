@@ -4,8 +4,7 @@ import java.util.logging.Logger;
 
 import kgsum.HARE.HARERank;
 import kgsum.PageRank.PageRank;
-import kgsum.parallel.HARE.HARERankParallel;
-import kgsum.parallel.PageRank.PageRankParallel;
+
 import kgsum.reader.RDFReadWriteHandler;
 import org.apache.jena.rdf.model.Model;
 
@@ -30,12 +29,6 @@ public class TimeEvaluation {
 				break;
 			case "pagerank":
 				work.setupPageRank(readmodel);
-				break;
-			case "parallelhare":
-				work.setupParallelHARE(readmodel);
-				break;
-			case "parallelpagerank":
-				work.setupParallelPageRank(readmodel);
 				break;
 			default:
 				work.LOGGER.info("No valid experiment were provided");
@@ -71,23 +64,5 @@ public class TimeEvaluation {
 		harehandler.writeRankToFile(filerank);
 	}
 
-	public void setupParallelPageRank(Model model) {
-		String filerank = "LastParallelPageRankCalculation.txt";
-		long tic = System.currentTimeMillis();
-		PageRankParallel prhandler = new PageRankParallel(model);
-		prhandler.getPageRank().calculateRank();
-		long tac = System.currentTimeMillis();
-		System.out.println("Total Execution  Parallel PageRank  time is " + ((tac - tic) / 1000d) + " seconds");
-		prhandler.getPageRank().writeRankToFile(filerank);
-	}
 
-	public void setupParallelHARE(Model model) {
-		String filerank = "LastParallelRankCalculation.txt";
-		long tic = System.currentTimeMillis();
-		HARERankParallel harehandler = new HARERankParallel(model);
-		harehandler.getrank().calculateRank();
-		long tac = System.currentTimeMillis();
-		System.out.println("Total Execution Parallel HARE  time is " + ((tac - tic) / 1000d) + " seconds");
-		harehandler.getrank().writeRankToFile(filerank);
-	}
 }

@@ -17,8 +17,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class RDFReadWriteHandler {
-	public void writeRDFResults(Matrix S_n_hare, Matrix S_t_hare, ArrayList<Statement> tripleList,
-			ArrayList<Resource> entityList, String datasetname) {
+	public void writeRDFResults(
+			Matrix S_n_hare,
+			Matrix S_t_hare,
+			ArrayList<Statement> tripleList,
+			ArrayList<Resource> entityList,
+			String datasetname) {
 		Model outputModel = ModelFactory.createDefaultModel();
 		Property hare = ResourceFactory.createProperty("http://aksw.org/property/hareRank");
 		int size = tripleList.size();
@@ -30,7 +34,8 @@ public class RDFReadWriteHandler {
 			outputModel.add(triple);
 			if (triple.getObject().isLiteral()) {
 				String name = triple.getObject().toString();
-				String psudoName = name.substring(0, name.indexOf("^"));
+				int index =name.indexOf("^");
+				String psudoName = index < 0 ? name : name.substring(0, index);
 				String res = null;
 				if (psudoName.contains(" ")) {
 					res = psudoName.replaceAll(" ", "_");
@@ -48,6 +53,7 @@ public class RDFReadWriteHandler {
 			outputModel.addLiteral(triple.getPredicate().asResource(), hare,
 					S_n_hare.getAsDouble(0, entityList.indexOf(triple.getPredicate())));
 		}
+		System.out.println("yes1");
 
 		String outputfile = datasetname.concat("_result.ttl");
 
@@ -59,12 +65,14 @@ public class RDFReadWriteHandler {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		System.out.println("yes2");
 
 	}
 
 	public void writePageRankResults(Matrix S_n, ArrayList<Statement> tripleList, ArrayList<Resource> entityList,
 			String datasetname) {
 		Model outputModel = ModelFactory.createDefaultModel();
+		System.out.println("yes3");
 
 		Property pageRank = ResourceFactory.createProperty("http://aksw.org/property/pageRank");
 		System.out.println("Writing model to file: " + datasetname + ".ttl. ");
@@ -92,6 +100,7 @@ public class RDFReadWriteHandler {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		System.out.println("yes4");
 
 	}
 

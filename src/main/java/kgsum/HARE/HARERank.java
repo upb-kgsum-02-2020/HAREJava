@@ -153,6 +153,7 @@ public class HARERank {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		LOGGER.info("Y");
 
 	}
 
