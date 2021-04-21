@@ -1,6 +1,7 @@
 package kgsum.main;
 
 import kgsum.HARE.HARERank;
+
 import kgsum.reader.RDFReadWriteHandler;
 import org.apache.jena.rdf.model.Model;
 
@@ -21,7 +22,14 @@ public class ResultsWriteHandler {
 					hrTester.getS_t_Final(),
 					hrTester.getMatrxUtil().getTripleList(),
 					hrTester.getMatrxUtil().getEntityList(),
-					"test1");
+					"test");
+//			prTester.calculateRank();
+//			write.writePageRankResults(
+//					prTester.getS_n_Final(),
+//					prTester.getMatrxUtil().getTripleList(),
+//					prTester.getMatrxUtil().getEntityList(),
+//					"test1");
+
 
 //		}
 	}

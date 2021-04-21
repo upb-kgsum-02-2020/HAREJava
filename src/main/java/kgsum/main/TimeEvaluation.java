@@ -3,7 +3,6 @@ package kgsum.main;
 import java.util.logging.Logger;
 
 import kgsum.HARE.HARERank;
-import kgsum.PageRank.PageRank;
 
 import kgsum.reader.RDFReadWriteHandler;
 import org.apache.jena.rdf.model.Model;
@@ -13,44 +12,16 @@ public class TimeEvaluation {
 
 	public static void main(String[] args) {
 		TimeEvaluation work = new TimeEvaluation();
-		String filename = null;
-		if (args.length == 0) {
-			System.out.println("no arguments were given.");
-		} else if (args[0].equals("-f") && args[2].equals("-t")) {
-			filename = args[1];
+//		String filename = null;
+//		if (args[0].equals("-f") && args[2].equals("-t")) {
+//			filename = args[1];
 			long tic = System.currentTimeMillis();
 			RDFReadWriteHandler reader = new RDFReadWriteHandler();
-			Model readmodel = reader.readData(filename);
+			Model readmodel = reader.readData("m.ttl");
 			long tac = System.currentTimeMillis();
 			System.out.println("Reading Data time is " + ((tac - tic) / 1000d) + " seconds");
-			switch (args[3]) {
-			case "hare":
 				work.setupHARE(readmodel);
-				break;
-			case "pagerank":
-				work.setupPageRank(readmodel);
-				break;
-			default:
-				work.LOGGER.info("No valid experiment were provided");
-				break;
-			}
-
 			System.exit(0);
-		} else
-			work.LOGGER.info(
-					"Arguments not according to the format. \n Execute as follows: \n java Example.java -f <filename> -t <typename>");
-	}
-
-	public void setupPageRank(Model model) {
-		String filerank = "LastPageRankCalculation.txt";
-		long tic = System.currentTimeMillis();
-		PageRank prhandler = new PageRank(model);
-		prhandler.calculateRank();
-		long tac = System.currentTimeMillis();
-		System.out.println("Total Execution  of PageRank time is " + ((tac - tic) / 1000d) + " seconds");
-
-		prhandler.writeRankToFile(filerank);
-
 	}
 
 	public void setupHARE(Model model) {
