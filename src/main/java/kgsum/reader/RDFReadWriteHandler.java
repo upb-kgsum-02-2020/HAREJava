@@ -15,8 +15,42 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 public class RDFReadWriteHandler {
+	public void writeFilteredTriples(
+			Matrix S_t_hare, ArrayList<Statement> tripleList, String datasetname) {
+		Model outputModel = ModelFactory.createDefaultModel();
+		System.out.println("Writing model to file: " + datasetname + ".ttl. ");
+		double sum =
+				tripleList.parallelStream()
+						.mapToDouble(t -> S_t_hare.getAsDouble(0, tripleList.indexOf(t)))
+						.sum();
+		System.out.println("Should be 1 => " + sum);
+		double average = sum / tripleList.size();
+		outputModel.add(
+				tripleList.parallelStream()
+						.filter(t -> S_t_hare.getAsDouble(0, tripleList.indexOf(t)) >= average)
+						.collect(Collectors.toList()));
+
+		String outputTtl = datasetname.concat("_result.ttl");
+		String outputJson = datasetname.concat("_result.json");
+		String outputJson2 = datasetname.concat("_result2.json");
+
+		FileOutputStream streamTtl, streamJson, streamJson2;
+		try {
+			streamTtl = new FileOutputStream(outputTtl);
+			streamJson = new FileOutputStream(outputJson);
+			streamJson2 = new FileOutputStream(outputJson2);
+			outputModel.write(streamTtl, "TURTLE");
+			outputModel.write(streamJson, "JSON-LD");
+			outputModel.write(streamJson2, "RDF/JSON");
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public void writeRDFResults(
 			Matrix S_n_hare,
 			Matrix S_t_hare,
