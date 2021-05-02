@@ -34,7 +34,7 @@ public class RDFReadWriteHandler {
 			outputModel.add(triple);
 			if (triple.getObject().isLiteral()) {
 				String name = triple.getObject().toString();
-				int index =name.indexOf("^");
+				int index = name.indexOf("^");
 				String psudoName = index < 0 ? name : name.substring(0, index);
 				String res = null;
 				if (psudoName.contains(" ")) {

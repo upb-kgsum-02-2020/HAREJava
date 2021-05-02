@@ -12,17 +12,17 @@ public class ResultsWriteHandler {
 //			System.out.println("no arguments were given.");
 //		} else if (args[0].equals("-f")) {
 //			filename = args[1];
-			RDFReadWriteHandler reader = new RDFReadWriteHandler();
-			Model readmodel = reader.readData("m.ttl");
-			RDFReadWriteHandler write = new RDFReadWriteHandler();
-			HARERank hrTester = new HARERank(readmodel);
-			hrTester.calculateRank();
-			write.writeRDFResults(
-					hrTester.getS_n_Final(),
-					hrTester.getS_t_Final(),
-					hrTester.getMatrxUtil().getTripleList(),
-					hrTester.getMatrxUtil().getEntityList(),
-					"test");
+		RDFReadWriteHandler reader = new RDFReadWriteHandler();
+		Model readmodel = reader.readData("m.ttl");
+		RDFReadWriteHandler write = new RDFReadWriteHandler();
+		HARERank hrTester = new HARERank(readmodel);
+		hrTester.calculateRank();
+		write.writeRDFResults(
+				hrTester.getS_n_Final(),
+				hrTester.getS_t_Final(),
+				hrTester.getMatrxUtil().getTripleList(),
+				hrTester.getMatrxUtil().getEntityList(),
+				"test");
 //			prTester.calculateRank();
 //			write.writePageRankResults(
 //					prTester.getS_n_Final(),

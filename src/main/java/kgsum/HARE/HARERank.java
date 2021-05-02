@@ -32,15 +32,14 @@ public class HARERank {
 	}
 
 	/**
-	 * @param matrxUtil
-	 *            the matrxUtil to set
+	 * @param matrxUtil the matrxUtil to set
 	 */
 	public void setMatrxUtil(TransitionMatrixUtil matrxUtil) {
 		this.matrxUtil = matrxUtil;
 	}
 
 	public HARERank(Model data) {
-	
+
 		this.matrxUtil = new TransitionMatrixUtil(data);
 		this.W = matrxUtil.getW();
 		this.F = matrxUtil.getF();
@@ -68,10 +67,10 @@ public class HARERank {
 		while (error > epsilon) {
 			LOGGER.info("Going for iteration " + iteration);
 			Matrix S_n_previous = S_n;
-			
+
 			S_n = (P_n.times(damping).transpose().mtimes(S_n_previous)
 					.plus(I.times((1 - damping) / S_n_previous.getRowCount())));
-			
+
 			error = S_n.manhattenDistanceTo(S_n_previous, true);
 			LOGGER.info("Iteration " + iteration + "Complete");
 			iteration++;
@@ -98,8 +97,7 @@ public class HARERank {
 	}
 
 	/**
-	 * @param s
-	 *            the s to set
+	 * @param s the s to set
 	 */
 	public void setS(Matrix s) {
 		S = s;
@@ -113,8 +111,7 @@ public class HARERank {
 	}
 
 	/**
-	 * @param s_n_Final
-	 *            the s_n_Final to set
+	 * @param s_n_Final the s_n_Final to set
 	 */
 	public void setS_n_Final(Matrix s_n_Final) {
 		S_n_Final = s_n_Final;
@@ -128,8 +125,7 @@ public class HARERank {
 	}
 
 	/**
-	 * @param s_t_Final
-	 *            the s_t_Final to set
+	 * @param s_t_Final the s_t_Final to set
 	 */
 	public void setS_t_Final(Matrix s_t_Final) {
 		S_t_Final = s_t_Final;

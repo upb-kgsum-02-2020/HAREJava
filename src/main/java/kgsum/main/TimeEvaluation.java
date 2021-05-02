@@ -15,18 +15,18 @@ public class TimeEvaluation {
 //		String filename = null;
 //		if (args[0].equals("-f") && args[2].equals("-t")) {
 //			filename = args[1];
-			long tic = System.currentTimeMillis();
-			RDFReadWriteHandler reader = new RDFReadWriteHandler();
-			Model readmodel = reader.readData("m.ttl");
-			long tac = System.currentTimeMillis();
-			System.out.println("Reading Data time is " + ((tac - tic) / 1000d) + " seconds");
-				work.setupHARE(readmodel);
-			System.exit(0);
+		long tic = System.currentTimeMillis();
+		RDFReadWriteHandler reader = new RDFReadWriteHandler();
+		Model readmodel = reader.readData("m.ttl");
+		long tac = System.currentTimeMillis();
+		System.out.println("Reading Data time is " + ((tac - tic) / 1000d) + " seconds");
+		work.setupHARE(readmodel);
+		System.exit(0);
 	}
 
 	public void setupHARE(Model model) {
 		String filerank = "LastRankCalculation.txt";
-		
+
 		long tic = System.currentTimeMillis();
 		HARERank harehandler = new HARERank(model);
 		harehandler.calculateRank();
