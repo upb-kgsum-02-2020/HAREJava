@@ -14,8 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.ujmp.core.DenseMatrix;
 import org.ujmp.core.Matrix;
-
-import junit.framework.Assert;
+import org.junit.Assert;
 
 public class HARERankTest {
 

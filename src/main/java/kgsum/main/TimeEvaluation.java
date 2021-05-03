@@ -8,6 +8,7 @@ import kgsum.reader.RDFReadWriteHandler;
 import org.apache.jena.rdf.model.Model;
 
 public class TimeEvaluation {
+	@SuppressWarnings("unused")
 	private final Logger LOGGER = Logger.getLogger(TimeEvaluation.class.getName());
 
 	public static void main(String[] args) {

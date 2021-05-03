@@ -59,7 +59,9 @@ public class RDFReadWriteHandler {
 			String datasetname) {
 		Model outputModel = ModelFactory.createDefaultModel();
 		Property hare = ResourceFactory.createProperty("http://aksw.org/property/hareRank");
+		
 		int size = tripleList.size();
+		System.out.println("size of of Triple List : " + size);
 		System.out.println("Writing model to file: " + datasetname + ".ttl. ");
 		for (Statement triple : tripleList) {
 			ReifiedStatement rstmt = outputModel.createReifiedStatement(triple);

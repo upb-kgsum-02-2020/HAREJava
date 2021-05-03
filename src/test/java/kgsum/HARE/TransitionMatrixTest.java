@@ -14,7 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.ujmp.core.DenseMatrix;
 import org.ujmp.core.Matrix;
-import junit.framework.Assert;
+import org.junit.Assert;
 
 public class TransitionMatrixTest {
 	static Resource r1 = ResourceFactory.createResource("http://aksw.org/resource/BarackObama");
@@ -64,8 +64,8 @@ public class TransitionMatrixTest {
 		W_actual.setAsDouble(a, 1, 3);
 		W_actual.setAsDouble(a, 1, 4);
 
-		Assert.assertEquals(W_actual, matrixUtil.getW());
-		Assert.assertEquals(F_actual, matrixUtil.getF());
+		org.junit.Assert.assertEquals(W_actual, matrixUtil.getW());
+		org.junit.Assert.assertEquals(F_actual, matrixUtil.getF());
 	}
 
 	@Test
