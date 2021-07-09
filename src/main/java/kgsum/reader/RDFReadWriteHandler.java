@@ -91,12 +91,14 @@ public class RDFReadWriteHandler {
 		}
 
 		String outputfile = datasetname.concat("_result.ttl");
-//		String outputfile = datasetname.concat("_result.json");
+		String outputfile_json = datasetname.concat("_result.json");
 		FileOutputStream outputStream;
+		FileOutputStream outputStream_json;
 		try {
 			outputStream = new FileOutputStream(outputfile);
 			outputModel.write(outputStream, "Turtle");
-//			outputModel.write(outputStream, "JSON-LD");
+			outputStream_json=new FileOutputStream(outputfile_json);
+			outputModel.write(outputStream_json, "JSON-LD");
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
