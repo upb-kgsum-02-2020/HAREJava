@@ -30,7 +30,7 @@ public class RDFReadWriteHandler {
 		double average = sum / tripleList.size();
 		outputModel.add(
 				tripleList.parallelStream()
-						.filter(t -> S_t_hare.getAsDouble(0, tripleList.indexOf(t)) >= average)
+						//.filter(t -> S_t_hare.getAsDouble(0, tripleList.indexOf(t)) >= average)
 						.collect(Collectors.toList()));
 
 		String outputTtl = datasetname.concat("_result.ttl");
