@@ -1,0 +1,53 @@
+.input-form {
+    background-image: url(../../bg.jpg);
+    background-size: contain;
+    background-color: rgba(255, 255, 255, 0);
+    background-blend-mode: color;
+    height: 100vh;
+    width: 100%;
+}
+
+.page-title {
+    text-align: center;
+    margin: 0;
+    padding: 150px 0;
+    padding-bottom: 45px;
+}
+
+.MuiGrid-container {
+    max-width: 650px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 45px;
+    border-radius: 45px;
+}
+
+.MuiButton-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+}
+
+.input-file {
+    display: flex;
+    flex-direction: column;
+    
+    
+    input {
+        margin: 45px 0;
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 600;
+    }
+
+    Button {
+        max-width: fit-content;
+        text-transform: capitalize;
+    }
+}
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 45px;
+    background: lightgray;
+}

@@ -1,0 +1,1480 @@
+{
+  "@graph" : [ {
+    "@id" : "http://stardog.com/tutorial/%22Heroes%22_(David_Bowie_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/David_Bowie",
+    "producer" : [ "http://stardog.com/tutorial/David_Bowie", "http://stardog.com/tutorial/Tony_Visconti" ],
+    "track" : [ "http://stardog.com/tutorial/Joe_the_Lion", "http://stardog.com/tutorial/%22Heroes%22_(David_Bowie_song)", "http://stardog.com/tutorial/Neuköln", "http://stardog.com/tutorial/Sons_of_the_Silent_Age", "http://stardog.com/tutorial/Blackout_(David_Bowie_song)", "http://stardog.com/tutorial/Beauty_and_the_Beast_(David_Bowie_song)", "http://stardog.com/tutorial/Sense_of_Doubt", "http://stardog.com/tutorial/The_Secret_Life_of_Arabia", "http://stardog.com/tutorial/Moss_Garden", "http://stardog.com/tutorial/V-2_Schneider" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/%22Heroes%22_(David_Bowie_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/David_Bowie", "http://stardog.com/tutorial/Brian_Eno" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/'39_(Queen_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Brian_May"
+  }, {
+    "@id" : "http://stardog.com/tutorial/'97_Bonnie_&_Clyde",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Bass_Brothers", "http://stardog.com/tutorial/Eminem" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/'Til_I_Die",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Brian_Wilson"
+  }, {
+    "@id" : "http://stardog.com/tutorial/'Til_Love_Comes_Again",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Bob_Regan", "http://stardog.com/tutorial/Ed_Hill" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/(Always_Be_My)_Sunshine",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jay-Z", "http://stardog.com/tutorial/Bobby_Robinson_(record_producer)", "http://stardog.com/tutorial/James_Harris_III", "http://stardog.com/tutorial/Jimmy_Jam_and_Terry_Lewis", "http://stardog.com/tutorial/The_Fearless_Four_(band)", "http://stardog.com/tutorial/Daven_%22Prestige%22_Vanderpool" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/(Don't_Go_Back_To)_Rockville",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bill_Berry"
+  }, {
+    "@id" : "http://stardog.com/tutorial/(God_Must_Have_Spent)_A_Little_More_Time_on_You",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Carl_Sturken_and_Evan_Rogers"
+  }, {
+    "@id" : "http://stardog.com/tutorial/(I've_Been)_Searchin'_So_Long",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/James_Pankow"
+  }, {
+    "@id" : "http://stardog.com/tutorial/(I_Can't_Get_No)_Satisfaction",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Jagger/Richards"
+  }, {
+    "@id" : "http://stardog.com/tutorial/(If_You're_Not_in_It_for_Love)_I'm_Outta_Here!",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Robert_Lange", "http://stardog.com/tutorial/Shania_Twain" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/(Let_Me_Be_Your)_Teddy_Bear",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Kal_Mann", "http://stardog.com/tutorial/Bernie_Lowe" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/(Miss)understood",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Ayumi_Hamasaki",
+    "producer" : "http://stardog.com/tutorial/Max_Matsuura",
+    "track" : [ "http://stardog.com/tutorial/Bold_&_Delicious/Pride", "http://stardog.com/tutorial/Step_You/Is_This_Love%3F", "http://stardog.com/tutorial/Fairyland_(Ayumi_Hamasaki_song)", "http://stardog.com/tutorial/Heaven_(Ayumi_Hamasaki_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/(Such_an)_Easy_Question",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Winfield_Scott", "http://stardog.com/tutorial/Otis_Blackwell" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/(Sweet_Sweet_Baby)_Since_You've_Been_Gone",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Aretha_Franklin"
+  }, {
+    "@id" : "http://stardog.com/tutorial/(You_Make_Me_Feel_Like)_A_Natural_Woman",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jerry_Wexler", "http://stardog.com/tutorial/Carole_King", "http://stardog.com/tutorial/Gerry_Goffin" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/(You_Want_To)_Make_a_Memory",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jon_Bon_Jovi", "http://stardog.com/tutorial/Richie_Sambora", "http://stardog.com/tutorial/Desmond_Child" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/+_(Ed_Sheeran_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Ed_Sheeran",
+    "producer" : [ "http://stardog.com/tutorial/Charlie_Hugall", "http://stardog.com/tutorial/Jake_Gosling", "http://stardog.com/tutorial/No_I.D." ],
+    "track" : [ "http://stardog.com/tutorial/Lego_House", "http://stardog.com/tutorial/Small_Bump", "http://stardog.com/tutorial/Give_Me_Love_(Ed_Sheeran_song)", "http://stardog.com/tutorial/You_Need_Me,_I_Don't_Need_You", "http://stardog.com/tutorial/Drunk_(Ed_Sheeran_song)", "http://stardog.com/tutorial/The_A_Team_(Ed_Sheeran_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/...And_Justice_for_All_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Metallica",
+    "producer" : [ "http://stardog.com/tutorial/Metallica", "http://stardog.com/tutorial/Flemming_Rasmussen" ],
+    "track" : [ "http://stardog.com/tutorial/One_(Metallica_song)", "http://stardog.com/tutorial/Eye_of_the_Beholder_(song)", "http://stardog.com/tutorial/Harvester_of_Sorrow" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/...And_Then_There_Were_Three...",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Genesis_(band)",
+    "producer" : [ "http://stardog.com/tutorial/Genesis_(band)", "http://stardog.com/tutorial/David_Hentschel" ],
+    "track" : [ "http://stardog.com/tutorial/Deep_in_the_Motherlode", "http://stardog.com/tutorial/Many_Too_Many", "http://stardog.com/tutorial/Follow_You_Follow_Me" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/...Baby_One_More_Time_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Britney_Spears",
+    "producer" : [ "http://stardog.com/tutorial/Per_Magnusson", "http://stardog.com/tutorial/Jörgen_Elofsson", "http://stardog.com/tutorial/David_Kreuger", "http://stardog.com/tutorial/All_Seeing_I", "http://stardog.com/tutorial/Rami_Yacoub", "http://stardog.com/tutorial/Kristian_Lundin", "http://stardog.com/tutorial/Max_Martin" ],
+    "track" : [ "http://stardog.com/tutorial/Sometimes_(Britney_Spears_song)", "http://stardog.com/tutorial/...Baby_One_More_Time_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/...Baby_One_More_Time_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Max_Martin"
+  }, {
+    "@id" : "http://stardog.com/tutorial/...But_Seriously",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Phil_Collins",
+    "producer" : [ "http://stardog.com/tutorial/Hugh_Padgham", "http://stardog.com/tutorial/Phil_Collins" ],
+    "track" : [ "http://stardog.com/tutorial/That's_Just_the_Way_It_Is", "http://stardog.com/tutorial/Something_Happened_on_the_Way_to_Heaven", "http://stardog.com/tutorial/Hang_in_Long_Enough", "http://stardog.com/tutorial/Do_You_Remember%3F_(Phil_Collins_song)", "http://stardog.com/tutorial/I_Wish_It_Would_Rain_Down", "http://stardog.com/tutorial/Another_Day_in_Paradise" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/100_Years_Ago",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Jagger/Richards"
+  }, {
+    "@id" : "http://stardog.com/tutorial/11_(Bryan_Adams_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Bryan_Adams",
+    "producer" : [ "http://stardog.com/tutorial/Bryan_Adams", "http://stardog.com/tutorial/Robert_John_%22Mutt%22_Lange" ],
+    "track" : [ "http://stardog.com/tutorial/She's_Got_a_Way_(Bryan_Adams_song)", "http://stardog.com/tutorial/I_Thought_I'd_Seen_Everything", "http://stardog.com/tutorial/Tonight_We_Have_the_Stars" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/12-Bar_Original",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/John_Lennon", "http://stardog.com/tutorial/George_Harrison", "http://stardog.com/tutorial/Ringo_Starr", "http://stardog.com/tutorial/Paul_McCartney" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/12_X_5",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/The_Rolling_Stones",
+    "producer" : "http://stardog.com/tutorial/Andrew_Loog_Oldham",
+    "track" : [ "http://stardog.com/tutorial/It's_All_Over_Now", "http://stardog.com/tutorial/Time_Is_on_My_Side__Time_Is_on_My_Side__1", "http://stardog.com/tutorial/2120_South_Michigan_Avenue" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/15_Big_Ones",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/The_Beach_Boys",
+    "producer" : "http://stardog.com/tutorial/Brian_Wilson",
+    "track" : [ "http://stardog.com/tutorial/Chapel_of_Love__Chapel_of_Love__1", "http://stardog.com/tutorial/Everyone's_in_Love_with_You", "http://stardog.com/tutorial/Had_to_Phone_Ya", "http://stardog.com/tutorial/It's_OK_(The_Beach_Boys_song)", "http://stardog.com/tutorial/Rock_and_Roll_Music" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/18_til_I_Die",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Bryan_Adams",
+    "producer" : [ "http://stardog.com/tutorial/Robert_Lange", "http://stardog.com/tutorial/Bryan_Adams" ],
+    "track" : [ "http://stardog.com/tutorial/Star_(Bryan_Adams_song)", "http://stardog.com/tutorial/The_Only_Thing_That_Looks_Good_on_Me_Is_You", "http://stardog.com/tutorial/I'll_Always_Be_Right_There", "http://stardog.com/tutorial/Let's_Make_a_Night_to_Remember", "http://stardog.com/tutorial/18_til_I_Die_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/18_til_I_Die_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Robert_John_%22Mutt%22_Lange", "http://stardog.com/tutorial/Bryan_Adams" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/1984_(Van_Halen_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Van_Halen",
+    "producer" : "http://stardog.com/tutorial/Ted_Templeman",
+    "track" : [ "http://stardog.com/tutorial/Jump_(Van_Halen_song)", "http://stardog.com/tutorial/Panama_(song)", "http://stardog.com/tutorial/I'll_Wait" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/1984_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/David_Bowie"
+  }, {
+    "@id" : "http://stardog.com/tutorial/1989_(Taylor_Swift_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Taylor_Swift",
+    "producer" : [ "http://stardog.com/tutorial/Mattman_&_Robin", "http://stardog.com/tutorial/Greg_Kurstin", "http://stardog.com/tutorial/Taylor_Swift", "http://stardog.com/tutorial/Ryan_Tedder", "http://stardog.com/tutorial/Shellback_(record_producer)", "http://stardog.com/tutorial/Imogen_Heap", "http://stardog.com/tutorial/Max_Martin", "http://stardog.com/tutorial/Nathan_Chapman_(record_producer)", "http://stardog.com/tutorial/Jack_Antonoff", "http://stardog.com/tutorial/Noel_Zancanella" ],
+    "track" : [ "http://stardog.com/tutorial/Wildest_Dreams_(Taylor_Swift_song)", "http://stardog.com/tutorial/Shake_It_Off", "http://stardog.com/tutorial/Wonderland_(Taylor_Swift_song)", "http://stardog.com/tutorial/Welcome_to_New_York_(song)", "http://stardog.com/tutorial/Bad_Blood_(Taylor_Swift_song)", "http://stardog.com/tutorial/Blank_Space", "http://stardog.com/tutorial/Out_of_the_Woods_(song)", "http://stardog.com/tutorial/New_Romantics_(song)", "http://stardog.com/tutorial/Style_(Taylor_Swift_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/1999_(Prince_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Prince_(musician)",
+    "producer" : "http://stardog.com/tutorial/Prince_(musician)",
+    "track" : [ "http://stardog.com/tutorial/Automatic_(Prince_song)", "http://stardog.com/tutorial/International_Lover", "http://stardog.com/tutorial/Let's_Pretend_We're_Married", "http://stardog.com/tutorial/Little_Red_Corvette", "http://stardog.com/tutorial/1999_(song)", "http://stardog.com/tutorial/Delirious_(Prince_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/1999_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Prince_(musician)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/19_(Adele_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Adele",
+    "producer" : [ "http://stardog.com/tutorial/Eg_White", "http://stardog.com/tutorial/Jim_Abbiss", "http://stardog.com/tutorial/Mark_Ronson" ],
+    "track" : [ "http://stardog.com/tutorial/Hometown_Glory", "http://stardog.com/tutorial/Cold_Shoulder_(Adele_song)", "http://stardog.com/tutorial/Chasing_Pavements", "http://stardog.com/tutorial/Make_You_Feel_My_Love" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/1_fille_&_4_types",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Celine_Dion",
+    "producer" : "http://stardog.com/tutorial/Erick_Benzi",
+    "track" : "http://stardog.com/tutorial/Et_je_t'aime_encore"
+  }, {
+    "@id" : "http://stardog.com/tutorial/2000_Light_Years_from_Home",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Jagger/Richards"
+  }, {
+    "@id" : "http://stardog.com/tutorial/20_Y.O.",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Janet_Jackson",
+    "producer" : [ "http://stardog.com/tutorial/Executive_producer", "http://stardog.com/tutorial/LRoc", "http://stardog.com/tutorial/Janet_Jackson", "http://stardog.com/tutorial/Jimmy_Jam_and_Terry_Lewis", "http://stardog.com/tutorial/Manuel_Seal", "http://stardog.com/tutorial/Jermaine_Dupri", "http://stardog.com/tutorial/No_I.D." ],
+    "track" : [ "http://stardog.com/tutorial/Call_on_Me_(Janet_Jackson_song)", "http://stardog.com/tutorial/With_U" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/20th_Century_Boy",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Marc_Bolan"
+  }, {
+    "@id" : "http://stardog.com/tutorial/2120_South_Michigan_Avenue",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Nanker_Phelge"
+  }, {
+    "@id" : "http://stardog.com/tutorial/21_(Adele_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Adele",
+    "producer" : [ "http://stardog.com/tutorial/Fraser_T_Smith", "http://stardog.com/tutorial/Jim_Abbiss", "http://stardog.com/tutorial/Rick_Rubin", "http://stardog.com/tutorial/Dan_Wilson_(musician)", "http://stardog.com/tutorial/Paul_Epworth", "http://stardog.com/tutorial/Ryan_Tedder", "http://stardog.com/tutorial/Adele" ],
+    "track" : [ "http://stardog.com/tutorial/Turning_Tables", "http://stardog.com/tutorial/Rolling_in_the_Deep", "http://stardog.com/tutorial/Someone_like_You_(Adele_song)", "http://stardog.com/tutorial/Set_Fire_to_the_Rain", "http://stardog.com/tutorial/Rumour_Has_It_(Adele_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/21_at_33",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Elton_John",
+    "producer" : "http://stardog.com/tutorial/Elton_John",
+    "track" : [ "http://stardog.com/tutorial/Dear_God_(Elton_John_song)", "http://stardog.com/tutorial/Sartorial_Eloquence_(Don't_Ya_Wanna_Play_This_Game_No_More%3F)", "http://stardog.com/tutorial/Little_Jeannie" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/22_(Taylor_Swift_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Max_Martin", "http://stardog.com/tutorial/Shellback_(record_producer)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/24K_Magic_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Bruno_Mars",
+    "producer" : "http://stardog.com/tutorial/The_Stereotypes",
+    "track" : "http://stardog.com/tutorial/24K_Magic_(song)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/24K_Magic_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Bruno_Mars", "http://stardog.com/tutorial/The_Smeezingtons" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/25_(Adele_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Adele",
+    "producer" : [ "http://stardog.com/tutorial/Danger_Mouse_(musician)", "http://stardog.com/tutorial/Paul_Epworth", "http://stardog.com/tutorial/Mark_Ronson", "http://stardog.com/tutorial/Ryan_Tedder", "http://stardog.com/tutorial/Linda_Perry", "http://stardog.com/tutorial/Greg_Kurstin", "http://stardog.com/tutorial/Ariel_Rechtshaid", "http://stardog.com/tutorial/Shellback_(record_producer)", "http://stardog.com/tutorial/Samuel_Dixon", "http://stardog.com/tutorial/Max_Martin", "http://stardog.com/tutorial/The_Smeezingtons" ],
+    "track" : [ "http://stardog.com/tutorial/Million_Years_Ago_(song)", "http://stardog.com/tutorial/River_Lea_(song)", "http://stardog.com/tutorial/Send_My_Love_(To_Your_New_Lover)", "http://stardog.com/tutorial/Remedy_(Adele_song)", "http://stardog.com/tutorial/When_We_Were_Young_(Adele_song)", "http://stardog.com/tutorial/Hello_(Adele_song)", "http://stardog.com/tutorial/All_I_Ask_(Adele_song)", "http://stardog.com/tutorial/Water_Under_the_Bridge_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/25_or_6_to_4",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Robert_Lamm"
+  }, {
+    "@id" : "http://stardog.com/tutorial/2Pac",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/2Pacalypse_Now",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Tupac_Shakur",
+    "producer" : [ "http://stardog.com/tutorial/Live_Squad", "http://stardog.com/tutorial/Shock_G", "http://stardog.com/tutorial/Executive_producer", "http://stardog.com/tutorial/Raw_Fusion" ],
+    "track" : "http://stardog.com/tutorial/If_My_Homie_Calls"
+  }, {
+    "@id" : "http://stardog.com/tutorial/2_(Olivia_Newton-John_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Olivia_Newton-John",
+    "producer" : [ "http://stardog.com/tutorial/Richard_Marx", "http://stardog.com/tutorial/Executive_producer", "http://stardog.com/tutorial/Charles_Fisher_(producer)", "http://stardog.com/tutorial/Rick_Nowels" ],
+    "track" : "http://stardog.com/tutorial/Lift_Me_Up_(Olivia_Newton-John_and_Darren_Hayes_song)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/2_Chainz",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/2_of_Amerikaz_Most_Wanted",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Daz_Dillinger", "http://stardog.com/tutorial/Snoop_Dogg", "http://stardog.com/tutorial/Tupac_Shakur" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/3_a.m._(Eminem_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Dawaun_Parker", "http://stardog.com/tutorial/Mark_Batson", "http://stardog.com/tutorial/Mike_Elizondo", "http://stardog.com/tutorial/Dr._Dre", "http://stardog.com/tutorial/Eminem" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/40-Hour_Week",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Alabama_(band)",
+    "producer" : [ "http://stardog.com/tutorial/Alabama_(band)", "http://stardog.com/tutorial/Harold_Shedd" ],
+    "track" : [ "http://stardog.com/tutorial/There's_No_Way", "http://stardog.com/tutorial/40_Hour_Week_(For_a_Livin')" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/409_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Gary_Usher", "http://stardog.com/tutorial/Brian_Wilson", "http://stardog.com/tutorial/Mike_Love" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/40_(producer)",
+    "@type" : [ "http://stardog.com/tutorial/Songwriter", "http://stardog.com/tutorial/Producer" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/40_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/U2"
+  }, {
+    "@id" : "http://stardog.com/tutorial/40_Hour_Week_(For_a_Livin')",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Dave_Loggins", "http://stardog.com/tutorial/Don_Schlitz" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/4_(Foreigner_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Foreigner_(band)",
+    "producer" : [ "http://stardog.com/tutorial/Mick_Jones_(Foreigner_guitarist)", "http://stardog.com/tutorial/Robert_Lange" ],
+    "track" : [ "http://stardog.com/tutorial/Urgent_(song)", "http://stardog.com/tutorial/Waiting_for_a_Girl_Like_You", "http://stardog.com/tutorial/Luanne", "http://stardog.com/tutorial/Juke_Box_Hero" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/4th_Time_Around",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bob_Dylan"
+  }, {
+    "@id" : "http://stardog.com/tutorial/4th_of_July,_Asbury_Park_(Sandy)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bruce_Springsteen"
+  }, {
+    "@id" : "http://stardog.com/tutorial/4th_of_July_(U2_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/U2"
+  }, {
+    "@id" : "http://stardog.com/tutorial/5.15",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Pete_Townshend"
+  }, {
+    "@id" : "http://stardog.com/tutorial/50,000,000_Elvis_Fans_Can't_Be_Wrong",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Elvis_Presley",
+    "producer" : "http://stardog.com/tutorial/Steve_Sholes",
+    "track" : [ "http://stardog.com/tutorial/A_Big_Hunk_o'_Love", "http://stardog.com/tutorial/I_Need_Your_Love_Tonight" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/500_Degreez",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Lil_Wayne",
+    "producer" : "http://stardog.com/tutorial/Mannie_Fresh",
+    "track" : "http://stardog.com/tutorial/Way_of_Life_(Lil_Wayne_song)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/50_Number_Ones",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/George_Strait",
+    "producer" : [ "http://stardog.com/tutorial/George_Strait", "http://stardog.com/tutorial/Tony_Brown_(record_producer)", "http://stardog.com/tutorial/Jimmy_Bowen", "http://stardog.com/tutorial/Ray_Baker_(music_producer)" ],
+    "track" : "http://stardog.com/tutorial/I_Hate_Everything_(song)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/5150_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Van_Halen",
+    "producer" : [ "http://stardog.com/tutorial/Van_Halen", "http://stardog.com/tutorial/Eddie_Van_Halen", "http://stardog.com/tutorial/Donn_Landee", "http://stardog.com/tutorial/Mick_Jones_(Foreigner)" ],
+    "track" : "http://stardog.com/tutorial/Dreams_(Van_Halen_song)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/52nd_Street_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Billy_Joel",
+    "producer" : "http://stardog.com/tutorial/Phil_Ramone",
+    "track" : [ "http://stardog.com/tutorial/Zanzibar_(Billy_Joel_song)", "http://stardog.com/tutorial/Big_Shot_(song)", "http://stardog.com/tutorial/My_Life_(Billy_Joel_song)", "http://stardog.com/tutorial/Until_the_Night", "http://stardog.com/tutorial/Honesty_(Billy_Joel_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/57_Channels_(And_Nothin'_On)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bruce_Springsteen"
+  }, {
+    "@id" : "http://stardog.com/tutorial/5_Women",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Prince_(musician)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/7_(George_Strait_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/George_Strait",
+    "producer" : "http://stardog.com/tutorial/Jimmy_Bowen",
+    "track" : [ "http://stardog.com/tutorial/Nobody_in_His_Right_Mind_Would've_Left_Her", "http://stardog.com/tutorial/It_Ain't_Cool_to_Be_Crazy_About_You" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/7_(Prince_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jimmy_McCracklin", "http://stardog.com/tutorial/Prince_(musician)", "http://stardog.com/tutorial/Lowell_Fulson" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/808s_&_Heartbreak",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Kanye_West",
+    "producer" : [ "http://stardog.com/tutorial/Jeff_Bhasker", "http://stardog.com/tutorial/Plain_Pat", "http://stardog.com/tutorial/Kanye_West", "http://stardog.com/tutorial/No_I.D.", "http://stardog.com/tutorial/Mr_Hudson" ],
+    "track" : [ "http://stardog.com/tutorial/Amazing_(Kanye_West_song)", "http://stardog.com/tutorial/Paranoid_(Kanye_West_song)", "http://stardog.com/tutorial/Welcome_to_Heartbreak", "http://stardog.com/tutorial/Heartless_(Kanye_West_song)", "http://stardog.com/tutorial/Love_Lockdown" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/88-Keys",
+    "@type" : [ "http://stardog.com/tutorial/Producer", "http://stardog.com/tutorial/Songwriter" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A-Trak",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A._J._McLean",
+    "@type" : "http://stardog.com/tutorial/SoloArtist"
+  }, {
+    "@id" : "http://stardog.com/tutorial/ABBA",
+    "@type" : [ "http://stardog.com/tutorial/Songwriter", "http://stardog.com/tutorial/Band" ],
+    "member" : [ "http://stardog.com/tutorial/Agnetha_Fältskog", "http://stardog.com/tutorial/Frida_Lyngstad", "http://stardog.com/tutorial/Björn_Ulvaeus", "http://stardog.com/tutorial/Benny_Andersson" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/ABBA:_The_Album",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/ABBA",
+    "producer" : [ "http://stardog.com/tutorial/Björn_Ulvaeus", "http://stardog.com/tutorial/Benny_Andersson" ],
+    "track" : [ "http://stardog.com/tutorial/I'm_a_Marionette", "http://stardog.com/tutorial/Eagle_(song)", "http://stardog.com/tutorial/Thank_You_for_the_Music", "http://stardog.com/tutorial/The_Name_of_the_Game_(ABBA_song)", "http://stardog.com/tutorial/Take_a_Chance_on_Me" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/ABBA_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/ABBA",
+    "producer" : [ "http://stardog.com/tutorial/Björn_Ulvaeus", "http://stardog.com/tutorial/Benny_Andersson" ],
+    "track" : [ "http://stardog.com/tutorial/I've_Been_Waiting_for_You_(ABBA_song)", "http://stardog.com/tutorial/SOS_(ABBA_song)", "http://stardog.com/tutorial/I_Do,_I_Do,_I_Do,_I_Do,_I_Do", "http://stardog.com/tutorial/Bang-A-Boomerang", "http://stardog.com/tutorial/Rock_Me_(ABBA_song)", "http://stardog.com/tutorial/So_Long_(ABBA_song)", "http://stardog.com/tutorial/Mamma_Mia_(song)", "http://stardog.com/tutorial/Intermezzo_No._1" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Beginning",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/George_Martin"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Best",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Ayumi_Hamasaki",
+    "producer" : "http://stardog.com/tutorial/Max_Matsuura",
+    "track" : "http://stardog.com/tutorial/M_(song)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Big_Hunk_o'_Love",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Aaron_Schroeder"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Bigger_Bang",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/The_Rolling_Stones",
+    "producer" : [ "http://stardog.com/tutorial/Jagger/Richards", "http://stardog.com/tutorial/Don_Was" ],
+    "track" : [ "http://stardog.com/tutorial/This_Place_Is_Empty", "http://stardog.com/tutorial/Rain_Fall_Down", "http://stardog.com/tutorial/Biggest_Mistake", "http://stardog.com/tutorial/Rough_Justice_(The_Rolling_Stones_song)", "http://stardog.com/tutorial/Streets_of_Love", "http://stardog.com/tutorial/Oh_No,_Not_You_Again", "http://stardog.com/tutorial/Infamy_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Boy_Named_Sue",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Shel_Silverstein"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Brand_New_Day_(The_Wiz_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Luther_Vandross"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Complete:_All_Singles",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Ayumi_Hamasaki",
+    "producer" : "http://stardog.com/tutorial/Max_Matsuura",
+    "track" : "http://stardog.com/tutorial/Mirrorcle_World"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Date_with_Elvis",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Elvis_Presley",
+    "producer" : [ "http://stardog.com/tutorial/Steve_Sholes", "http://stardog.com/tutorial/Sam_Phillips" ],
+    "track" : "http://stardog.com/tutorial/Good_Rocking_Tonight__Good_Rockin'_Tonight__1"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Day_Without_Me",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/U2"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Day_Without_Rain",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Enya",
+    "producer" : "http://stardog.com/tutorial/Nicky_Ryan",
+    "track" : [ "http://stardog.com/tutorial/Only_Time", "http://stardog.com/tutorial/Wild_Child_(Enya_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Day_at_the_Races_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Queen_(band)",
+    "producer" : "http://stardog.com/tutorial/Queen_(band)",
+    "track" : [ "http://stardog.com/tutorial/Good_Old-Fashioned_Lover_Boy", "http://stardog.com/tutorial/Long_Away", "http://stardog.com/tutorial/Somebody_to_Love_(Queen_song)", "http://stardog.com/tutorial/Teo_Torriatte_(Let_Us_Cling_Together)", "http://stardog.com/tutorial/Tie_Your_Mother_Down" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Day_in_the_Life",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/John_Lennon", "http://stardog.com/tutorial/Paul_McCartney" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Different_Kind_of_Love_Song",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Michelle_Lewis", "http://stardog.com/tutorial/Sigurd_Rosnes", "http://stardog.com/tutorial/Johan_Aberg" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Different_Kind_of_Truth",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Van_Halen",
+    "producer" : [ "http://stardog.com/tutorial/John_Shanks", "http://stardog.com/tutorial/Van_Halen" ],
+    "track" : [ "http://stardog.com/tutorial/Tattoo_(Van_Halen_song)", "http://stardog.com/tutorial/She's_the_Woman" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Face_in_the_Crowd_(Tom_Petty_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jeff_Lynne", "http://stardog.com/tutorial/Tom_Petty" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Friend_for_Life__A_Friend_for_Life__1",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jim_Cregan", "http://stardog.com/tutorial/Steve_Harley" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Great_Day_for_Freedom",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/David_Gilmour", "http://stardog.com/tutorial/Polly_Samson" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Hard_Day's_Night_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/The_Beatles",
+    "producer" : "http://stardog.com/tutorial/George_Martin",
+    "track" : [ "http://stardog.com/tutorial/I'll_Be_Back_(song)", "http://stardog.com/tutorial/You_Can't_Do_That", "http://stardog.com/tutorial/Any_Time_at_All", "http://stardog.com/tutorial/Can't_Buy_Me_Love", "http://stardog.com/tutorial/If_I_Fell", "http://stardog.com/tutorial/When_I_Get_Home", "http://stardog.com/tutorial/Tell_Me_Why_(Beatles_song)", "http://stardog.com/tutorial/Things_We_Said_Today", "http://stardog.com/tutorial/A_Hard_Day's_Night_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Hard_Day's_Night_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/John_Lennon", "http://stardog.com/tutorial/Paul_McCartney" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Hard_Rain's_a-Gonna_Fall",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bob_Dylan"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Head_Full_of_Dreams",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Coldplay",
+    "producer" : [ "http://stardog.com/tutorial/Rik_Simpson", "http://stardog.com/tutorial/Stargate_(production_team)" ],
+    "track" : [ "http://stardog.com/tutorial/A_Head_Full_of_Dreams_(song)", "http://stardog.com/tutorial/Up_&_Up", "http://stardog.com/tutorial/Hymn_for_the_Weekend", "http://stardog.com/tutorial/Everglow", "http://stardog.com/tutorial/Fun_(Coldplay_song)", "http://stardog.com/tutorial/Adventure_of_a_Lifetime", "http://stardog.com/tutorial/Birds_(Coldplay_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Head_Full_of_Dreams_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jonny_Buckland", "http://stardog.com/tutorial/Guy_Berryman", "http://stardog.com/tutorial/Will_Champion", "http://stardog.com/tutorial/Chris_Martin" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Jolly_Christmas_from_Frank_Sinatra",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Frank_Sinatra",
+    "producer" : "http://stardog.com/tutorial/Voyle_Gilmore",
+    "track" : "http://stardog.com/tutorial/Mistletoe_and_Holly"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Kind_of_Hush_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/The_Carpenters",
+    "producer" : [ "http://stardog.com/tutorial/Karen_Carpenter", "http://stardog.com/tutorial/Richard_Carpenter_(musician)" ],
+    "track" : [ "http://stardog.com/tutorial/Goofus_(song)", "http://stardog.com/tutorial/There's_a_Kind_of_Hush", "http://stardog.com/tutorial/I_Need_to_Be_in_Love", "http://stardog.com/tutorial/Can't_Smile_Without_You" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Kind_of_Magic",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Queen_(band)",
+    "producer" : [ "http://stardog.com/tutorial/Queen_(band)", "http://stardog.com/tutorial/Reinhold_Mack", "http://stardog.com/tutorial/David_Richards_(record_producer)" ],
+    "track" : [ "http://stardog.com/tutorial/A_Kind_of_Magic_(song)", "http://stardog.com/tutorial/Pain_Is_So_Close_to_Pleasure", "http://stardog.com/tutorial/Who_Wants_to_Live_Forever", "http://stardog.com/tutorial/One_Year_of_Love_(song)", "http://stardog.com/tutorial/Princes_of_the_Universe", "http://stardog.com/tutorial/One_Vision", "http://stardog.com/tutorial/Friends_Will_Be_Friends" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Kind_of_Magic_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Roger_Taylor_(Queen_drummer)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Legal_Matter",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Pete_Townshend"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Little_Less_Conversation",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Billy_Strange", "http://stardog.com/tutorial/Mac_Davis" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Love_Trilogy",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Donna_Summer",
+    "producer" : [ "http://stardog.com/tutorial/Giorgio_Moroder", "http://stardog.com/tutorial/Pete_Bellotte" ],
+    "track" : [ "http://stardog.com/tutorial/Could_It_Be_Magic", "http://stardog.com/tutorial/Try_Me,_I_Know_We_Can_Make_It" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Man_and_a_Woman_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Composer", "http://stardog.com/tutorial/Lyricist", "http://stardog.com/tutorial/Bono" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Matter_of_Trust",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Billy_Joel"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Milli",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Lil_Wayne", "http://stardog.com/tutorial/Fatboy_Slim" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Momentary_Lapse_of_Reason",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Pink_Floyd",
+    "producer" : [ "http://stardog.com/tutorial/David_Gilmour", "http://stardog.com/tutorial/Bob_Ezrin" ],
+    "track" : [ "http://stardog.com/tutorial/On_the_Turning_Away", "http://stardog.com/tutorial/One_Slip", "http://stardog.com/tutorial/Sorrow_(Pink_Floyd_song)", "http://stardog.com/tutorial/The_Dogs_of_War_(song)", "http://stardog.com/tutorial/A_New_Machine", "http://stardog.com/tutorial/Signs_of_Life_(instrumental)", "http://stardog.com/tutorial/Learning_to_Fly_(Pink_Floyd_song)", "http://stardog.com/tutorial/Terminal_Frost", "http://stardog.com/tutorial/Yet_Another_Movie", "http://stardog.com/tutorial/Round_and_Around_(Pink_Floyd_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_New_Career_in_a_New_Town",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/David_Bowie"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_New_Machine",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/David_Gilmour"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Night_at_the_Opera_(Queen_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Queen_(band)",
+    "producer" : [ "http://stardog.com/tutorial/Roy_Thomas_Baker", "http://stardog.com/tutorial/Queen_(band)" ],
+    "track" : [ "http://stardog.com/tutorial/The_Prophet's_Song", "http://stardog.com/tutorial/'39_(Queen_song)", "http://stardog.com/tutorial/Bohemian_Rhapsody", "http://stardog.com/tutorial/Sweet_Lady_(Queen_song)", "http://stardog.com/tutorial/I'm_in_Love_with_My_Car", "http://stardog.com/tutorial/Death_on_Two_Legs_(Dedicated_to...)", "http://stardog.com/tutorial/Seaside_Rendezvous", "http://stardog.com/tutorial/You're_My_Best_Friend_(Queen_song)", "http://stardog.com/tutorial/Good_Company_(Queen_song)", "http://stardog.com/tutorial/Lazing_on_a_Sunday_Afternoon", "http://stardog.com/tutorial/Love_of_My_Life_(Queen_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Night_on_the_Town_(Rod_Stewart_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Rod_Stewart",
+    "producer" : "http://stardog.com/tutorial/Tom_Dowd",
+    "track" : [ "http://stardog.com/tutorial/The_Killing_of_Georgie_(Part_I_and_II)", "http://stardog.com/tutorial/Tonight's_the_Night_(Gonna_Be_Alright)", "http://stardog.com/tutorial/The_First_Cut_Is_the_Deepest__The_First_Cut_Is_the_Deepest__1" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Pillow_of_Winds",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/David_Gilmour", "http://stardog.com/tutorial/Roger_Waters" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Place_for_My_Head",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Linkin_Park"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Place_in_the_Sun_(Stevie_Wonder_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Ron_Miller_(Songwriter)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Place_in_the_Sun_(Tim_McGraw_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Tim_McGraw",
+    "producer" : [ "http://stardog.com/tutorial/Tim_McGraw", "http://stardog.com/tutorial/James_Stroud", "http://stardog.com/tutorial/Byron_Gallimore" ],
+    "track" : [ "http://stardog.com/tutorial/Some_Things_Never_Change_(song)", "http://stardog.com/tutorial/My_Best_Friend_(song)", "http://stardog.com/tutorial/Something_Like_That", "http://stardog.com/tutorial/My_Next_Thirty_Years", "http://stardog.com/tutorial/Please_Remember_Me" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Quick_One",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/The_Who",
+    "producer" : "http://stardog.com/tutorial/Kit_Lambert",
+    "track" : [ "http://stardog.com/tutorial/Boris_the_Spider", "http://stardog.com/tutorial/Happy_Jack_(song)", "http://stardog.com/tutorial/A_Quick_One,_While_He's_Away" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Quick_One,_While_He's_Away",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Pete_Townshend"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Rush_of_Blood_to_the_Head",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Coldplay",
+    "producer" : [ "http://stardog.com/tutorial/Coldplay", "http://stardog.com/tutorial/Ken_Nelson_(British_record_producer)" ],
+    "track" : [ "http://stardog.com/tutorial/God_Put_a_Smile_upon_Your_Face", "http://stardog.com/tutorial/In_My_Place", "http://stardog.com/tutorial/The_Scientist_(song)", "http://stardog.com/tutorial/Clocks_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Saucerful_of_Secrets",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Pink_Floyd",
+    "producer" : "http://stardog.com/tutorial/Norman_Smith_(record_producer)",
+    "track" : [ "http://stardog.com/tutorial/Corporal_Clegg", "http://stardog.com/tutorial/Let_There_Be_More_Light", "http://stardog.com/tutorial/Remember_a_Day", "http://stardog.com/tutorial/Jugband_Blues", "http://stardog.com/tutorial/Set_the_Controls_for_the_Heart_of_the_Sun", "http://stardog.com/tutorial/See-Saw_(song)", "http://stardog.com/tutorial/A_Saucerful_of_Secrets_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Saucerful_of_Secrets_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/David_Gilmour", "http://stardog.com/tutorial/Roger_Waters", "http://stardog.com/tutorial/Nick_Mason", "http://stardog.com/tutorial/Richard_Wright_(musician)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Single_Man_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Elton_John",
+    "producer" : "http://stardog.com/tutorial/Elton_John",
+    "track" : [ "http://stardog.com/tutorial/I_Don't_Care_(Elton_John_song)", "http://stardog.com/tutorial/Ego_(Elton_John_song)", "http://stardog.com/tutorial/It_Ain't_Gonna_Be_Easy", "http://stardog.com/tutorial/Song_for_Guy", "http://stardog.com/tutorial/Part-Time_Love", "http://stardog.com/tutorial/Madness_(Elton_John_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Sky_Full_of_Stars",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Chris_Martin", "http://stardog.com/tutorial/Will_Champion", "http://stardog.com/tutorial/Jonny_Buckland", "http://stardog.com/tutorial/Tim_Bergling", "http://stardog.com/tutorial/Guy_Berryman" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Song_Is_Born_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Tetsuya_Komuro", "http://stardog.com/tutorial/Ayumi_Hamasaki" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Song_for_You_(The_Carpenters_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/The_Carpenters",
+    "producer" : "http://stardog.com/tutorial/Jack_Daugherty_(musician)",
+    "track" : [ "http://stardog.com/tutorial/Goodbye_to_Love", "http://stardog.com/tutorial/It's_Going_to_Take_Some_Time", "http://stardog.com/tutorial/Top_of_the_World_(The_Carpenters_song)", "http://stardog.com/tutorial/I_Won't_Last_a_Day_Without_You", "http://stardog.com/tutorial/Bless_the_Beasts_and_Children_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Song_for_××",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Ayumi_Hamasaki",
+    "producer" : "http://stardog.com/tutorial/Max_Matsuura",
+    "track" : [ "http://stardog.com/tutorial/You_(Ayumi_Hamasaki_song)", "http://stardog.com/tutorial/For_My_Dear...", "http://stardog.com/tutorial/Poker_Face_(Ayumi_Hamasaki_song)", "http://stardog.com/tutorial/Depend_on_You", "http://stardog.com/tutorial/Trust_(Ayumi_Hamasaki_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Spanish_Piece",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/David_Gilmour"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Star_Is_Born_(Jay-Z_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Kanye_West", "http://stardog.com/tutorial/J._Cole", "http://stardog.com/tutorial/Jay-Z", "http://stardog.com/tutorial/No_ID" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Summer_Best",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Ayumi_Hamasaki",
+    "producer" : "http://stardog.com/tutorial/Max_Matsuura",
+    "track" : "http://stardog.com/tutorial/You_&_Me_(Ayumi_Hamasaki_song)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Taste_of_Honey_(song)__A_Taste_of_Honey__1",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Ric_Marlow", "http://stardog.com/tutorial/Bobby_Scott_(producer)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Thousand_Suns",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Linkin_Park",
+    "producer" : [ "http://stardog.com/tutorial/Rick_Rubin", "http://stardog.com/tutorial/Mike_Shinoda" ],
+    "track" : [ "http://stardog.com/tutorial/Blackout_(Linkin_Park_song)", "http://stardog.com/tutorial/Waiting_for_the_End", "http://stardog.com/tutorial/Iridescent_(song)", "http://stardog.com/tutorial/Burning_in_the_Skies", "http://stardog.com/tutorial/The_Catalyst", "http://stardog.com/tutorial/Wretches_and_Kings" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Time_to_Love_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Stevie_Wonder",
+    "producer" : "http://stardog.com/tutorial/Stevie_Wonder",
+    "track" : [ "http://stardog.com/tutorial/From_the_Bottom_of_My_Heart_(Stevie_Wonder_song)", "http://stardog.com/tutorial/So_What_the_Fuss" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Trick_of_the_Tail",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Genesis_(band)",
+    "producer" : [ "http://stardog.com/tutorial/David_Hentschel", "http://stardog.com/tutorial/Genesis_(band)" ],
+    "track" : [ "http://stardog.com/tutorial/Entangled_(song)", "http://stardog.com/tutorial/A_Trick_of_the_Tail_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Trick_of_the_Tail_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Tony_Banks_(musician)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_Woman's_Threat",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/R._Kelly"
+  }, {
+    "@id" : "http://stardog.com/tutorial/A_World_Without_Heroes",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Gene_Simmons", "http://stardog.com/tutorial/Lou_Reed", "http://stardog.com/tutorial/Bob_Ezrin", "http://stardog.com/tutorial/Paul_Stanley" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aalias",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aaron_Barker",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aaron_Hall_(singer)",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aaron_Schroeder",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aaron_Zigman",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Abacab",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Genesis_(band)",
+    "producer" : "http://stardog.com/tutorial/Genesis_(band)",
+    "track" : [ "http://stardog.com/tutorial/Man_on_the_Corner", "http://stardog.com/tutorial/No_Reply_at_All", "http://stardog.com/tutorial/Abacab_(song)", "http://stardog.com/tutorial/Keep_It_Dark" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Abacab_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Tony_Banks_(musician)", "http://stardog.com/tutorial/Mike_Rutherford", "http://stardog.com/tutorial/Phil_Collins" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Abandoned_Love",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bob_Dylan"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Abbey_Road",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/The_Beatles",
+    "producer" : "http://stardog.com/tutorial/George_Martin",
+    "track" : [ "http://stardog.com/tutorial/Golden_Slumbers", "http://stardog.com/tutorial/The_End_(Beatles_song)", "http://stardog.com/tutorial/Because_(Beatles_song)", "http://stardog.com/tutorial/I_Want_You_(She's_So_Heavy)", "http://stardog.com/tutorial/You_Never_Give_Me_Your_Money", "http://stardog.com/tutorial/Come_Together", "http://stardog.com/tutorial/Polythene_Pam", "http://stardog.com/tutorial/Something_(Beatles_song)", "http://stardog.com/tutorial/Carry_That_Weight", "http://stardog.com/tutorial/Maxwell's_Silver_Hammer", "http://stardog.com/tutorial/She_Came_In_Through_the_Bathroom_Window", "http://stardog.com/tutorial/Mean_Mr._Mustard", "http://stardog.com/tutorial/Octopus's_Garden", "http://stardog.com/tutorial/Sun_King_(song)", "http://stardog.com/tutorial/Here_Comes_the_Sun", "http://stardog.com/tutorial/Oh!_Darling", "http://stardog.com/tutorial/Her_Majesty_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Abel_Meeropol",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/About_a_Girl_(Nirvana_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Kurt_Cobain"
+  }, {
+    "@id" : "http://stardog.com/tutorial/About_a_Girl_(Nirvana_song)__About_a_Girl__1",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Kurt_Cobain"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Absolutely_Curtains",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Roger_Waters", "http://stardog.com/tutorial/Richard_Wright_(musician)", "http://stardog.com/tutorial/David_Gilmour", "http://stardog.com/tutorial/Nick_Mason" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Absolutely_Live_(The_Doors_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/The_Doors",
+    "producer" : "http://stardog.com/tutorial/Paul_A._Rothchild",
+    "track" : "http://stardog.com/tutorial/Celebration_of_the_Lizard"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Absolutely_Sweet_Marie",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bob_Dylan"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Accelerate_(R.E.M._album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/R.E.M.",
+    "producer" : [ "http://stardog.com/tutorial/R.E.M.", "http://stardog.com/tutorial/Jacknife_Lee" ],
+    "track" : "http://stardog.com/tutorial/Until_the_Day_Is_Done"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ace_Frehley",
+    "@type" : [ "http://stardog.com/tutorial/Songwriter", "http://stardog.com/tutorial/SoloArtist" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Achilles_Last_Stand",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jimmy_Page", "http://stardog.com/tutorial/Robert_Plant" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Achtung_Baby",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/U2",
+    "producer" : [ "http://stardog.com/tutorial/Daniel_Lanois", "http://stardog.com/tutorial/Brian_Eno" ],
+    "track" : [ "http://stardog.com/tutorial/Ultraviolet_(Light_My_Way)", "http://stardog.com/tutorial/So_Cruel", "http://stardog.com/tutorial/Acrobat_(song)", "http://stardog.com/tutorial/One_(U2_song)", "http://stardog.com/tutorial/Until_the_End_of_the_World_(song)", "http://stardog.com/tutorial/Even_Better_Than_the_Real_Thing", "http://stardog.com/tutorial/Love_Is_Blindness", "http://stardog.com/tutorial/The_Fly_(song)", "http://stardog.com/tutorial/Zoo_Station_(song)", "http://stardog.com/tutorial/Mysterious_Ways_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Acrobat_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Bono", "http://stardog.com/tutorial/Composer" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Across_the_Universe",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Paul_McCartney", "http://stardog.com/tutorial/John_Lennon" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Act_Naturally__Act_Naturally__1",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Johnny_Russell_(singer)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Action_(Sweet_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Steve_Priest", "http://stardog.com/tutorial/Brian_Connolly", "http://stardog.com/tutorial/Andy_Scott_(guitarist)", "http://stardog.com/tutorial/Mick_Tucker" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ad-Rock",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adam_Levine",
+    "@type" : [ "http://stardog.com/tutorial/Songwriter", "http://stardog.com/tutorial/SoloArtist" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adam_Messinger",
+    "@type" : [ "http://stardog.com/tutorial/Producer", "http://stardog.com/tutorial/Songwriter" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adam_Mitchell_(Songwriter)",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adam_Raised_a_Cain",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bruce_Springsteen"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adam_Yauch",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adamski",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Add_Some_Music_to_Your_Day",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Mike_Love", "http://stardog.com/tutorial/Brian_Wilson", "http://stardog.com/tutorial/Joe_Knott" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adele",
+    "@type" : [ "http://stardog.com/tutorial/Songwriter", "http://stardog.com/tutorial/SoloArtist", "http://stardog.com/tutorial/Producer" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adele_Adkins",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adonis_Shropshire",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adore_(Prince_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Prince_(musician)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adrenalize",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Def_Leppard",
+    "producer" : [ "http://stardog.com/tutorial/Mike_Shipley", "http://stardog.com/tutorial/Def_Leppard" ],
+    "track" : [ "http://stardog.com/tutorial/Stand_Up_(Kick_Love_into_Motion)", "http://stardog.com/tutorial/Make_Love_Like_a_Man", "http://stardog.com/tutorial/Tonight_(Def_Leppard_song)", "http://stardog.com/tutorial/Let's_Get_Rocked", "http://stardog.com/tutorial/Have_You_Ever_Needed_Someone_So_Bad", "http://stardog.com/tutorial/I_Wanna_Touch_U", "http://stardog.com/tutorial/Heaven_Is" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adrian_Barber",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adrian_Belew",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adrienne_Anderson",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Adventure_of_a_Lifetime",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Guy_Berryman", "http://stardog.com/tutorial/Chris_Martin", "http://stardog.com/tutorial/Jonny_Buckland", "http://stardog.com/tutorial/Will_Champion", "http://stardog.com/tutorial/Stargate_(production_team)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Advertising_Space",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Stephen_Duffy", "http://stardog.com/tutorial/Robbie_Williams" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aeroplane_(Red_Hot_Chili_Peppers_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Dave_Navarro", "http://stardog.com/tutorial/Flea_(musician)", "http://stardog.com/tutorial/Anthony_Kiedis", "http://stardog.com/tutorial/Chad_Smith" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aerosmith",
+    "@type" : [ "http://stardog.com/tutorial/Producer", "http://stardog.com/tutorial/Band" ],
+    "member" : [ "http://stardog.com/tutorial/Rick_Dufay", "http://stardog.com/tutorial/Steven_Tyler", "http://stardog.com/tutorial/Brad_Whitford", "http://stardog.com/tutorial/Joey_Kramer", "http://stardog.com/tutorial/Jimmy_Crespo", "http://stardog.com/tutorial/Joe_Perry_(musician)", "http://stardog.com/tutorial/Tom_Hamilton_(musician)", "http://stardog.com/tutorial/Ray_Tabano" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aerosmith_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Aerosmith",
+    "producer" : "http://stardog.com/tutorial/Adrian_Barber",
+    "track" : [ "http://stardog.com/tutorial/Write_Me_a_Letter", "http://stardog.com/tutorial/Somebody_(Aerosmith_song)", "http://stardog.com/tutorial/Make_It", "http://stardog.com/tutorial/Mama_Kin", "http://stardog.com/tutorial/Movin'_Out_(song)", "http://stardog.com/tutorial/Dream_On_(Aerosmith_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Afeni_Shakur",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Afire_Love",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Foy_Vance", "http://stardog.com/tutorial/Johnny_McDaid", "http://stardog.com/tutorial/Ed_Sheeran" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/After_All_(Cher_and_Peter_Cetera_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Dean_Pitchford"
+  }, {
+    "@id" : "http://stardog.com/tutorial/After_All_(David_Bowie_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/David_Bowie"
+  }, {
+    "@id" : "http://stardog.com/tutorial/After_All_These_Years_(Journey_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Neal_Schon", "http://stardog.com/tutorial/Jonathan_Cain" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/After_Loving_You",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Eddie_Miller_(Songwriter)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/After_the_Fall_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jonathan_Cain", "http://stardog.com/tutorial/Steve_Perry" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aftermath_(R.E.M._song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Mike_Mills", "http://stardog.com/tutorial/Michael_Stipe", "http://stardog.com/tutorial/Peter_Buck" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aftermath_(The_Rolling_Stones_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/The_Rolling_Stones",
+    "producer" : "http://stardog.com/tutorial/Andrew_Loog_Oldham",
+    "track" : [ "http://stardog.com/tutorial/Lady_Jane_(song)", "http://stardog.com/tutorial/Take_It_or_Leave_It_(song)__Take_It_or_Leave_It__1", "http://stardog.com/tutorial/Goin'_Home_(The_Rolling_Stones_song)", "http://stardog.com/tutorial/Under_My_Thumb", "http://stardog.com/tutorial/I_Am_Waiting_(song)", "http://stardog.com/tutorial/Out_of_Time_(The_Rolling_Stones_song)", "http://stardog.com/tutorial/Mother's_Little_Helper", "http://stardog.com/tutorial/Paint_It_Black", "http://stardog.com/tutorial/Stupid_Girl_(The_Rolling_Stones_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Against_All_Odds_(Take_a_Look_at_Me_Now)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Phil_Collins"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Agent_Provocateur_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Foreigner_(band)",
+    "producer" : [ "http://stardog.com/tutorial/Mick_Jones_(Foreigner_guitarist)", "http://stardog.com/tutorial/Alex_Sadkin" ],
+    "track" : [ "http://stardog.com/tutorial/Down_on_Love", "http://stardog.com/tutorial/Reaction_to_Action", "http://stardog.com/tutorial/I_Want_to_Know_What_Love_Is", "http://stardog.com/tutorial/Growing_Up_the_Hard_Way", "http://stardog.com/tutorial/That_Was_Yesterday_(Foreigner_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ages_of_You",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Mike_Mills", "http://stardog.com/tutorial/Michael_Stipe", "http://stardog.com/tutorial/Peter_Buck", "http://stardog.com/tutorial/Bill_Berry" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Agnetha_Fältskog",
+    "@type" : "http://stardog.com/tutorial/SoloArtist"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aimee_Mayo",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ain't_Goin'_Down_('Til_the_Sun_Comes_Up)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Garth_Brooks", "http://stardog.com/tutorial/Kent_Blazy" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ain't_Love_a_Bitch",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Rod_Stewart", "http://stardog.com/tutorial/Gary_Grainger" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ain't_My_Bitch",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/James_Hetfield", "http://stardog.com/tutorial/Lars_Ulrich" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ain't_No_Nigga",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Foxy_Brown_(rapper)", "http://stardog.com/tutorial/Jaz-O", "http://stardog.com/tutorial/Jay-Z" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ain't_No_Other_Man",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/DJ_Premier", "http://stardog.com/tutorial/Kara_DioGuardi", "http://stardog.com/tutorial/Christina_Aguilera" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ain't_No_Sunshine",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bill_Withers"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ain't_No_Way",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Carolyn_Franklin"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ain't_Talkin'",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bob_Dylan"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ain't_Talkin'_'bout_Love",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/David_Lee_Roth", "http://stardog.com/tutorial/Alex_Van_Halen", "http://stardog.com/tutorial/Michael_Anthony_(musician)", "http://stardog.com/tutorial/Eddie_Van_Halen" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Akon",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Al_Anderson_(NRBQ)",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Al_Green",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Al_Jackson,_Jr.",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Al_Jardine",
+    "@type" : [ "http://stardog.com/tutorial/Producer", "http://stardog.com/tutorial/Songwriter", "http://stardog.com/tutorial/SoloArtist" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Al_Kasha",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Al_Mortimer",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Al_Shux",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alabama_(band)",
+    "@type" : [ "http://stardog.com/tutorial/Producer", "http://stardog.com/tutorial/Band" ],
+    "member" : [ "http://stardog.com/tutorial/Mark_Herndon", "http://stardog.com/tutorial/Jeff_Cook", "http://stardog.com/tutorial/Randy_Owen" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alabama_Song__Whisky_Bar__1",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Kurt_Weill", "http://stardog.com/tutorial/Bertolt_Brecht" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aladdin_Sane",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/David_Bowie",
+    "producer" : "http://stardog.com/tutorial/Ken_Scott",
+    "track" : [ "http://stardog.com/tutorial/Let's_Spend_the_Night_Together", "http://stardog.com/tutorial/The_Jean_Genie", "http://stardog.com/tutorial/Aladdin_Sane_(song)", "http://stardog.com/tutorial/Watch_That_Man", "http://stardog.com/tutorial/Cracked_Actor_(song)", "http://stardog.com/tutorial/The_Prettiest_Star", "http://stardog.com/tutorial/Lady_Grinning_Soul", "http://stardog.com/tutorial/Drive-In_Saturday", "http://stardog.com/tutorial/Panic_in_Detroit", "http://stardog.com/tutorial/Time_(David_Bowie_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Aladdin_Sane_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/David_Bowie"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alan's_Psychedelic_Breakfast",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Richard_Wright_(musician)", "http://stardog.com/tutorial/Roger_Waters", "http://stardog.com/tutorial/David_Gilmour", "http://stardog.com/tutorial/Nick_Mason" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alan_Blaikley",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alan_Boyd",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alan_Clark",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alan_Jardine",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alan_Kendall",
+    "@type" : "http://stardog.com/tutorial/SoloArtist"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alan_Kohan",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alan_Parker",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Albert_Calbrera",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Albert_Hammond",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Albert_Willemetz",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Albhy_Galuten",
+    "@type" : [ "http://stardog.com/tutorial/Producer", "http://stardog.com/tutorial/Songwriter" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alec_John_Such",
+    "@type" : "http://stardog.com/tutorial/SoloArtist"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alesso",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alex_Coletti",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alex_González_(musician)",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alex_Sadkin",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alex_Van_Halen",
+    "@type" : [ "http://stardog.com/tutorial/SoloArtist", "http://stardog.com/tutorial/Songwriter" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alex_da_Kid",
+    "@type" : [ "http://stardog.com/tutorial/Producer", "http://stardog.com/tutorial/Songwriter" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alicia_Keys",
+    "@type" : [ "http://stardog.com/tutorial/Songwriter", "http://stardog.com/tutorial/Producer" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alison_Krauss",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alive_(The_Black_Eyed_Peas_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/The_Black_Eyed_Peas"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alive_Again_(Cher_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Tracey_Ackerman", "http://stardog.com/tutorial/Ray_Hedges", "http://stardog.com/tutorial/Chicane_(recording_artist)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alive_Again_(Chicago_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/James_Pankow"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alive_II",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Kiss_(band)",
+    "producer" : [ "http://stardog.com/tutorial/Eddie_Kramer", "http://stardog.com/tutorial/Kiss_(band)" ],
+    "track" : [ "http://stardog.com/tutorial/Rocket_Ride_(song)", "http://stardog.com/tutorial/Shout_It_Out_Loud_(Kiss_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_About_Lovin'_You",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bon_Jovi"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_About_Soul",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Billy_Joel"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_About_You_(The_Rolling_Stones_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Jagger/Richards"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Along_the_Watchtower",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bob_Dylan"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Apologies",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Kurt_Cobain"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Apologies__All_Apologies__1",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Kurt_Cobain"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Around_the_World_(Justin_Bieber_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Nasri_(Songwriter)", "http://stardog.com/tutorial/Ludacris", "http://stardog.com/tutorial/Sir_Nolan", "http://stardog.com/tutorial/Adam_Messinger", "http://stardog.com/tutorial/Justin_Bieber" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Because_of_You_(U2_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Composer", "http://stardog.com/tutorial/Lyricist", "http://stardog.com/tutorial/Bono" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Dressed_Up_for_School",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Brian_Wilson"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Eyez_on_Me",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Tupac_Shakur",
+    "producer" : [ "http://stardog.com/tutorial/DJ_Quik", "http://stardog.com/tutorial/Rick_Rock", "http://stardog.com/tutorial/Executive_producer", "http://stardog.com/tutorial/Suge_Knight", "http://stardog.com/tutorial/DJ_Pooh", "http://stardog.com/tutorial/DeVante_Swing", "http://stardog.com/tutorial/Johnny_%22J%22", "http://stardog.com/tutorial/Tupac_Shakur", "http://stardog.com/tutorial/QD3", "http://stardog.com/tutorial/Dr._Dre", "http://stardog.com/tutorial/Daz_Dillinger" ],
+    "track" : [ "http://stardog.com/tutorial/How_Do_U_Want_It", "http://stardog.com/tutorial/I_Ain't_Mad_at_Cha", "http://stardog.com/tutorial/California_Love", "http://stardog.com/tutorial/2_of_Amerikaz_Most_Wanted" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Falls_Down",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Lauryn_Hill", "http://stardog.com/tutorial/Kanye_West" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Hell's_Breakin'_Loose",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Eric_Carr", "http://stardog.com/tutorial/Paul_Stanley", "http://stardog.com/tutorial/Vinnie_Vincent", "http://stardog.com/tutorial/Gene_Simmons" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_I've_Got_to_Do",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Paul_McCartney", "http://stardog.com/tutorial/John_Lennon" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_I_Ask_(Adele_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Adele", "http://stardog.com/tutorial/Bruno_Mars" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_I_Have_to_Give",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Full_Force"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_I_Really_Want_to_Do",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bob_Dylan"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_I_Really_Want_to_Do_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Cher",
+    "producer" : "http://stardog.com/tutorial/Sonny_Bono",
+    "track" : "http://stardog.com/tutorial/All_I_Really_Want_to_Do__All_I_Really_Want_to_Do__1"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_I_Really_Want_to_Do__All_I_Really_Want_to_Do__1",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bob_Dylan"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_I_Wanna_Do_(The_Beach_Boys_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Mike_Love", "http://stardog.com/tutorial/Brian_Wilson" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_I_Want_(Tim_McGraw_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Tim_McGraw",
+    "producer" : [ "http://stardog.com/tutorial/Byron_Gallimore", "http://stardog.com/tutorial/James_Stroud" ],
+    "track" : [ "http://stardog.com/tutorial/Can't_Be_Really_Gone", "http://stardog.com/tutorial/She_Never_Lets_It_Go_to_Her_Heart", "http://stardog.com/tutorial/All_I_Want_Is_a_Life" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_I_Want_Is_Everything_(Def_Leppard_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Joe_Elliott"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_I_Want_Is_You_(U2_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Composer", "http://stardog.com/tutorial/Lyricist", "http://stardog.com/tutorial/Bono" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_I_Want_Is_a_Life",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Stan_Munsey", "http://stardog.com/tutorial/Tony_Mullins" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Me_(Drake_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Drake_(rapper)", "http://stardog.com/tutorial/2_Chainz", "http://stardog.com/tutorial/Big_Sean", "http://stardog.com/tutorial/Noah_%2240%22_Shebib", "http://stardog.com/tutorial/Albert_Willemetz", "http://stardog.com/tutorial/Key_Wane" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_My_Ex's_Live_in_Texas",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Sanger_D._Shafer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_My_Love_(Led_Zeppelin_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/John_Paul_Jones_(musician)", "http://stardog.com/tutorial/Robert_Plant" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_My_Loving",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Paul_McCartney", "http://stardog.com/tutorial/John_Lennon" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Night_Long_(All_Night)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Lionel_Richie"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Nightmare_Long",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/James_Hetfield", "http://stardog.com/tutorial/Lars_Ulrich", "http://stardog.com/tutorial/Robert_Trujillo", "http://stardog.com/tutorial/Kirk_Hammett" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Nite_(Don't_Stop)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Paul_Jackson_(bassist)", "http://stardog.com/tutorial/Arnthor_Birgisson", "http://stardog.com/tutorial/Herbie_Hancock", "http://stardog.com/tutorial/Wah_Wah_Watson", "http://stardog.com/tutorial/Anders_Bagge", "http://stardog.com/tutorial/Jimmy_Jam_and_Terry_Lewis" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Quiet_on_the_Western_Front_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Bernie_Taupin", "http://stardog.com/tutorial/Elton_John" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Seeing_I",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Summer_Long_(The_Beach_Boys_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Brian_Wilson", "http://stardog.com/tutorial/Mike_Love" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Summer_Long_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/The_Beach_Boys",
+    "producer" : "http://stardog.com/tutorial/Brian_Wilson",
+    "track" : [ "http://stardog.com/tutorial/We'll_Run_Away", "http://stardog.com/tutorial/I_Get_Around", "http://stardog.com/tutorial/Don't_Back_Down_(song)", "http://stardog.com/tutorial/Little_Honda", "http://stardog.com/tutorial/Drive-In_(song)", "http://stardog.com/tutorial/Do_You_Remember%3F_(The_Beach_Boys_song)", "http://stardog.com/tutorial/All_Summer_Long_(The_Beach_Boys_song)", "http://stardog.com/tutorial/All_Dressed_Up_for_School", "http://stardog.com/tutorial/Wendy_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Systems_Go_(Donna_Summer_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Donna_Summer",
+    "producer" : [ "http://stardog.com/tutorial/Peter_Bunetta", "http://stardog.com/tutorial/Richard_Perry", "http://stardog.com/tutorial/Harold_Faltermeyer", "http://stardog.com/tutorial/Donna_Summer", "http://stardog.com/tutorial/Rick_Chudacoff" ],
+    "track" : [ "http://stardog.com/tutorial/Dinner_with_Gershwin", "http://stardog.com/tutorial/Only_the_Fool_Survives", "http://stardog.com/tutorial/All_Systems_Go_(song)", "http://stardog.com/tutorial/Fascination_(Donna_Summer_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Systems_Go_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Donna_Summer", "http://stardog.com/tutorial/Harold_Faltermeyer" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_That_You_Can't_Leave_Behind",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/U2",
+    "producer" : [ "http://stardog.com/tutorial/Daniel_Lanois", "http://stardog.com/tutorial/Brian_Eno" ],
+    "track" : [ "http://stardog.com/tutorial/Beautiful_Day", "http://stardog.com/tutorial/Elevation_(song)", "http://stardog.com/tutorial/Kite_(U2_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Things_Go",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Vinylz", "http://stardog.com/tutorial/Boi-1da", "http://stardog.com/tutorial/Ester_Dean", "http://stardog.com/tutorial/Nicki_Minaj", "http://stardog.com/tutorial/Allen_Ritter" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Things_Must_Pass_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/George_Harrison"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Together_Now",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/John_Lennon", "http://stardog.com/tutorial/Paul_McCartney" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_Too_Well",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Liz_Rose"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_You_Get_from_Love_Is_a_Love_Song",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Steve_Eaton_(singer)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_You_Need_Is_Love",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/John_Lennon", "http://stardog.com/tutorial/Paul_McCartney" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_for_Leyna",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Billy_Joel"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_for_Nothing_(Linkin_Park_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Linkin_Park"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_for_You_(Janet_Jackson_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Janet_Jackson",
+    "producer" : [ "http://stardog.com/tutorial/Rockwilder", "http://stardog.com/tutorial/Jimmy_Jam_and_Terry_Lewis", "http://stardog.com/tutorial/Janet_Jackson" ],
+    "track" : [ "http://stardog.com/tutorial/Someone_to_Call_My_Lover", "http://stardog.com/tutorial/Come_On_Get_Up", "http://stardog.com/tutorial/All_for_You_(Janet_Jackson_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_for_You_(Janet_Jackson_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Mauro_Malavasi", "http://stardog.com/tutorial/Jimmy_Jam_and_Terry_Lewis" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_of_My_Life_(The_Carpenters_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Richard_Carpenter_(musician)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_of_the_Stars",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Ed_Sheeran", "http://stardog.com/tutorial/Johnny_McDaid" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_the_Best!",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Paul_McCartney",
+    "producer" : [ "http://stardog.com/tutorial/Paul_McCartney", "http://stardog.com/tutorial/George_Martin" ],
+    "track" : "http://stardog.com/tutorial/Once_Upon_a_Long_Ago"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_the_Madmen_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/David_Bowie"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_the_Man_That_I_Need",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Dean_Pitchford", "http://stardog.com/tutorial/Michael_Gore" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_the_Tired_Horses",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Bob_Dylan"
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_the_Way_to_Reno_(You're_Gonna_Be_a_Star)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Mike_Mills", "http://stardog.com/tutorial/Peter_Buck", "http://stardog.com/tutorial/Michael_Stipe" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_the_Women_I_Am",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Reba_McEntire",
+    "producer" : "http://stardog.com/tutorial/Dann_Huff",
+    "track" : [ "http://stardog.com/tutorial/When_Love_Gets_a_Hold_of_You", "http://stardog.com/tutorial/Somebody's_Chelsea" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/All_the_Years",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Bruce_Gaitsch", "http://stardog.com/tutorial/Robert_Lamm" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Allen_Collins",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Allen_Reynolds",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Allen_Ritter",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Allen_Shamblin",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Allentown_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Billy_Joel"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alley_Oop_(song)__Alley-Oop__1",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Dallas_Frazier"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Almost_Hear_You_Sigh",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jagger/Richards", "http://stardog.com/tutorial/Steve_Jordan_(musician)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alone_(Bee_Gees_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Maurice_Gibb", "http://stardog.com/tutorial/Barry_Gibb", "http://stardog.com/tutorial/Robin_Gibb" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Along_Comes_a_Woman",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Peter_Cetera"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Alphabet_St.",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Prince_(musician)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Already_Gone_(Eagles_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Jack_Tempchin"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Always_(Bon_Jovi_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Jon_Bon_Jovi"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Always_Be_My_Baby",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Manuel_Seal", "http://stardog.com/tutorial/Mariah_Carey", "http://stardog.com/tutorial/Jermaine_Dupri" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Always_Crashing_in_the_Same_Car",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/David_Bowie"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Always_Never_the_Same_(George_Strait_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/George_Strait",
+    "producer" : [ "http://stardog.com/tutorial/Tony_Brown_(record_producer)", "http://stardog.com/tutorial/George_Strait" ],
+    "track" : [ "http://stardog.com/tutorial/Write_This_Down_(song)", "http://stardog.com/tutorial/What_Do_You_Say_to_That", "http://stardog.com/tutorial/Meanwhile_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Always_in_My_Head",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jonny_Buckland", "http://stardog.com/tutorial/Guy_Berryman", "http://stardog.com/tutorial/Will_Champion", "http://stardog.com/tutorial/Chris_Martin" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Am_I_Evil%3F",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Brian_Tatler"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Amarantine_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Enya",
+    "producer" : "http://stardog.com/tutorial/Nicky_Ryan",
+    "track" : [ "http://stardog.com/tutorial/Amarantine_(song)", "http://stardog.com/tutorial/It's_in_the_Rain" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Amarantine_(song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/Roma_Ryan"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Amazing_(Aerosmith_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Steven_Tyler", "http://stardog.com/tutorial/Richie_Supa_(Songwriter)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Amazing_(George_Michael_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/George_Michael"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Amazing_(Kanye_West_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Jeff_Bhasker_(producer)", "http://stardog.com/tutorial/Kanye_West", "http://stardog.com/tutorial/Consequence_(rapper)", "http://stardog.com/tutorial/Young_Jeezy" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Amber_(performer)",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/America_(Prince_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Prince_(musician)", "http://stardog.com/tutorial/The_Revolution_(band)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/American_Gangster_(album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Jay-Z",
+    "producer" : [ "http://stardog.com/tutorial/DJ_Toomp", "http://stardog.com/tutorial/The_Neptunes", "http://stardog.com/tutorial/L.A._Reid", "http://stardog.com/tutorial/Executive_producer", "http://stardog.com/tutorial/Just_Blaze", "http://stardog.com/tutorial/Idris_Elba", "http://stardog.com/tutorial/No_I.D.", "http://stardog.com/tutorial/Bigg_D", "http://stardog.com/tutorial/Sean_Combs", "http://stardog.com/tutorial/Jermaine_Dupri" ],
+    "track" : [ "http://stardog.com/tutorial/Roc_Boys_(And_the_Winner_Is)...", "http://stardog.com/tutorial/I_Know_(Jay-Z_song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/American_III:_Solitary_Man",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Johnny_Cash",
+    "producer" : [ "http://stardog.com/tutorial/Rick_Rubin", "http://stardog.com/tutorial/John_Carter_Cash" ],
+    "track" : "http://stardog.com/tutorial/Solitary_Man_(song)__Solitary_Man__1"
+  }, {
+    "@id" : "http://stardog.com/tutorial/American_IV:_The_Man_Comes_Around",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Johnny_Cash",
+    "producer" : [ "http://stardog.com/tutorial/Rick_Rubin", "http://stardog.com/tutorial/John_Carter_Cash" ],
+    "track" : [ "http://stardog.com/tutorial/Hurt_(Nine_Inch_Nails_song)", "http://stardog.com/tutorial/The_Man_Comes_Around_(song)" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Amigos_(Santana_album)",
+    "@type" : "http://stardog.com/tutorial/Album",
+    "artist" : "http://stardog.com/tutorial/Santana_(band)",
+    "producer" : "http://stardog.com/tutorial/David_Rubinson",
+    "track" : "http://stardog.com/tutorial/Europa_(Earth's_Cry_Heaven's_Smile)"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Amil_(rapper)",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ammo",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Ammo_(musician)",
+    "@type" : "http://stardog.com/tutorial/Producer"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Amsterdam_(Van_Halen_song)",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : [ "http://stardog.com/tutorial/Michael_Anthony_(musician)", "http://stardog.com/tutorial/Alex_Van_Halen", "http://stardog.com/tutorial/Sammy_Hagar", "http://stardog.com/tutorial/Eddie_Van_Halen" ]
+  }, {
+    "@id" : "http://stardog.com/tutorial/Amy_Dalley",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/Amy_Wadge",
+    "@type" : "http://stardog.com/tutorial/Songwriter"
+  }, {
+    "@id" : "http://stardog.com/tutorial/An_Easier_Affair",
+    "@type" : "http://stardog.com/tutorial/Song",
+    "writer" : "http://stardog.com/tutorial/George_Michael"
+  } ],
+  "@context" : {
+    "artist" : {
+      "@id" : "http://stardog.com/tutorial/artist",
+      "@type" : "@id"
+    },
+    "producer" : {
+      "@id" : "http://stardog.com/tutorial/producer",
+      "@type" : "@id"
+    },
+    "track" : {
+      "@id" : "http://stardog.com/tutorial/track",
+      "@type" : "@id"
+    },
+    "writer" : {
+      "@id" : "http://stardog.com/tutorial/writer",
+      "@type" : "@id"
+    },
+    "member" : {
+      "@id" : "http://stardog.com/tutorial/member",
+      "@type" : "@id"
+    }
+  }
+}
